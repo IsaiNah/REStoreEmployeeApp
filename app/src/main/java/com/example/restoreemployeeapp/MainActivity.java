@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             Log.d(TAG, "\n Email : " + etEmail.getText().toString() + ", Password : " + etPass.getText().toString());
 
-            User user = new User(etEmail.toString(), etPass.toString());
+            User user = new User(etEmail.getText().toString(), etPass.getText().toString());
 
             //TODO Add Local DataBase?
 
@@ -77,7 +77,12 @@ public class MainActivity extends AppCompatActivity {
 
 
                                     //TODO this area will determine employee level and show different menu accordingly
-                                    startActivity(menuIntent);
+                                    try {
+                                        startActivity(menuIntent);
+                                    }catch(Exception e)
+                                    {
+                                        Log.d(TAG, "onResponse: StartActivity Exception " + e);
+                                    }
 
                                 }
                                 else
@@ -93,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
-                    error.printStackTrace();
+                   // error.printStackTrace(); //TODO tutorial
                 }
             }
 
