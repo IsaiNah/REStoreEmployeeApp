@@ -1,3 +1,6 @@
 2019/04/08
 - Created Project
 - Added Git repository
+- Setup LoginView
+- Setup User Class
+- Began Setting up database connection using Volly
