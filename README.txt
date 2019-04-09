@@ -16,6 +16,7 @@
 - Established connection with phpscript on backend 
 - Fixed bug with volley
 - Added Call Nearest Manager Button to Main Menu
+- Added Calling permissions to App Manifest
 
 
 -TODO Recycler View menu, with Call button on buttom and user menu (Fragment?) on top with dropdownlist
