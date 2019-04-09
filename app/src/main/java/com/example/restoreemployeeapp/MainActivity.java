@@ -1,5 +1,6 @@
 package com.example.restoreemployeeapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -8,8 +9,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -17,8 +27,11 @@ public class MainActivity extends AppCompatActivity {
     private Button bLogin;
     private TextView registerLink;
     private EditText etEmail, etPass;
+    private Intent menuIntent;
     //LocalDB localDataBase;
     static String savedEmail, savedPhone;
+    //Url for Database connection script
+    final String loginUrl = "http://project17.globalapps.ca/Login.php";
 
 
     @Override
@@ -31,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
     registerLink = (TextView) findViewById(R.id.idRegisterLink);
     etEmail = (EditText) findViewById(R.id.idetEmail);
     etPass = (EditText) findViewById(R.id.idetPassword);
+
+    menuIntent = new Intent(MainActivity.this, MainMenu.class);
 
     bLogin.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -45,8 +60,68 @@ public class MainActivity extends AppCompatActivity {
             userFieldCheck(user);
 
             //Volley for database Connection
-           // Request requestQueue = Volley.newR
+            RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
+            // Request and Response with Error handling
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, loginUrl,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+                            try {
+                                JSONObject jsonObject = new JSONObject(response);
+                                boolean success = jsonObject.getBoolean("success");
+                                if (success)
+                                {
+                                    Log.d(TAG, "onResponse: Success");
 
+
+
+                                    //TODO this area will determine employee level and show different menu accordingly
+                                    startActivity(menuIntent);
+
+                                }
+                                else
+                                {
+                                    Toast.makeText(getApplicationContext(), "Login Fail", Toast.LENGTH_SHORT);
+                                }
+                            } catch (JSONException e) {
+                                Log.d(TAG, "JSONE Response exception : " + e);
+                            }
+                        }
+
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
+                }
+            }
+
+            );
+
+
+            requestQueue.add(stringRequest);
+
+            //menuIntent = new Intent(MainActivity.this, )
+
+       /*     if (etEmail.getText().toString().equals("driver")) //
+            {
+                Log.d(TAG,"Driver true : " + etEmail.getText().toString() );
+                Intent intent = new Intent(Login.this, DriverMainActivity.class);
+                startActivity(intent);
+            }else {
+                Log.d(TAG,"Driver false : " + etEmail.getText().toString());
+                Intent intent = new Intent(Login.this, MainActivity.class);
+                startActivity(intent);
+            }//End of sorting area
+        }else //Failed to login
+        {
+            Toast.makeText(getApplicationContext(), "Login Fail", Toast.LENGTH_SHORT);
+
+        }
+    }catch(JSONException e)
+        {
+            Log.d(TAG, "JSONE Response exception : " + e);
+        }*/
 
 
         }
