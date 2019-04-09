@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     //LocalDB localDataBase;
     static String savedEmail, savedPhone;
     //Url for Database connection script
-    final String loginUrl = "http://project17.globalapps.ca/Login.php";
+    final String loginUrl = "http://webdaze.ca/RELogin.php";
 
 
     @Override
