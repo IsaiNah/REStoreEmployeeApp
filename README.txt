@@ -3,3 +3,9 @@
 2019/04/08
 - Created Project
 - Added Git repository
+- Created Project
+- Added Git repository
+- Setup LoginView
+- Setup User Class
+- Began Setting up database connection using V	olly
+- Designed LoginView
