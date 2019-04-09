@@ -13,6 +13,10 @@
 - Finished Volley *to be tested*, Added Internet Permissions to App Manifest
 - Setup Main Menu Class + View
 - Created php script to communicate between database and applicatetion: \RELogin.php
+- Established connection with phpscript on backend 
+- Fixed bug with volley
+- Added Call Nearest Manager Button to Main Menu
+
 
 -TODO Recycler View menu, with Call button on buttom and user menu (Fragment?) on top with dropdownlist
 -TODO Different Employee Levels
