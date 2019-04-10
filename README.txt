@@ -18,6 +18,8 @@
 - Added Call Nearest Manager Button to Main Menu
 - Added Calling permissions to App Manifest
 
+2019/04/10
+- Created mysql database[RE_StoreEmployees] to store App Data.
 
 -TODO Recycler View menu, with Call button on buttom and user menu (Fragment?) on top with dropdownlist
 -TODO Different Employee Levels
