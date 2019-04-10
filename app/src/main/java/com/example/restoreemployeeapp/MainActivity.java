@@ -21,6 +21,9 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "SEA_Log";
@@ -102,7 +105,17 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            );
+            )  {
+                @Override
+                protected Map<String, String> getParams()
+                {
+                    Map<String, String> params = new HashMap<String, String>();
+                    params.put("email", etEmail.getText().toString());
+                    params.put("password", etPass.getText().toString());
+                    return params;
+                }
+            };
+
 
 
 
