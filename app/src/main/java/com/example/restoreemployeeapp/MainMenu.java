@@ -44,7 +44,7 @@ public class MainMenu extends AppCompatActivity {
 
             //recyclerView.setLayoutManager(new LinearLayoutManager(this));
             //Changed to Grid Layout
-            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         }catch (Exception e){
             Log.d(TAG, "onCreate: RecyclerView Exception " + e);
         }
@@ -56,6 +56,24 @@ public class MainMenu extends AppCompatActivity {
                 0,
                 "Information",
                 R.drawable.info00
+
+        ));
+        menuItems.add(new MenuItem(
+                1,
+                "Training",
+                R.drawable.training00
+
+        ));
+        menuItems.add(new MenuItem(
+                2,
+                "Quiz",
+                R.drawable.quiz02
+
+        ));
+        menuItems.add(new MenuItem(
+                3,
+                "My Stats",
+                R.drawable.level01
 
         ));
 
