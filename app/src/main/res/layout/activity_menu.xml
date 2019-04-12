@@ -14,9 +14,9 @@
         android:layout_marginTop="646dp"
         android:layout_marginEnd="162dp"
         android:layout_marginBottom="37dp"
-        android:background="@color/LightYellow"
+        android:background="@color/Black"
         android:text="Call Nearest Manager"
-        android:textColor="@color/Black"
+        android:textColor="@color/White"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,4 +36,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.599" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="413dp"
+        android:layout_height="111dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/relogo00" />
 </android.support.constraint.ConstraintLayout>

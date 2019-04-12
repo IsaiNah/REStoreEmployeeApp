@@ -60,22 +60,41 @@ public class MainMenu extends AppCompatActivity {
         ));
         menuItems.add(new MenuItem(
                 1,
+                "VOIP Call",
+                R.drawable.call01
+
+        ));
+        menuItems.add(new MenuItem(
+                2,
+                "Contacts",
+                R.drawable.contacts01
+
+        ));
+        menuItems.add(new MenuItem(
+                3,
+                "RE Services",
+                R.drawable.allservices00
+
+        ));
+        menuItems.add(new MenuItem(
+                4,
                 "Training",
                 R.drawable.training00
 
         ));
         menuItems.add(new MenuItem(
-                2,
-                "Quiz",
+                5,
+                "Certificate Quiz",
                 R.drawable.quiz02
 
         ));
         menuItems.add(new MenuItem(
-                3,
+                6,
                 "My Stats",
                 R.drawable.level01
 
         ));
+
 
 
         try {
