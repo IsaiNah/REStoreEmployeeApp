@@ -44,7 +44,7 @@ public class MainMenu extends AppCompatActivity {
 
             //recyclerView.setLayoutManager(new LinearLayoutManager(this));
             //Changed to Grid Layout
-            recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+            recyclerView.setLayoutManager(new GridLayoutManager(this,2));
         }catch (Exception e){
             Log.d(TAG, "onCreate: RecyclerView Exception " + e);
         }

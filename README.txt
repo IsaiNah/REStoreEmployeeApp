@@ -27,8 +27,14 @@
 
 2019/04/11
 - Finished recyclerview
+
+2019/04/12
+- Made Scrolling horizional in menu
+- Populated Menu with Items (Subject to change)
+- Created menu items
+- Changed to GridLayoutManager from Linear Horizonal
 -TODO Design menu
--TODO create menu items
+
 
 - TODO hidden layout control buttons
 - TODO new user mandatory info +  test
