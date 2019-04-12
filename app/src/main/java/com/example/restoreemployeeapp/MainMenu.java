@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -18,21 +19,27 @@ public class MainMenu extends AppCompatActivity {
     private static final String TAG = "SEA_Log";
     private Button btnCallManager;
     private Intent callIntent;
+    private Toolbar toolbar;
     //Menu Items
     private List<MenuItem> menuItems;
     //RecyclerView
     private RecyclerView recyclerView;
-
+//TODO continue https://www.youtube.com/watch?v=LD2zsCAAVXw 4:20
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
 
+        toolbar = (Toolbar)  findViewById(R.id.app_toolbar);
         btnCallManager = (Button) findViewById(R.id.btn_menu_callmanager);
 
-
-
+try {
+    setSupportActionBar(toolbar);
+}catch(Exception e)
+{
+    Log.d(TAG, "onCreate: Exception " + e);
+}
         //Create RecyclerView
         try {
             recyclerView = findViewById(R.id.mainmenu_recyclerview);
@@ -44,7 +51,8 @@ public class MainMenu extends AppCompatActivity {
 
             //recyclerView.setLayoutManager(new LinearLayoutManager(this));
             //Changed to Grid Layout
-            recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+            recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+
         }catch (Exception e){
             Log.d(TAG, "onCreate: RecyclerView Exception " + e);
         }
@@ -55,41 +63,47 @@ public class MainMenu extends AppCompatActivity {
         menuItems.add(new MenuItem(
                 0,
                 "Information",
-                R.drawable.info00
+                R.drawable.info01
 
         ));
         menuItems.add(new MenuItem(
                 1,
-                "VOIP Call",
-                R.drawable.call01
+                "Call Closest Manager",
+                R.drawable.manager00
 
         ));
         menuItems.add(new MenuItem(
                 2,
+                "VOIP Call",
+                R.drawable.call00
+
+        ));
+        menuItems.add(new MenuItem(
+                3,
                 "Contacts",
                 R.drawable.contacts01
 
         ));
         menuItems.add(new MenuItem(
-                3,
+                4,
                 "RE Services",
                 R.drawable.allservices00
 
         ));
         menuItems.add(new MenuItem(
-                4,
+                5,
                 "Training",
                 R.drawable.training00
 
         ));
         menuItems.add(new MenuItem(
-                5,
+                6,
                 "Certificate Quiz",
-                R.drawable.quiz02
+                R.drawable.quiz03
 
         ));
         menuItems.add(new MenuItem(
-                6,
+                7,
                 "My Stats",
                 R.drawable.level01
 
