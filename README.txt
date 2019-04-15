@@ -33,7 +33,11 @@
 - Populated Menu with Items (Subject to change)
 - Created menu items
 - Changed to GridLayoutManager from Linear Horizonal
--TODO Design menu
+- ReDesigned MainMenu
+
+
+2019/04/14
+- Created ActionBar (Top Toolbar) -> will have app options such as change language
 
 
 - TODO hidden layout control buttons

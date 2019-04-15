@@ -2,9 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
-<item
-    android:id="@+id/menu_settings"
-    android:title="@string/menuitem00"
-    app:showAsAction="always"
-    />
+    <item
+        android:id="@+id/menu_settings00"
+        android:icon="@drawable/options00"
+        android:title="@string/menuitem00"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/menu_settings01"
+        android:title="@string/menuitem01"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/menu_settings02"
+        android:title="@string/menuitem01"
+        app:showAsAction="never"
+        />
 </menu>
