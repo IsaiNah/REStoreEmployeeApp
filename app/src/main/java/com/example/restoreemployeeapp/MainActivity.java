@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     static String savedEmail, savedPhone;
     //Url for Database connection script
     final String loginUrl = "http://webdaze.ca/RELogin.php";
-
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -169,3 +172,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }}
+
+
+

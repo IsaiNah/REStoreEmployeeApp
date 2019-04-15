@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">REStoreEmployeeApp</string>
+    <string name="menuitem00">Change Language</string>
 </resources>
