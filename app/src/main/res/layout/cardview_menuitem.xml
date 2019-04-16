@@ -5,14 +5,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardview_mainmenu"
-    android:layout_width="150dp"
-    android:layout_height="150dp"
+    android:layout_width="350dp"
+    android:layout_height="350dp"
     android:layout_margin="5dp"
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="8dp"
     android:layout_marginBottom="8dp"
-    app:cardBackgroundColor="@color/White"
+    app:cardBackgroundColor="@color/Black"
     app:cardCornerRadius="12dp"
     app:cardElevation="5dp"
     app:cardUseCompatPadding="true"
@@ -24,13 +24,13 @@
 
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="125dp"
-        android:layout_height="123dp">
+        android:layout_width="330dp"
+        android:layout_height="327dp">
 
         <ImageView
             android:id="@+id/mainmenu_image"
-            android:layout_width="126dp"
-            android:layout_height="92dp"
+            android:layout_width="329dp"
+            android:layout_height="256dp"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -40,19 +40,18 @@
 
         <TextView
             android:id="@+id/mainmenu_title"
-            android:layout_width="126dp"
-            android:layout_height="24dp"
+            android:layout_width="204dp"
+            android:layout_height="42dp"
             android:layout_marginBottom="110dp"
             android:gravity="center_horizontal"
             android:paddingBottom="5dp"
-            android:textColor="@color/Black"
-            android:textSize="12sp"
+            android:textColor="@color/White"
+            android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.082" />
 
 
     </android.support.constraint.ConstraintLayout>
