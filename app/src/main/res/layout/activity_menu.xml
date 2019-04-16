@@ -25,29 +25,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <Button
-        android:id="@+id/btn_menu_callmanager2"
-        android:layout_width="408dp"
-        android:layout_height="wrap_content"
-        android:background="@color/Black"
-        android:text="Call Nearest Manager"
-        android:textColor="@color/White"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="589dp" />
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/mainmenu_recyclerview"
-        android:layout_width="wrap_content"
-        android:layout_height="592dp"
+        android:layout_width="379dp"
+        android:layout_height="544dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_menu_callmanager"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.813" />
+        app:layout_constraintVertical_bias="0.691" />
 
 </android.support.constraint.ConstraintLayout>

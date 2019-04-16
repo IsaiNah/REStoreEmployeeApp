@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     static String savedEmail, savedPhone;
     //Url for Database connection script
     final String loginUrl = "http://webdaze.ca/RELogin.php";
-    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

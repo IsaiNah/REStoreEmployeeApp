@@ -15,7 +15,7 @@
         />
     <item
         android:id="@+id/menu_settings02"
-        android:title="@string/menuitem01"
+        android:title="@string/menuitem02"
         app:showAsAction="never"
         />
 </menu>

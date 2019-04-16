@@ -65,9 +65,11 @@ try {
             recyclerView.setDrawingCacheEnabled(true);
             recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
 
-            //recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
             //Changed to Grid Layout
-            recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+            //recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+            SnapHelperOneByOne snapHelperOneByOne = new SnapHelperOneByOne();
+            snapHelperOneByOne.attachToRecyclerView(recyclerView);
 
         }catch (Exception e){
             Log.d(TAG, "onCreate: RecyclerView Exception " + e);
@@ -82,44 +84,34 @@ try {
                 R.drawable.info01
 
         ));
+
         menuItems.add(new MenuItem(
                 1,
-                "Call Closest Manager",
-                R.drawable.manager00
-
-        ));
-        menuItems.add(new MenuItem(
-                2,
                 "VOIP Call",
                 R.drawable.call00
 
         ));
-        menuItems.add(new MenuItem(
-                3,
-                "Contacts",
-                R.drawable.contacts01
 
-        ));
         menuItems.add(new MenuItem(
-                4,
+                2,
                 "RE Services",
                 R.drawable.allservices00
 
         ));
         menuItems.add(new MenuItem(
-                5,
+                3,
                 "Training",
                 R.drawable.training00
 
         ));
         menuItems.add(new MenuItem(
-                6,
+                4,
                 "Certificate Quiz",
                 R.drawable.quiz03
 
         ));
         menuItems.add(new MenuItem(
-                7,
+                5,
                 "My Stats",
                 R.drawable.level01
 
