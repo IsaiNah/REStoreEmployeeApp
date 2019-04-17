@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.List;
@@ -44,7 +45,7 @@ public RecyclerViewAdapterMainMenu(Context context, List<MenuItem> list)
 
     //Binds data to viewholder
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewAdapterMainMenu.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final RecyclerViewAdapterMainMenu.MyViewHolder holder, int position) {
         final MenuItem menuItem = list.get(position);
         Log.d(TAG, "onBindViewHolder: counter");
         try {
@@ -58,10 +59,7 @@ public RecyclerViewAdapterMainMenu(Context context, List<MenuItem> list)
             holder.cardView.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
-                    //Initiating Fragment
-                    FragmentInformation fragmentInformation = new FragmentInformation();
-
-                   /* //Creating data bundle to pass to fragment
+                    /* //Creating data bundle to pass to fragment
                     Bundle bundle = new Bundle();
                     bundle.putString("Title", menuItems.getCollectionTitle());
                     bundle.putString("Description", productCollections.getCollectionDesc());
@@ -69,10 +67,23 @@ public RecyclerViewAdapterMainMenu(Context context, List<MenuItem> list)
                     bundle.putInt("Id", productCollections.getCollectionImage());
 
                     fragmentAllCollections.setArguments(bundle);*/
+                    FragmentManager fm = ((AppCompatActivity) context).getSupportFragmentManager();
+
+                    Log.d(TAG, "onClick: Clicked on " + holder.getLayoutPosition());
 
                     // Launching Fragment
-                    FragmentManager fm = ((AppCompatActivity) context).getSupportFragmentManager();
-                    fragmentInformation.show(fm, "Collections information");
+                    switch (holder.getLayoutPosition())
+                    {
+                        case 0: FragmentInformation fragmentInformation = new FragmentInformation();
+                                fragmentInformation.show(fm, "Fragment Information");
+                                break;
+
+                        case 2: FragmentCoworkers fragmentCoworkers = new FragmentCoworkers();
+                        fragmentCoworkers.show(fm, "Fragment Coworkers");
+                                 break;
+
+                    }
+
                 }
             });
 

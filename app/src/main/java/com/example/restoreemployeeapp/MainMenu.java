@@ -67,7 +67,7 @@ try {
             recyclerView.setDrawingCacheEnabled(true);
             recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
 
-            recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
             //Changed to Grid Layout
             //recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
             SnapHelperOneByOne snapHelperOneByOne = new SnapHelperOneByOne();
