@@ -54,32 +54,32 @@ public RecyclerViewAdapterMainMenu(Context context, List<MenuItem> list)
             Log.d(TAG, "onBindViewHolder: " + e);
         }
 
-      /*  try {
+        try {
             holder.cardView.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
                     //Initiating Fragment
-                    FragmentAllCollections fragmentAllCollections = new FragmentAllCollections();
+                    FragmentInformation fragmentInformation = new FragmentInformation();
 
-                    //Creating data bundle to pass to fragment
+                   /* //Creating data bundle to pass to fragment
                     Bundle bundle = new Bundle();
                     bundle.putString("Title", menuItems.getCollectionTitle());
                     bundle.putString("Description", productCollections.getCollectionDesc());
                     bundle.putString("Filename", productCollections.getFilename());
                     bundle.putInt("Id", productCollections.getCollectionImage());
 
-                    fragmentAllCollections.setArguments(bundle);
+                    fragmentAllCollections.setArguments(bundle);*/
 
                     // Launching Fragment
                     FragmentManager fm = ((AppCompatActivity) context).getSupportFragmentManager();
-                    fragmentAllCollections.show(fm, "Collections information");
+                    fragmentInformation.show(fm, "Collections information");
                 }
             });
 
         }catch(Exception e)
         {
             Log.d(TAG, "onBindViewHolder: Exception" +e);
-        }*/
+        }
 
 
 

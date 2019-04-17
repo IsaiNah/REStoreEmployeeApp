@@ -3,6 +3,7 @@ package com.example.restoreemployeeapp;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,7 +27,7 @@ public class MainMenu extends AppCompatActivity {
     private List<MenuItem> menuItems;
     //RecyclerView
     private RecyclerView recyclerView;
-//TODO continue https://www.youtube.com/watch?v=LD2zsCAAVXw 4:20
+
 
 
     @Override
@@ -49,6 +50,7 @@ public class MainMenu extends AppCompatActivity {
 
         toolbar = (Toolbar)  findViewById(R.id.app_toolbar);
         btnCallManager = (Button) findViewById(R.id.btn_menu_callmanager);
+
 
 try {
     setSupportActionBar(toolbar);
@@ -87,32 +89,37 @@ try {
 
         menuItems.add(new MenuItem(
                 1,
-                "VOIP Call",
-                R.drawable.call00
+                "Training",
+                R.drawable.training00
 
         ));
 
         menuItems.add(new MenuItem(
                 2,
+                "Co-Worker's",
+                R.drawable.coworkers00
+
+        ));
+
+
+
+        menuItems.add(new MenuItem(
+                3,
                 "RE Services",
                 R.drawable.allservices00
 
         ));
-        menuItems.add(new MenuItem(
-                3,
-                "Training",
-                R.drawable.training00
 
-        ));
         menuItems.add(new MenuItem(
                 4,
-                "Certificate Quiz",
-                R.drawable.quiz03
+                "VOIP",
+                R.drawable.call00
 
         ));
+
         menuItems.add(new MenuItem(
                 5,
-                "My Stats",
+                "Stats",
                 R.drawable.level01
 
         ));
