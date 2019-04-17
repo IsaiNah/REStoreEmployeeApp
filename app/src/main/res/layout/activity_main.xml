@@ -7,7 +7,7 @@
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
     android:gravity="center"
-    android:background="@drawable/background02"
+    android:background="@drawable/background03"
     >
 
     <!--    <TextView
@@ -111,7 +111,7 @@
 
     <Button
         android:id="@+id/idbtLogin"
-        android:layout_width="362dp"
+        android:layout_width="404dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="100dp"
