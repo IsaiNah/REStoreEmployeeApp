@@ -38,9 +38,36 @@
 
 2019/04/14
 - Created ActionBar (Top Toolbar) -> will have app options such as change language
+- Added SnapHelper to help with smooth menu item transition
+- Redesigned MainMenu
 
+2019/04/15
+- Created Information Fragment
+- Created Co-Workers Fragment	
+- Changed MainMenu to horizonal orientation
+- Created RecyclerViewAdapterUsers to display all users
+- Desgined Users CardView
 
+- TODO Created Training Fragmnet
+- TODO if manager RecyclerView add more items for management
+- TODO Create Avaliable Training list and completed training list, new training will appear in availiable training
+- TODO Change recyclerview to vartical to elimiated ugly white space above and under
+- TODO Change topbar REStoreEmpployementApp to Welcome (UserName)
+- TODO BackEnd for Admin
+- TODO Allow users to change profile picture
+- TODO Change Menu Style in options -> eg  Linear to Grid
+     Change Horizonal to Vertical?
+- TODO change REService to Images of Food Repairs Shopping
+- TODO Remove Certificate Quiz -> will be part of training
+- TODO Add options?
+
+- TODO add employee information? 
+-> Name, Level, total sales other information on top section
+-> Move recycler View to button section
+- TODO Create CoWorkers/Contacts list with fragment for each name having name, title, map location etc
+- TODO Include VOIP calling in contacts & ?remove voip button?
+ 
 - TODO hidden layout control buttons
 - TODO new user mandatory info +  test
--TODO Recycler View menu, with Call button on buttom and user menu (Fragment?) on top with dropdownlist
--TODO Different Employee Levels
+- TODO Recycler View menu, with Call button on buttom and user menu (Fragment?) on top with dropdownlist
+- TODO Different Employee Levels
