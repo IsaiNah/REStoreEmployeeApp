@@ -101,24 +101,29 @@ try {
 
         ));
 
-
-
         menuItems.add(new MenuItem(
                 3,
-                "RE Services",
-                R.drawable.allservices00
+                "Schedule",
+                R.drawable.schedule00
 
         ));
 
-        menuItems.add(new MenuItem(
+        /*menuItems.add(new MenuItem(
                 4,
+                "RE Services",
+                R.drawable.allservices00
+
+        ));*/
+
+        menuItems.add(new MenuItem(
+                5,
                 "VOIP",
                 R.drawable.call00
 
         ));
 
         menuItems.add(new MenuItem(
-                5,
+                6,
                 "Stats",
                 R.drawable.level01
 
