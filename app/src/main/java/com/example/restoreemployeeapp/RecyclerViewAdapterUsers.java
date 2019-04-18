@@ -95,7 +95,7 @@ public class RecyclerViewAdapterUsers extends RecyclerView.Adapter<RecyclerViewA
         public void onClick(View v) {
             User user = list.get(getAdapterPosition());
 
-
+            Log.d(TAG, "onClick: ");
           /*  Log.d(TAG, "onClick: is highlight status : " + findMatch.isHighlight());
             if(!findMatch.isHighlight()) {
                 cardView.setCardBackgroundColor(Color.parseColor("#c3b180"));
