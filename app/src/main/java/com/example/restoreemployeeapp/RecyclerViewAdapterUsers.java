@@ -3,6 +3,8 @@ package com.example.restoreemployeeapp;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -14,7 +16,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class RecyclerViewAdapterUsers extends RecyclerView.Adapter<RecyclerViewAdapterUsers.MyViewHolder> {
+public class RecyclerViewAdapterUsers extends RecyclerView.Adapter<RecyclerViewAdapterUsers.ViewHolder> {
 
     private static final String TAG = " OrogolcLog";
     private Context context;//For layout inflater
@@ -33,24 +35,33 @@ public class RecyclerViewAdapterUsers extends RecyclerView.Adapter<RecyclerViewA
 
     //Returns UI Elements
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.card_layoutuser, null);// inflates the cardview layout
 
-        return new MyViewHolder(view);
+        return new ViewHolder(view);
     }
 
     //Binds data to viewholder
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewAdapterUsers.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final RecyclerViewAdapterUsers.ViewHolder holder, int position) {
         final User user = list.get(position);
-        Log.d(TAG, "onBindViewHolder: counter");
+        Log.d(TAG, "onBindViewHolder: counter!!");
         try {
             holder.textName.setText(user.getFirstName() + " " + user.getLastName());
             holder.textEmail.setText(user.getEmail());
             holder.textPhone.setText(user.getPhone());
             holder.imageView.setImageDrawable(context.getResources().getDrawable(user.getImage()));
 
+            holder.cardView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    // FragmentManager fm = ((AppCompatActivity) context).getSupportFragmentManager();
+
+                    Log.d(TAG, "onClick: Clicked on " + holder.getLayoutPosition());
+
+                }
+            });
 
             /*Log.d(TAG, "onBindViewHolder: findmatch highlight getter" + findMatch.isHighlight());
             if (findMatch.isHighlight()) {
@@ -68,16 +79,16 @@ public class RecyclerViewAdapterUsers extends RecyclerView.Adapter<RecyclerViewA
     @Override
     public int getItemCount() {
 
-        Log.d(TAG, "getItemCount: value of list size : " + list.size());
+        Log.d(TAG, "getItemCount: value of list size  : " + list.size());
         return this.list.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         ImageView imageView;
         TextView textName, textEmail, textPhone;
         CardView cardView;
 
-        public MyViewHolder(View itemView)
+        public ViewHolder(View itemView)
         {
             super(itemView);
 
