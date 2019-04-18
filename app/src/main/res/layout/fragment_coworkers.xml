@@ -16,8 +16,8 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/coworkers_recyclerview"
-        android:layout_width="395dp"
-        android:layout_height="667dp"
+        android:layout_width="334dp"
+        android:layout_height="580dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
