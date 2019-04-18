@@ -8,6 +8,7 @@ public class User {
 
     private int _id;
     private String  email, firstName, lastName, password, addressone, postal, phone = "Not Set";
+    private int image;
     //Seperating reg and log varaibles tmp?
     static String logEmail, logPassword = "Not set";
 
@@ -20,6 +21,7 @@ public  User(String email, String firstName, String lastName, String password, S
     this.addressone = addressone;
     this.postal = postal;
     this.phone = phone;
+  //  this.image =  R.drawable.
     Log.d(TAG, "Location in user | New user created :" + email + " " +  password + " " + phone );
 }
 
@@ -73,5 +75,9 @@ public  User(String email, String firstName, String lastName, String password, S
 
     public static String getLogPassword() {
         return logPassword;
+    }
+
+    public int getImage() {
+        return image;
     }
 }
