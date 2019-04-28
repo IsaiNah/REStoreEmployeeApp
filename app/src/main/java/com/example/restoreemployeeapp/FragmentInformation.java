@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,15 +15,14 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FragmentInformation extends DialogFragment {
     private static final String TAG = "SEA_Log";
     private Button backButton;
-    private ListView listView;
+    private List<Information> infomrationList;
+    private RecyclerView recyclerView;
 
-//    String[] listViewString = {"1" , "2", "3" , "4", "5"};
-
-    ArrayAdapter arrayAdapter;
 
 
     @Nullable
@@ -32,32 +33,53 @@ public class FragmentInformation extends DialogFragment {
         // Getting Items by id
         backButton = view.findViewById(R.id.btn_back);
 
-        listView = (ListView) view.findViewById(R.id.information_listview);
+        //listView = (ListView) view.findViewById(R.id.information_listview);
 
-        //TODO change this to other way of doing
-        // Information Init
-        Information welcome = new Information("Welcome", "Incomplete", "Date: 2019/01/01");
-        Information orientation = new Information("Orientation", "Incomplete", "Date: 2019/01/01");
-        Information schedule = new Information("How To Check My Work Schedule", "Incomplete", "Date: 2019/01/01");
-        //Information = new Information("How To Check My Work Schedule", "Incomplete", "Date: 2019/01/01");
-
-        ArrayList<Information> informationList = new ArrayList<>();
-
-        informationList.add(welcome);
-        informationList.add(orientation);
-        informationList.add(schedule);
-
-    //arrayAdapter = new ArrayAdapter(this, and)
-        //try {
-          //  InformationListAdatper adapter = new InformationListAdatper(getActivity(), R.layout.listview_informationadapter);
-       /* }
-        catch(Exception e)
+        //Setting up recyclerview
+        try{
+            recyclerView = view.findViewById(R.id.fraginfo_recyclerview);
+            recyclerView.setHasFixedSize(true);
+            recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        }catch (Exception e)
         {
-            Log.d(TAG, "onCreateView: Exception " + e);
-        }*/
-      // listView.setAdapter(adapter);
+            Log.d(TAG, "onCreateView: RecyclerView Exception " + e);
+        }
 
-      //  listView.setAdapter(new InformationListAdatper(getActivity(),R.layout.listview_informationadapter ));
+        //Creating information list
+        infomrationList = new ArrayList<>();
+
+        infomrationList.add(new Information(
+                0,
+                "Welcome",
+                "Click here to begin",
+                "Incomplete"
+
+        ));
+        infomrationList.add(new Information(
+                1,
+                "Orientation",
+                "Welcome to the team",
+                "Incomplete"
+
+        ));
+        infomrationList.add(new Information(
+                2,
+                "Navigation",
+                "Information to help you find your way",
+                "Incomplete"
+
+        ));
+
+        //Recycler View adapter to attach list into
+        try{
+            RecyclerViewInformationAdapter adapter = new RecyclerViewInformationAdapter(view.getContext(),infomrationList);
+            recyclerView.setAdapter(adapter);
+        }catch (Exception e){
+            Log.d(TAG, "onCreateView: " + e);
+        }
+
+
+
 
         // Closing fragment
         backButton.setOnClickListener(new View.OnClickListener(){

@@ -2,8 +2,10 @@ package com.example.restoreemployeeapp;
 
 public class Information {
     private String title, subTitleA, subTitleB;
+    private int id;
 
-    public Information(String title, String subTitleA, String subTitleB) {
+    public Information(int id, String title, String subTitleA, String subTitleB) {
+        this.id = id;
         this.title = title;
         this.subTitleA = subTitleA;
         this.subTitleB = subTitleB;
