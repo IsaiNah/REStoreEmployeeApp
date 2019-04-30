@@ -1,9 +1,11 @@
 package com.example.restoreemployeeapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -157,4 +159,36 @@ try {
         });
 
     }
+
+
+
+
+
+
+
+    //TODO work or remove
+    public void TransFragmentInformationItem(){
+        try {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            FragmentInformationItem fragmentInformationItem = new FragmentInformationItem();
+            transaction.replace(R.id.mainmenu, fragmentInformationItem);
+            transaction.addToBackStack(null);
+
+// Commit the transaction
+            transaction.commit();
+        }
+        catch(Exception e)
+        {
+            Log.d(TAG, "replaceToFragmentInformationItem: Exception " + e);
+        }
+
+        Log.d(TAG, "!!!! WORKING !!!! " );
+
+    }
+
+
 }
+
+
+
+

@@ -1,6 +1,7 @@
 package com.example.restoreemployeeapp;
 
 import android.content.Intent;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     bLogin =(Button) findViewById(R.id.idbtLogin);
-    registerLink = (TextView) findViewById(R.id.idRegisterLink);
+   // registerLink = (TextView) findViewById(R.id.idRegisterLink);
     etEmail = (EditText) findViewById(R.id.idetEmail);
     etPass = (EditText) findViewById(R.id.idetPassword);
 
@@ -152,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
+
 
 
 

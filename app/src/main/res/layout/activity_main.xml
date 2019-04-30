@@ -4,11 +4,10 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background03"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
-    android:gravity="center"
-    android:background="@drawable/background03"
-    >
+    android:gravity="center">
 
     <!--    <TextView
 
@@ -31,6 +30,35 @@
             />-->
 
     <!-- Email line -->
+
+    <RadioButton
+        android:id="@+id/idrbLangRus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="57dp"
+        android:buttonTint="@color/OrangeRed"
+        android:text="русский"
+        android:textColor="@color/LightGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/idrbLangEnglish2"
+        app:layout_constraintTop_toBottomOf="@+id/txt_SelectLang" />
+
+    <RadioButton
+        android:id="@+id/idrbLangEnglish2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="עברי"
+        android:textColor="@color/LightGrey"
+        android:buttonTint="@color/OrangeRed"
+        app:layout_constraintEnd_toStartOf="@+id/idrbLangRus"
+        app:layout_constraintStart_toEndOf="@+id/idrbLangEnglish"
+        app:layout_constraintTop_toBottomOf="@+id/txt_SelectLang" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="400dp"
@@ -135,43 +163,39 @@
         android:layout_marginEnd="143dp"
         android:text="Remember me"
         android:textColor="@color/LightGrey"
+        android:buttonTint="@color/OrangeRed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idbtLogin" />
 
+    <RadioButton
+        android:id="@+id/idrbLangEnglish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="33dp"
+        android:buttonTint="@color/OrangeRed"
+        android:checked="true"
+        android:text="English"
+        android:textColor="@color/LightGrey"
+        app:layout_constraintEnd_toStartOf="@+id/idrbLangEnglish2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_SelectLang" />
 
     <TextView
-        android:id="@+id/idRegisterLink"
+        android:id="@+id/txt_SelectLang"
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_marginStart="177dp"
-        android:layout_marginTop="179dp"
-        android:layout_marginEnd="178dp"
-        android:layout_marginBottom="2dp"
-        android:text="Register"
-        android:textColor="@color/LightGrey"
-        android:textSize="15sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/idForgotLink"
+        android:layout_height="25dp"
+        android:layout_marginStart="153dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="147dp"
+        android:text="Select Language :"
+        android:textColor="@color/White"
+        app:layout_constraintBottom_toTopOf="@+id/idrbLangEnglish2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idrbRemember" />
-
-    <TextView
-        android:id="@+id/idForgotLink"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_marginStart="149dp"
-        android:layout_marginEnd="149dp"
-        android:layout_marginBottom="96dp"
-        android:text="Forgot Password"
-        android:textColor="@color/LightGrey"
-        android:textSize="15sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idRegisterLink" />
 
 
 </android.support.constraint.ConstraintLayout>

@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -20,7 +23,7 @@ import java.util.List;
 public class FragmentInformation extends DialogFragment {
     private static final String TAG = "SEA_Log";
     private Button backButton;
-    private List<Information> infomrationList;
+    private List<Information> informationList;
     private RecyclerView recyclerView;
 
 
@@ -46,23 +49,23 @@ public class FragmentInformation extends DialogFragment {
         }
 
         //Creating information list
-        infomrationList = new ArrayList<>();
+        informationList = new ArrayList<>();
 
-        infomrationList.add(new Information(
+        informationList.add(new Information(
                 0,
                 "Welcome",
                 "Click here to begin",
                 "Incomplete"
 
         ));
-        infomrationList.add(new Information(
+        informationList.add(new Information(
                 1,
                 "Orientation",
                 "Welcome to the team",
                 "Incomplete"
 
         ));
-        infomrationList.add(new Information(
+        informationList.add(new Information(
                 2,
                 "Navigation",
                 "Information to help you find your way",
@@ -72,23 +75,45 @@ public class FragmentInformation extends DialogFragment {
 
         //Recycler View adapter to attach list into
         try{
-            RecyclerViewInformationAdapter adapter = new RecyclerViewInformationAdapter(view.getContext(),infomrationList);
+            RecyclerViewInformationAdapter adapter = new RecyclerViewInformationAdapter(view.getContext(),informationList,passData);
             recyclerView.setAdapter(adapter);
         }catch (Exception e){
             Log.d(TAG, "onCreateView: " + e);
         }
 
 
-
+        
 
         // Closing fragment
         backButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                getDialog().dismiss();
+                ((MainMenu)getActivity()).TransFragmentInformationItem();
+               getDialog().dismiss();
+
             }
         });
 
         return view;
     }
+
+   /* @Override
+    public void passdata(String string) {
+        Log.d(TAG, "passdata: WORKING!!!!!!! " + string);
+    }*/
+
+   PassData passData = new PassData() {
+       @Override
+       public void passdata(String string) {
+           Log.d(TAG, "passdata: WORKING!!!!!!! " + string);
+
+           FragmentInformationItem fragmentInformationItem = new FragmentInformationItem();//TODO Pass Data Here
+           FragmentManager manager = getFragmentManager();
+           FragmentTransaction transaction = manager.beginTransaction();
+           transaction.replace(R.id.mainmenu, fragmentInformationItem).commit();
+           getDialog().dismiss();
+       }
+   };
+
 }
+

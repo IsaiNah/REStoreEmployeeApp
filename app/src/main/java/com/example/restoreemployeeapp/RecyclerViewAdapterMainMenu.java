@@ -23,6 +23,7 @@ public class RecyclerViewAdapterMainMenu extends  RecyclerView.Adapter<RecyclerV
     private List<MenuItem> list; // list of menu items
 
 
+
 public RecyclerViewAdapterMainMenu(Context context, List<MenuItem> list)
 {
     try{
@@ -76,6 +77,8 @@ public RecyclerViewAdapterMainMenu(Context context, List<MenuItem> list)
                     {
                         case 0: FragmentInformation fragmentInformation = new FragmentInformation();
                                 fragmentInformation.show(fm, "Fragment Information");
+
+
                                 break;
 
                         case 2: FragmentCoworkers fragmentCoworkers = new FragmentCoworkers();
