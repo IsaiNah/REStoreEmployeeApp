@@ -2,57 +2,59 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_allcollection"
+    android:id="@+id/fragment_information"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/WhiteSmoke"
     tools:context=".FragmentInformationItem">
 
     <VideoView
-        android:id="@+id/image_allcollectionFragmentImage"
+        android:id="@+id/image_informationFragmentImage"
         android:layout_width="match_parent"
         android:layout_height="288dp"
-        app:layout_constraintBottom_toTopOf="@+id/textview_allcollectionFragmentTitle"
+        app:layout_constraintBottom_toTopOf="@+id/textview_informationFragmentTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread" />
 
     <TextView
-        android:id="@+id/textview_allcollectionFragmentTitle"
+        android:id="@+id/textview_informationFragmentTitle"
         android:layout_width="wrap_content"
         android:layout_height="34dp"
         android:layout_marginStart="102dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="102dp"
         android:gravity="center_horizontal"
-        android:text="allcollection Title"
-        android:textColor="@color/White"
+        android:text="Title"
+        android:textColor="@color/Black"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/textview_allcollectionFragmentDescription"
+        app:layout_constraintBottom_toTopOf="@+id/textview_informationFragmentDescription"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_allcollectionFragmentImage" />
+        app:layout_constraintTop_toBottomOf="@+id/image_informationFragmentImage" />
 
     <TextView
-        android:id="@+id/textview_allcollectionFragmentDescription"
+        android:id="@+id/textview_informationFragmentDescription"
         android:layout_width="281dp"
         android:layout_height="193dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="76dp"
         android:gravity="center_horizontal"
+        android:scrollbars="vertical"
         android:text="allcollection Description"
         android:textColor="@color/oroBlack"
         android:textSize="15sp"
-        android:scrollbars = "vertical"
-        app:layout_constraintBottom_toTopOf="@+id/textview_allcollectionFragmentAllInCollection"
+        app:layout_constraintBottom_toTopOf="@+id/button_informationFragmentBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_allcollectionFragmentTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/textview_informationFragmentTitle" />
 
 
     <Button
-        android:id="@+id/button_allcollectionFragmentWatch"
+        android:id="@+id/button_informationFragmentWatch"
         android:layout_width="185dp"
         android:layout_height="41dp"
         android:text="Watch Video"
@@ -61,70 +63,44 @@
         tools:layout_editor_absoluteY="812dp" />
 
     <Button
-        android:id="@+id/button_allcollectionFragmentBack"
-        android:layout_width="432dp"
-        android:layout_height="47dp"
-        android:background="@color/White"
+        android:id="@+id/button_informationFragmentBack"
+        android:layout_width="174dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="76dp"
+        android:background="@color/Black"
         android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textview_allcollectionFragmentAllInCollection"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="38dp"
-        android:text="Product's in Collection :"
         android:textColor="@color/White"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_allcollectionFragmentDescription" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="171dp"
-        android:layout_height="126dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_allcollectionFragmentBack"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_allcollectionFragmentAllInCollection"
-         />
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/textview_informationFragmentDescription" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="29dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="59dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/button_allcollectionFragmentBack"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_allcollectionFragmentAllInCollection"
-        app:layout_constraintVertical_bias="0.461" />
+        android:background="@drawable/icons_arrow_thick"
+        android:scaleX="-1"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_informationFragmentBack"
+        app:layout_constraintEnd_toStartOf="@+id/button_informationFragmentBack"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="59dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/button_allcollectionFragmentBack"
+        android:layout_marginTop="79dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="71dp"
+        android:background="@drawable/icons_arrow_thick"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_informationFragmentBack"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/textview_allcollectionFragmentAllInCollection"
-        app:layout_constraintVertical_bias="0.461" />
+        app:layout_constraintStart_toEndOf="@+id/button_informationFragmentBack"
+        app:layout_constraintTop_toBottomOf="@+id/textview_informationFragmentDescription" />
 
 
 </android.support.constraint.ConstraintLayout>

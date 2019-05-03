@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,20 +25,32 @@ public class FragmentInformationItem extends DialogFragment {
 
     private String title, desc, filename;
 
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_information_item, container, false);
 
         // Getting layout items by id
-        backButton = view.findViewById(R.id.button_allcollectionFragmentBack);
-        watchButton = view.findViewById(R.id.button_allcollectionFragmentWatch);
-        collectionTitle = view.findViewById(R.id.textview_allcollectionFragmentTitle);
-        collectionDescription = view.findViewById(R.id.textview_allcollectionFragmentDescription);
-        collectionVideo = view.findViewById(R.id.image_allcollectionFragmentImage);
+        backButton = view.findViewById(R.id.button_informationFragmentBack);
+        watchButton = view.findViewById(R.id.button_informationFragmentWatch);
+        collectionTitle = view.findViewById(R.id.textview_informationFragmentTitle);
+        collectionDescription = view.findViewById(R.id.textview_informationFragmentDescription);
+        collectionVideo = view.findViewById(R.id.image_informationFragmentImage);
 
         collectionDescription.setMovementMethod(new ScrollingMovementMethod());
-        //Bundle
+        //Bundle data
+        try{
+            //Getting data
+            Bundle bundle = getArguments();
+            String title = bundle.getString("title");
+            //Setting data
+            collectionTitle.setText(title);
+        }catch (Exception e)
+        {
+            Log.d(TAG, "onCreateView: Exception : " + e);
+        }
   /*      try{
             Bundle bundle =getArguments();
             //Setting variables from bundle
@@ -93,8 +107,18 @@ public class FragmentInformationItem extends DialogFragment {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                getDialog().dismiss();
+                try {
+                   /* FragmentInformation fragmentInformation = new FragmentInformation();
+                    FragmentManager manager = getFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    transaction.replace(R.id.mainmenu, fragmentInformation).commit();*/
+                   // getDialog().dismiss();
+                    ((MainMenu)getActivity()).TransFragmentInformationItem();
+                }
+                catch (Exception e)
+                {
+                    Log.d(TAG, "onClick: Exception " + e );
+                }
             }
         });
 

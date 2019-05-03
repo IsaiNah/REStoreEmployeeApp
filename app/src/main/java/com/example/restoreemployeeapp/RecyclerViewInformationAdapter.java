@@ -28,7 +28,7 @@ public class RecyclerViewInformationAdapter extends RecyclerView.Adapter<Recycle
     private List<Information> list; //List of List of Facial Features
 
 
-    private PassData passData;
+    private PassData passData; // Interface Call to pass data from adapter to Fragment in order to control screen
 
 
     public RecyclerViewInformationAdapter(Context context, List<Information> list, PassData passData)
@@ -138,9 +138,6 @@ public class RecyclerViewInformationAdapter extends RecyclerView.Adapter<Recycle
                 transaction.commit();*/
 
                // FragmentManager fm = ((FragmentActivity) context).getSupportFragmentManager();
-
-                passData.passdata("Test");
-
                 //AppCompatActivity activity = (AppCompatActivity) v.getContext();
 
                 //FragmentInformationItem fragmentInformationItem = new FragmentInformationItem();
@@ -148,7 +145,7 @@ public class RecyclerViewInformationAdapter extends RecyclerView.Adapter<Recycle
 
                 //mainMenu.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_allcollection, fragmentInformationItem).addToBackStack(null).commit();
                 // Activity activity = unwrap(v.getContext());
-               // activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_allcollection, fragmentInformationItem).addToBackStack(null).commit();
+                // activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_allcollection, fragmentInformationItem).addToBackStack(null).commit();
 /*
 
                 AppCompatActivity  activity = (AppCompatActivity) v.getContext();
@@ -156,9 +153,13 @@ public class RecyclerViewInformationAdapter extends RecyclerView.Adapter<Recycle
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.mainmenu, fragmentInformationItem).addToBackStack(null).commit();
 */
 
-             //   ((MainMenu)context).FragmentInformationItem();
-             //   FragmentInformationItem fragmentInformationItem = new FragmentInformationItem();
-               // fragmentInformationItem.show(fm, "a");
+                //   ((MainMenu)context).FragmentInformationItem();
+                //   FragmentInformationItem fragmentInformationItem = new FragmentInformationItem();
+                // fragmentInformationItem.show(fm, "a");
+
+                passData.passdata(information.getTitle());
+
+
 
 
 

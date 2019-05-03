@@ -170,9 +170,10 @@ try {
     public void TransFragmentInformationItem(){
         try {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            FragmentInformationItem fragmentInformationItem = new FragmentInformationItem();
-            transaction.replace(R.id.mainmenu, fragmentInformationItem);
+            FragmentInformation fragmentInformation = new FragmentInformation();
+            transaction.replace(R.id.mainmenu, fragmentInformation);
             transaction.addToBackStack(null);
+            transaction.commit();
 
 // Commit the transaction
             transaction.commit();

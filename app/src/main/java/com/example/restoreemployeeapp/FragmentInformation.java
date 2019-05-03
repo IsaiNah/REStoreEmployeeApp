@@ -88,7 +88,7 @@ public class FragmentInformation extends DialogFragment {
         backButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                ((MainMenu)getActivity()).TransFragmentInformationItem();
+              //  ((MainMenu)getActivity()).TransFragmentInformationItem();
                getDialog().dismiss();
 
             }
@@ -107,7 +107,14 @@ public class FragmentInformation extends DialogFragment {
        public void passdata(String string) {
            Log.d(TAG, "passdata: WORKING!!!!!!! " + string);
 
+           //TODO either change interface to accept more strings or extract data form single string with space or | seperators
+
            FragmentInformationItem fragmentInformationItem = new FragmentInformationItem();//TODO Pass Data Here
+           // Bundle to pass data into onCreateView method of fragment
+           Bundle bundle = new Bundle();
+           bundle.putString("title", string);
+           // Adding data to fragment
+           fragmentInformationItem.setArguments(bundle);
            FragmentManager manager = getFragmentManager();
            FragmentTransaction transaction = manager.beginTransaction();
            transaction.replace(R.id.mainmenu, fragmentInformationItem).commit();
