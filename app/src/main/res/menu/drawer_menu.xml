@@ -5,13 +5,13 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_usercallmanager"
+            android:id="@+id/nav_mainmenu"
             android:icon="@drawable/ic_useraccount"
-            android:title="Call Manager"></item>
+            android:title="Main Menu"></item>
         <item
-            android:id="@+id/nav_usermsgmanager"
+            android:id="@+id/nav_contactmanager"
             android:icon="@drawable/ic_useraccount"
-            android:title="Message Manager"></item>
+            android:title="Contact Manager"></item>
     </group>
 
     <item android:title="Options">

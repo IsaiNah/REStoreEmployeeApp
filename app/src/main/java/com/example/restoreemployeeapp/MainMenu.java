@@ -37,7 +37,7 @@ public class MainMenu extends AppCompatActivity  implements NavigationView.OnNav
     //Navigation Drawer
     private DrawerLayout drawer;
 
-
+//TODO remove unnecessary code after transfer
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -181,6 +181,10 @@ try {
     @Override
     public boolean onNavigationItemSelected(@NonNull android.view.MenuItem menuItem) {
         switch (menuItem.getItemId()){
+            case R.id.nav_mainmenu:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new FramentMainMenu()).commit();
+                break;
             case R.id.nav_usersettings:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new FragmentOptions()).commit();
