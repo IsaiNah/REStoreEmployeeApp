@@ -4,8 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -20,7 +25,7 @@ import android.widget.Button;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainMenu extends AppCompatActivity {
+public class MainMenu extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
     private static final String TAG = "SEA_Log";
     private Button btnCallManager;
     private Intent callIntent;
@@ -29,6 +34,8 @@ public class MainMenu extends AppCompatActivity {
     private List<MenuItem> menuItems;
     //RecyclerView
     private RecyclerView recyclerView;
+    //Navigation Drawer
+    private DrawerLayout drawer;
 
 
 
@@ -50,8 +57,18 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
 
-        toolbar = (Toolbar)  findViewById(R.id.app_toolbar);
-        btnCallManager = (Button) findViewById(R.id.btn_menu_callmanager);
+        //toolbar = (Toolbar)  findViewById(R.id.app_toolbar);
+        toolbar = (Toolbar)  findViewById(R.id.toolbar);
+        drawer = (DrawerLayout) findViewById(R.id.mainmenu);
+        // For handling click events in navigation drawer
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        // For opening and closing
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+       // btnCallManager = (Button) findViewById(R.id.btn_menu_callmanager);
 
 
 try {
@@ -62,7 +79,7 @@ try {
 }
         //Create RecyclerView
         try {
-            recyclerView = findViewById(R.id.mainmenu_recyclerview);
+       /*     recyclerView = findViewById(R.id.mainmenu_recyclerview);
             recyclerView.setHasFixedSize(true);
             //TODO uncomment below later
             recyclerView.setItemViewCacheSize(10);
@@ -74,12 +91,12 @@ try {
             //recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
             SnapHelperOneByOne snapHelperOneByOne = new SnapHelperOneByOne();
             snapHelperOneByOne.attachToRecyclerView(recyclerView);
-
+*/
         }catch (Exception e){
             Log.d(TAG, "onCreate: RecyclerView Exception " + e);
         }
 
-        // Init menu items list
+      /*  // Init menu items list
         menuItems = new ArrayList<>();
 
         menuItems.add(new MenuItem(
@@ -110,12 +127,12 @@ try {
 
         ));
 
-        /*menuItems.add(new MenuItem(
+        *//*menuItems.add(new MenuItem(
                 4,
                 "RE Services",
                 R.drawable.allservices00
 
-        ));*/
+        ));*//*
 
         menuItems.add(new MenuItem(
                 5,
@@ -156,15 +173,35 @@ try {
                     Log.d(TAG, "onClick: Exception " + e);
                 }
             }
-        });
+        });*/
 
     }
 
+    // Implementing NavigationView listener
+    @Override
+    public boolean onNavigationItemSelected(@NonNull android.view.MenuItem menuItem) {
+        switch (menuItem.getItemId()){
+            case R.id.nav_usersettings:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new FragmentOptions()).commit();
+                break;
+                //TODO add more
+        }
+    drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
 
-
-
-
-
+    // Overriding backbutton press to not leave activity but close drawer if open
+    @Override
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START))
+        {
+            drawer.closeDrawer(GravityCompat.START);
+        }else
+        {
+            super.onBackPressed(); // If drawer is not open, will close the activity
+        }
+    }
 
     //TODO work or remove
     public void TransFragmentInformationItem(){

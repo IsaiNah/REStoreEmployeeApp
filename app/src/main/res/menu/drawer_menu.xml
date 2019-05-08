@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_usercallmanager"
+            android:icon="@drawable/ic_useraccount"
+            android:title="Call Manager"></item>
+        <item
+            android:id="@+id/nav_usermsgmanager"
+            android:icon="@drawable/ic_useraccount"
+            android:title="Message Manager"></item>
+    </group>
+
+    <item android:title="Options">
+        <menu>
+            <item
+                android:id="@+id/nav_useraccount"
+                android:icon="@drawable/ic_useraccount"
+                android:title="User Account" />
+            <item
+                android:id="@+id/nav_usersettings"
+                android:icon="@drawable/ic_useraccount"
+                android:title="Settings" />
+            <item
+                android:id="@+id/nav_userlogout"
+                android:icon="@drawable/ic_useraccount"
+                android:title="Log Out" />
+        </menu>
+    </item>
+</menu>

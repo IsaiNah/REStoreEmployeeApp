@@ -3,4 +3,7 @@
     <string name="menuitem00">Change Language</string>
     <string name="menuitem01">Options</string>
     <string name="menuitem02">Log Out</string>
+    
+    <string name="navigation_drawer_open">Open Nav Drawer</string>
+    <string name="navigation_drawer_close">Close Nav Drawer</string>
 </resources>
