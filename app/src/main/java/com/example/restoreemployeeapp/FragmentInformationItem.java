@@ -51,6 +51,14 @@ public class FragmentInformationItem extends DialogFragment {
         {
             Log.d(TAG, "onCreateView: Exception : " + e);
         }
+
+        //TODO tmp filenmae
+        filename = "multi_vitamin_collection";
+        //Setting Video
+        //String path = "android.resource://" +getActivity().getPackageName().g
+        collectionVideo.setVideoURI(Uri.parse( "android.resource://com.example.projectgold/raw/"+filename));
+        collectionVideo.start();
+
   /*      try{
             Bundle bundle =getArguments();
             //Setting variables from bundle

@@ -16,7 +16,7 @@ import android.widget.Button;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FramentMainMenu extends Fragment {
+public class FragmentMainMenu extends Fragment {
     private static final String TAG = "SEA_Log";
     private Button btnCallManager;
     private Intent callIntent;
