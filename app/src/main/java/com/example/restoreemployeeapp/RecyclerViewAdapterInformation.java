@@ -1,28 +1,19 @@
 package com.example.restoreemployeeapp;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.ContextWrapper;
-import android.graphics.Color;
 import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
 
-public class RecyclerViewInformationAdapter extends RecyclerView.Adapter<RecyclerViewInformationAdapter.MyViewHolder> {
+public class RecyclerViewAdapterInformation extends RecyclerView.Adapter<RecyclerViewAdapterInformation.MyViewHolder> {
     private static final String TAG = " SEA_LOG";
     private Context context;//For layout inflater
     private List<Information> list; //List of List of Facial Features
@@ -31,7 +22,7 @@ public class RecyclerViewInformationAdapter extends RecyclerView.Adapter<Recycle
     private PassData passData; // Interface Call to pass data from adapter to Fragment in order to control screen
 
 
-    public RecyclerViewInformationAdapter(Context context, List<Information> list, PassData passData)
+    public RecyclerViewAdapterInformation(Context context, List<Information> list, PassData passData)
     {
         this.context = context;
         this.list = list;
@@ -51,7 +42,7 @@ public class RecyclerViewInformationAdapter extends RecyclerView.Adapter<Recycle
 
     //Binds data to viewholder
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewInformationAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerViewAdapterInformation.MyViewHolder holder, int position) {
 
         final Information information = list.get(position);
         Log.d(TAG, "onBindViewHolder: counter");

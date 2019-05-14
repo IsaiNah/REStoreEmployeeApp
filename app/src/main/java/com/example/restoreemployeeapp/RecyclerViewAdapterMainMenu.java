@@ -81,6 +81,11 @@ public RecyclerViewAdapterMainMenu(Context context, List<MenuItem> list)
 
                                 break;
 
+                        case 1: //TODO replace all like below
+                            fm.beginTransaction().replace(R.id.fragment_container,
+                                    new FragmentTraining()).commit();
+                            break;
+
                         case 2: FragmentCoworkers fragmentCoworkers = new FragmentCoworkers();
                         fragmentCoworkers.show(fm, "Fragment Coworkers");
                                  break;

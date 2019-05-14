@@ -6,16 +6,13 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,7 +72,7 @@ public class FragmentInformation extends DialogFragment {
 
         //Recycler View adapter to attach list into
         try{
-            RecyclerViewInformationAdapter adapter = new RecyclerViewInformationAdapter(view.getContext(),informationList,passData);
+            RecyclerViewAdapterInformation adapter = new RecyclerViewAdapterInformation(view.getContext(),informationList,passData);
             recyclerView.setAdapter(adapter);
         }catch (Exception e){
             Log.d(TAG, "onCreateView: " + e);

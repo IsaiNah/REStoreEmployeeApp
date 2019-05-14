@@ -63,6 +63,12 @@ public class MainMenu extends AppCompatActivity  implements NavigationView.OnNav
         toggle.syncState();
        // btnCallManager = (Button) findViewById(R.id.btn_menu_callmanager);
 
+        //Setting Main View
+      /*  getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                new FragmentMainMenu()).commit();*/
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                new FragmentMainView()).commit();
+
 
 try {
     setSupportActionBar(toolbar);

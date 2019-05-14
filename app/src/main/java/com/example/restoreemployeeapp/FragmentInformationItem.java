@@ -109,6 +109,7 @@ public class FragmentInformationItem extends DialogFragment {
 
 
 
+        
 
 
         // Closing Fragment
@@ -116,12 +117,17 @@ public class FragmentInformationItem extends DialogFragment {
             @Override
             public void onClick(View v) {
                 try {
+                    Log.d(TAG, "onClick: FragmentInformationItem back press");
                    /* FragmentInformation fragmentInformation = new FragmentInformation();
                     FragmentManager manager = getFragmentManager();
                     FragmentTransaction transaction = manager.beginTransaction();
                     transaction.replace(R.id.mainmenu, fragmentInformation).commit();*/
                    // getDialog().dismiss();
-                    ((MainMenu)getActivity()).TransFragmentInformationItem();
+                    //((MainMenu)getActivity()).TransFragmentInformationItem();
+                    FragmentManager manager = getFragmentManager();
+                    manager.beginTransaction().replace(R.id.fragment_container, new FragmentMainMenu()).commit();
+                    //TODO fix
+
                 }
                 catch (Exception e)
                 {
@@ -132,5 +138,7 @@ public class FragmentInformationItem extends DialogFragment {
 
         return  view;
     }
+    
+    
 
 }

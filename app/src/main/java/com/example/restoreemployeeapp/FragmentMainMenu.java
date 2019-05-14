@@ -66,15 +66,9 @@ public class FragmentMainMenu extends Fragment {
 
         ));
 
+
         menuItems.add(new MenuItem(
                 2,
-                "Co-Worker's",
-                R.drawable.coworkers00
-
-        ));
-
-        menuItems.add(new MenuItem(
-                3,
                 "Schedule",
                 R.drawable.schedule00
 
