@@ -8,11 +8,37 @@
             android:id="@+id/nav_mainmenu"
             android:icon="@drawable/ic_useraccount"
             android:title="Main Menu"></item>
-        <item
-            android:id="@+id/nav_contactmanager"
-            android:icon="@drawable/ic_useraccount"
-            android:title="Contact Manager"></item>
+
     </group>
+    <item android:title="Contact">
+        <menu>
+            <item
+                android:id="@+id/nav_contactmanager"
+                android:icon="@drawable/ic_useraccount"
+                android:title="Manager"></item>
+            <item
+                android:id="@+id/nav_contactco"
+                android:icon="@drawable/ic_useraccount"
+                android:title="Coworkers"></item>
+
+        </menu>
+    </item>
+    <item android:title="Navigation">
+        <menu>
+            <item
+                android:id="@+id/nav_navhome"
+                android:icon="@drawable/ic_useraccount"
+                android:title="Home" />
+            <item
+                android:id="@+id/nav_navstore"
+                android:icon="@drawable/ic_useraccount"
+                android:title="Store" />
+            <item
+                android:id="@+id/nav_shop"
+                android:icon="@drawable/ic_useraccount"
+                android:title="Extra ..." />
+        </menu>
+    </item>
 
     <item android:title="Options">
         <menu>
@@ -20,10 +46,10 @@
                 android:id="@+id/nav_useraccount"
                 android:icon="@drawable/ic_useraccount"
                 android:title="User Account" />
-            <item
+          <!--  <item
                 android:id="@+id/nav_usersettings"
                 android:icon="@drawable/ic_useraccount"
-                android:title="Settings" />
+                android:title="Settings" />-->
             <item
                 android:id="@+id/nav_userlogout"
                 android:icon="@drawable/ic_useraccount"

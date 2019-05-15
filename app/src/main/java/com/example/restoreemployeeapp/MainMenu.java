@@ -1,6 +1,7 @@
 package com.example.restoreemployeeapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -61,6 +62,8 @@ public class MainMenu extends AppCompatActivity  implements NavigationView.OnNav
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+
        // btnCallManager = (Button) findViewById(R.id.btn_menu_callmanager);
 
         //Setting Main View
@@ -72,6 +75,9 @@ public class MainMenu extends AppCompatActivity  implements NavigationView.OnNav
 
 try {
     setSupportActionBar(toolbar);
+    getSupportActionBar().setTitle("Welcome ");//TODO User Name Here
+    toolbar.setTitleTextColor(Color.parseColor("#FFFAFA"));
+    toolbar.setBackgroundColor(Color.parseColor("#000000"));
 }catch(Exception e)
 {
     Log.d(TAG, "onCreate: Exception " + e);
@@ -182,12 +188,20 @@ try {
         switch (menuItem.getItemId()){
             case R.id.nav_mainmenu:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new FragmentMainMenu()).commit();
+                        new FragmentMainView()).commit();
                 break;
-            case R.id.nav_usersettings:
+            case R.id.nav_contactmanager:
+                    FragmentCoworkers manager = new FragmentCoworkers();
+                    manager.show(getSupportFragmentManager(), "Text");
+                    break;
+            case R.id.nav_contactco:
+                FragmentCoworkers coworkers = new FragmentCoworkers();
+                coworkers.show(getSupportFragmentManager(), "Text");
+                break;
+          /*  case R.id.nav_usersettings:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new FragmentOptions()).commit();
-                break;
+                break;*/
                 //TODO add more
         }
     drawer.closeDrawer(GravityCompat.START);
