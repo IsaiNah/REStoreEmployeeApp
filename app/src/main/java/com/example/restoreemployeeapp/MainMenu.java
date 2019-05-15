@@ -191,7 +191,7 @@ try {
                         new FragmentMainView()).commit();
                 break;
             case R.id.nav_contactmanager:
-                    FragmentCoworkers manager = new FragmentCoworkers();
+                    FragmentCoworkers manager = new FragmentCoworkers(); // TODO Reuse class but check that manager
                     manager.show(getSupportFragmentManager(), "Text");
                     break;
             case R.id.nav_contactco:
