@@ -8,17 +8,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
 public class RecyclerViewAdapterUsers extends RecyclerView.Adapter<RecyclerViewAdapterUsers.ViewHolder> {
 
-    private static final String TAG = " OrogolcLog";
+    private static final String TAG = "SEA_LOG";
     private Context context;//For layout inflater
     private List<User> list; //List of List of Facial Features
 
@@ -63,11 +65,6 @@ public class RecyclerViewAdapterUsers extends RecyclerView.Adapter<RecyclerViewA
                 }
             });
 
-            /*Log.d(TAG, "onBindViewHolder: findmatch highlight getter" + findMatch.isHighlight());
-            if (findMatch.isHighlight()) {
-                holder.cardView.setCardBackgroundColor(Color.parseColor("#c3b180"));
-            }*/
-
         } catch (Exception e) {
             Log.d(TAG, "onBindViewHolder: " + e);
         }
@@ -98,15 +95,17 @@ public class RecyclerViewAdapterUsers extends RecyclerView.Adapter<RecyclerViewA
             textEmail = itemView.findViewById(R.id.user_email);
             textPhone = itemView.findViewById(R.id.user_phone);
             cardView  = itemView.findViewById(R.id.card_users);
-
+            Log.d(TAG, "Setting click listener: ");
             itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
+            Log.d(TAG, "onClick: ");
             User user = list.get(getAdapterPosition());
 
-            Log.d(TAG, "onClick: ");
+
+            Toast.makeText(v.getContext(), "Item is clicked", Toast.LENGTH_SHORT).show();
           /*  Log.d(TAG, "onClick: is highlight status : " + findMatch.isHighlight());
             if(!findMatch.isHighlight()) {
                 cardView.setCardBackgroundColor(Color.parseColor("#c3b180"));

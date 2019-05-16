@@ -198,6 +198,9 @@ try {
                 FragmentCoworkers coworkers = new FragmentCoworkers();
                 coworkers.show(getSupportFragmentManager(), "Text");
                 break;
+            case R.id.nav_useraccount:
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new FragmentAccount()).commit();
           /*  case R.id.nav_usersettings:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new FragmentOptions()).commit();
