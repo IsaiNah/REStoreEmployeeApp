@@ -43,9 +43,9 @@ public class FragmentCoworkers extends DialogFragment {
         userlist = new ArrayList<>();
 
         userlist.add(new User(
-               "employee00@email.com",
-                "Dan",
-                "Miles",
+               "employee00@reroyaltrading.ca",
+                "First",
+                "Last",
                 "123",
                 "200 Connie Cres",
                 "L4K 0K1",
@@ -53,9 +53,9 @@ public class FragmentCoworkers extends DialogFragment {
 
         ));
         userlist.add(new User(
-                "employee01@email.com",
-                "Steve",
-                "Carell",
+                "employee01@reroyaltrading.ca",
+                "First",
+                "Last",
                 "123",
                 "200 Connie Cres",
                 "L4K 0K1",
@@ -63,9 +63,9 @@ public class FragmentCoworkers extends DialogFragment {
 
         ));
         userlist.add(new User(
-                "employee02@email.com",
-                "Keanu",
-                "Reeves",
+                "employee02@reroyaltrading.ca",
+                "First",
+                "Last",
                 "123",
                 "200 Connie Cres",
                 "L4K 0K1",
@@ -73,9 +73,9 @@ public class FragmentCoworkers extends DialogFragment {
 
         ));
         userlist.add(new User(
-                "employee03@email.com",
-                "Jessica",
-                "Alba",
+                "employee03@reroyaltrading.ca",
+                "First",
+                "Last",
                 "123",
                 "200 Connie Cres",
                 "L4K 0K1",
