@@ -47,6 +47,7 @@
         app:menu="@menu/drawer_menu"
         />
 
+
    <!-- <include
         android:id="@+id/app_toolbar"
         layout="@layout/app_toolbar"></include>

@@ -201,6 +201,11 @@ try {
             case R.id.nav_useraccount:
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new FragmentAccount()).commit();
+            break;
+            case R.id.nav_userlogout:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new FragmentTestNav()).commit();
+                        break;
           /*  case R.id.nav_usersettings:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new FragmentOptions()).commit();

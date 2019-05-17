@@ -40,7 +40,7 @@ public class FragmentMainView extends Fragment implements OnMapReadyCallback {
 /*    private MapView mMapView;
     private GoogleMap googleMap;*/
 
-    private SupportMapFragment fragment;
+    private SupportMapFragment supportMapFragment;
     private GoogleMap map;
 
   /*  private GoogleMap mGoogleMap;
@@ -56,21 +56,7 @@ public class FragmentMainView extends Fragment implements OnMapReadyCallback {
          View view = inflater.inflate(R.layout.fragment_mainview, container, false);
 
 
-         try{
-          /*   FragmentManager fm = getChildFragmentManager();
-             fragment = (SupportMapFragment) fm.findFragmentById(R.id.map);
-             if (fragment == null) {
-                 fragment = SupportMapFragment.newInstance();
-                 fm.beginTransaction().replace(R.id.map, fragment).commit();
-             }*/
-             SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
-                     .findFragmentById(R.id.map);
-             mapFragment.getMapAsync(this);
 
-         }catch (Exception e)
-         {
-             Log.d(TAG, "onCreateView: Exception " + e);
-         }
 
       /*  try {
             supportMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
@@ -107,15 +93,46 @@ public class FragmentMainView extends Fragment implements OnMapReadyCallback {
 
 
     @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        try {
+            supportMapFragment = (SupportMapFragment) this.getChildFragmentManager().findFragmentById(R.id.map);
+            supportMapFragment.getMapAsync(this);
+        }catch(Exception e)
+        {
+            Log.d(TAG, "onViewCreated: Exception " + e);
+        }
+ /*       try{
+           *//*  FragmentManager fm = getChildFragmentManager();
+             fragment = (SupportMapFragment) fm.findFragmentById(R.id.map);
+             if (fragment == null) {
+                 fragment = SupportMapFragment.newInstance();
+                 fm.beginTransaction().replace(R.id.map, fragment).commit();
+             }*//*
+            SupportMapFragment mapFragment = (SupportMapFragment) getFragmentManager()
+                    .findFragmentById(R.id.map);
+            mapFragment.getMapAsync(this);
+
+        }catch (Exception e)
+        {
+            Log.d(TAG, "onCreateView: Exception " + e);
+        }*/
+    }
+
+    @Override
     public void onMapReady(GoogleMap googleMap) {
 
+
+  //      map = googleMap;
+
+//        LatLng pp  = new LatLng(-33.852, 151.211);
         // Add a marker in Sydney, Australia,
         // and move the map's camera to the same location.
         LatLng sydney = new LatLng(-33.852, 151.211);
         googleMap.addMarker(new MarkerOptions().position(sydney)
                 .title("Marker in Sydney"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-
 
     /*  map = googleMap;
         // Default Will Show Current Location
