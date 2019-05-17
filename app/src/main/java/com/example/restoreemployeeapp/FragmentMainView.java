@@ -35,17 +35,9 @@ public class FragmentMainView extends Fragment implements OnMapReadyCallback {
     private Intent callIntent;
     //TODO ABOVE MAYBE
 
-  //  SupportMapFragment supportMapFragment;
-
-/*    private MapView mMapView;
-    private GoogleMap googleMap;*/
 
     private SupportMapFragment supportMapFragment;
-    private GoogleMap map;
 
-  /*  private GoogleMap mGoogleMap;
-    MapView mapView;
-    View view;*/
 
 
     @Nullable
@@ -56,37 +48,6 @@ public class FragmentMainView extends Fragment implements OnMapReadyCallback {
          View view = inflater.inflate(R.layout.fragment_mainview, container, false);
 
 
-
-
-      /*  try {
-            supportMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
-            supportMapFragment.getMapAsync(this);
-
-            SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
-                    .findFragmentById(R.id.map);
-            mapFragment.getMapAsync(this);
-
-        }catch (Exception e)
-        {
-            Log.d(TAG, "onCreateView: Map Exception  " + e);
-        }*/
-
-  /*      try {
-            supportMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
-
-        if (supportMapFragment == null )
-        {
-            Log.d(TAG, "onCreateView: supportMapFragment is null");
-            FragmentManager fm = getFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
-            supportMapFragment = SupportMapFragment.newInstance();
-            ft.replace(R.id.map, supportMapFragment).commit();
-        }
-
-            supportMapFragment.getMapAsync(this);
-        } catch (Exception e) {
-            Log.d(TAG, "onCreateView: Exception " + e);
-        }*/
 
         return view;
     }
