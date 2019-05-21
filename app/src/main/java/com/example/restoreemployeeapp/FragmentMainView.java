@@ -137,6 +137,7 @@ public class FragmentMainView extends Fragment implements OnMapReadyCallback {
            // googleMap.addMarker(new MarkerOptions().snippet("Home Address"));
             googleMap.addMarker(new MarkerOptions().position(homeAddress).title("Home Address"));
             googleMap.moveCamera(CameraUpdateFactory.newLatLng(homeAddress));
+            googleMap.animateCamera(CameraUpdateFactory.zoomTo(10),2000,null);
 
         }
 else {
