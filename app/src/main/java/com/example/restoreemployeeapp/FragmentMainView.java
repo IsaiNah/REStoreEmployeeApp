@@ -48,6 +48,13 @@ public class FragmentMainView extends Fragment implements OnMapReadyCallback {
 
          View view = inflater.inflate(R.layout.fragment_mainview, container, false);
 
+         // Getting Bundle Data for Nav
+         Bundle bundle = this.getArguments();
+
+      if (bundle != null)
+      {
+          Log.d(TAG, "onCreateView: bundle not NULL, data in bundle : " + bundle.getString("Address"));
+      }
 
 
         return view;

@@ -206,6 +206,15 @@ try {
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new FragmentTestNav()).commit();
                         break;
+            case R.id.nav_navhome:
+                //Setting bundle to pass data
+                Bundle bundle = new Bundle();
+                bundle.putString("Address","96 Santa Amato Cres"); //TODO replace  value with variable | KEY , VALUE
+              FragmentMainView fragmentMainView = new FragmentMainView();
+              fragmentMainView.setArguments(bundle);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        fragmentMainView).commit();
+                break;
           /*  case R.id.nav_usersettings:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new FragmentOptions()).commit();
