@@ -39,6 +39,19 @@
                 android:title="Extra ..." />
         </menu>
     </item>
+    <item android:title="Interactions">
+        <menu>
+            <item
+                android:id="@+id/nav_training"
+                android:icon="@drawable/ic_book_black_24dp"
+                android:title="Training"></item>
+            <item
+                android:id="@+id/nav_facial"
+                android:icon="@drawable/ic_schedule_black_24dp"
+                android:title="Schedule Client"></item>
+
+        </menu>
+    </item>
 
     <item android:title="Options">
         <menu>

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -138,7 +139,7 @@ public class FragmentMainView extends Fragment implements OnMapReadyCallback {
            // googleMap.addMarker(new MarkerOptions().snippet("Home Address"));
             googleMap.addMarker(new MarkerOptions().position(homeAddress).title("Home Address"));
             googleMap.moveCamera(CameraUpdateFactory.newLatLng(homeAddress));
-            googleMap.animateCamera(CameraUpdateFactory.zoomTo(10),2000,null);
+            googleMap.animateCamera(CameraUpdateFactory.zoomTo(15),2000,null);
 
         }
 else {
@@ -147,6 +148,7 @@ else {
             if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
                     == PackageManager.PERMISSION_GRANTED) {
                 googleMap.setMyLocationEnabled(true);
+
 
                 /*googleMap.moveCamera();*/
                 Log.d(TAG, "onMapReady: PERMISSION YES");
