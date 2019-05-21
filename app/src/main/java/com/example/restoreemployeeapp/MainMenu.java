@@ -224,6 +224,10 @@ try {
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         fragmentMainViewStore).commit();
                 break;
+                case R.id.nav_training:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            new FragmentInformationItem()).commit();
+                    break;
           /*  case R.id.nav_usersettings:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new FragmentOptions()).commit();

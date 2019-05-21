@@ -20,9 +20,9 @@ public class FragmentTraining extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         
         
-        View view = inflater.inflate(R.layout.fragment_training, container, false);
+        View view = inflater.inflate(R.layout.fragment_training_item, container, false);
         
-        btnBack = (Button) view.findViewById(R.id.btn_train_back);
+      /*  btnBack = (Button) view.findViewById(R.id.btn_train_back);
         
         
         
@@ -32,10 +32,10 @@ public class FragmentTraining extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: Fragment Training Back Clicked");
-                getChildFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentMainMenu());
+               // getChildFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentMainMenu());
             }
         });
-        
+        */
         return view;
     }
 }

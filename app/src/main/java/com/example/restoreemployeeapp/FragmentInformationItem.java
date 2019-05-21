@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
@@ -15,7 +16,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.VideoView;
 
-public class FragmentInformationItem extends DialogFragment {
+public class FragmentInformationItem extends Fragment {
     private static final String TAG = " SEA_LOG";
 
     private Button backButton ,watchButton;
@@ -32,8 +33,6 @@ public class FragmentInformationItem extends DialogFragment {
         View view = inflater.inflate(R.layout.fragment_training_item, container, false);
 
         // Getting layout items by id
-        backButton = view.findViewById(R.id.button_informationFragmentBack);
-        watchButton = view.findViewById(R.id.button_informationFragmentWatch);
         collectionTitle = view.findViewById(R.id.textview_informationFragmentTitle);
         collectionDescription = view.findViewById(R.id.textview_informationFragmentDescription);
         collectionVideo = view.findViewById(R.id.image_informationFragmentImage);
@@ -111,29 +110,7 @@ public class FragmentInformationItem extends DialogFragment {
         
 
 
-        // Closing Fragment
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Log.d(TAG, "onClick: FragmentInformationItem back press");
-                   /* FragmentInformation fragmentInformation = new FragmentInformation();
-                    FragmentManager manager = getFragmentManager();
-                    FragmentTransaction transaction = manager.beginTransaction();
-                    transaction.replace(R.id.mainmenu, fragmentInformation).commit();*/
-                   // getDialog().dismiss();
-                    //((MainMenu)getActivity()).TransFragmentInformationItem();
-                    FragmentManager manager = getFragmentManager();
-                    manager.beginTransaction().replace(R.id.fragment_container, new FragmentMainMenu()).commit();
-                    //TODO fix
 
-                }
-                catch (Exception e)
-                {
-                    Log.d(TAG, "onClick: Exception " + e );
-                }
-            }
-        });
 
         return  view;
     }
