@@ -5,63 +5,146 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/txt_accountLangChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="154dp"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="143dp"
+        android:layout_marginBottom="13dp"
+        android:text="Change Language"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+    <TextView
+        android:id="@+id/txt_accountTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="134dp"
+        android:layout_marginBottom="29dp"
+        android:text="Edit Information"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/txt_userPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="212dp"
+        android:text="416-123-1234"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/txt_userEmail" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="15dp"
+        android:text="Phone :"
+        app:layout_constraintEnd_toStartOf="@+id/txt_userPhone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/txt_userLName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="201dp"
+        android:layout_marginBottom="19dp"
+        android:text="Last"
+        app:layout_constraintBottom_toTopOf="@+id/txt_userEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt_userFName"
+        app:layout_constraintTop_toBottomOf="@+id/txt_accountTitle" />
+
+    <TextView
+        android:id="@+id/txt_userAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="242dp"
+        android:text="Address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/txt_userPhone" />
+
+    <TextView
+        android:id="@+id/txt_userEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="150dp"
+        android:text="name@reroyaltrading.ca"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/txt_userLName" />
+
     <RadioButton
         android:id="@+id/idrbLangEnglish3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="166dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="167dp"
-        android:layout_marginBottom="18dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:buttonTint="@color/OrangeRed"
         android:checked="true"
         android:text="English"
         android:textColor="@color/LightGrey"
-        app:layout_constraintBottom_toTopOf="@+id/idrbLangEnglish4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view3" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/idrbLangRus2"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <RadioButton
         android:id="@+id/idrbLangEnglish4"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginEnd="176dp"
-        android:layout_marginBottom="6dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="16dp"
         android:buttonTint="@color/OrangeRed"
         android:text="עברי"
         android:textColor="@color/LightGrey"
-        app:layout_constraintBottom_toTopOf="@+id/idrbLangRus2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idrbLangEnglish3" />
+        app:layout_constraintStart_toEndOf="@+id/idrbLangRus2" />
 
     <RadioButton
         android:id="@+id/idrbLangRus2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="163dp"
-        android:layout_marginBottom="69dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:buttonTint="@color/OrangeRed"
         android:text="русский"
         android:textColor="@color/LightGrey"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idrbLangEnglish4" />
+        app:layout_constraintEnd_toStartOf="@+id/idrbLangEnglish4"
+        app:layout_constraintStart_toEndOf="@+id/idrbLangEnglish3" />
 
     <View
         android:id="@+id/view3"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="85dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginTop="188dp"
         android:background="@android:color/darker_gray"
-        app:layout_constraintBottom_toTopOf="@+id/idrbLangEnglish3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
@@ -69,7 +152,7 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="78dp"
         android:background="@android:color/darker_gray"
         app:layout_constraintBottom_toTopOf="@+id/button"
@@ -79,12 +162,11 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="160dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="126dp"
+        android:layout_marginBottom="157dp"
         android:text="Change Address"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
@@ -93,27 +175,23 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="292dp"
-        android:layout_marginBottom="32dp"
-        android:text="Home Address"
-        app:layout_constraintBottom_toTopOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="12dp"
+        android:text="Address :"
+        app:layout_constraintEnd_toStartOf="@+id/txt_userAddress"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="314dp"
-        android:layout_marginBottom="10dp"
-        android:text="Last Name:"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="12dp"
+        android:text="Email :"
+        app:layout_constraintEnd_toStartOf="@+id/txt_userEmail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -121,14 +199,14 @@
         android:id="@+id/txt_accountTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
+        android:layout_marginStart="162dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="149dp"
-        android:layout_marginBottom="696dp"
-        android:text="User Account"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="163dp"
+        android:layout_marginBottom="185dp"
+        android:text="User Information"
+        app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -137,27 +215,36 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="313dp"
-        android:layout_marginBottom="16dp"
-        android:text="First Name:"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginBottom="19dp"
+        android:text="Name :"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txt_userFName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="spread_inside" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="62dp"
-        android:layout_marginEnd="126dp"
+        android:layout_marginTop="33dp"
         android:text="Change Password"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_accountTitle2" />
+
+    <TextView
+        android:id="@+id/txt_userFName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="57dp"
+        android:layout_marginBottom="19dp"
+        android:text="First"
+        app:layout_constraintBottom_toTopOf="@+id/txt_userEmail"
+        app:layout_constraintEnd_toStartOf="@+id/txt_userLName"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
