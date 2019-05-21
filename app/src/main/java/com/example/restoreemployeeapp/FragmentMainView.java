@@ -4,6 +4,8 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -19,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -28,6 +31,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.List;
 
 public class FragmentMainView extends Fragment implements OnMapReadyCallback {
     private static final String TAG = "SEA_Log";
@@ -39,6 +44,8 @@ public class FragmentMainView extends Fragment implements OnMapReadyCallback {
 
     private SupportMapFragment supportMapFragment;
     private GoogleMap map;
+
+    String homeAddress;
 
 
     @Nullable
@@ -54,6 +61,7 @@ public class FragmentMainView extends Fragment implements OnMapReadyCallback {
       if (bundle != null)
       {
           Log.d(TAG, "onCreateView: bundle not NULL, data in bundle : " + bundle.getString("Address"));
+          homeAddress = bundle.getString("Address");
       }
 
 
@@ -110,24 +118,73 @@ public class FragmentMainView extends Fragment implements OnMapReadyCallback {
         googleMap.addMarker(new MarkerOptions().position(sydney)
                 .title("Marker in Sydney"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
-
-      map = googleMap;
-        // Default Will Show Current Location
-        if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
-                == PackageManager.PERMISSION_GRANTED) {
-            googleMap.setMyLocationEnabled(true);
-            Log.d(TAG, "onMapReady: PERMISSION YES");
-
-        }else
+        if (homeAddress != null)
         {
-            Log.d(TAG, "onMapReady: PERMISSION NO");
-        }
+            Log.d(TAG, "onMapReady: homneaddress not null");
+            String latlng = getLocationFromAddress(homeAddress);
 
+            Log.d(TAG, "onMapReady: Lat Lng = " + latlng);
+
+            //Separating string from latng to get lat and lng
+            String [] latlngString =  latlng.split(",");
+            Log.d(TAG, "onMapReady: Lat Lng independently = " + latlngString[0] + " and " + latlngString[1]);
+            // Parsing extracted strings to doubles
+            double lat = Double.parseDouble(latlngString[0]);
+            double lng = Double.parseDouble(latlngString[1]);
+
+            //Setting map to home address
+            LatLng homeAddress = new LatLng(lat,lng);
+           // googleMap.addMarker(new MarkerOptions().snippet("Home Address"));
+            googleMap.addMarker(new MarkerOptions().position(homeAddress).title("Home Address"));
+            googleMap.moveCamera(CameraUpdateFactory.newLatLng(homeAddress));
+
+        }
+else {
+            map = googleMap;
+            // Default Will Show Current Location
+            if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
+                    == PackageManager.PERMISSION_GRANTED) {
+                googleMap.setMyLocationEnabled(true);
+
+                /*googleMap.moveCamera();*/
+                Log.d(TAG, "onMapReady: PERMISSION YES");
+
+            } else {
+                Log.d(TAG, "onMapReady: PERMISSION NO");
+            }
+        }
  /*       MapsInitializer.initialize(getContext());
 
         mGoogleMap = googleMap;
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
         googleMap.addMarker(new MarkerOptions().position(new LatLng(48.689247, -74.044582)).title("Title").snippet("Snippet"));*/
+    }
+
+
+    /**
+     * to get latitude and longitude of an address
+     *
+     * @param strAddress address string
+     * @return lat and lng in comma separated string
+     */
+    public String getLocationFromAddress(String strAddress) {
+
+        Geocoder coder = new Geocoder(getContext());
+        List<Address> address;
+
+        try {
+            address = coder.getFromLocationName(strAddress, 1);
+            if (address == null) {
+                return null;
+            }
+            Address location = address.get(0);
+            double lat = location.getLatitude();
+            double lng = location.getLongitude();
+
+            return lat + "," + lng;
+        } catch (Exception e) {
+            return null;
+        }
     }
 }
