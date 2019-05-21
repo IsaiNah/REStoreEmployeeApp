@@ -215,6 +215,15 @@ try {
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         fragmentMainView).commit();
                 break;
+            case R.id.nav_navstore:
+                //Setting bundle to pass data
+                Bundle storebundle = new Bundle();
+                storebundle.putString("Address","200 connie crescent"); //TODO replace  value with variable | KEY , VALUE
+                FragmentMainView fragmentMainViewStore = new FragmentMainView();
+                fragmentMainViewStore.setArguments(storebundle);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        fragmentMainViewStore).commit();
+                break;
           /*  case R.id.nav_usersettings:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new FragmentOptions()).commit();
