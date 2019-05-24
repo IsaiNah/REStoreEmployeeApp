@@ -80,9 +80,10 @@ public class MainActivity extends AppCompatActivity {
                             try {
                                 JSONObject jsonObject = new JSONObject(response);
                                 boolean success = jsonObject.getBoolean("success");
+                                String test = jsonObject.getString("date");
                                 if (success)
                                 {
-                                    Log.d(TAG, "onResponse: Success");
+                                    Log.d(TAG, "onResponse: Success Test = " + test);
 
 
 
