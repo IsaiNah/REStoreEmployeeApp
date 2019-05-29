@@ -72,6 +72,9 @@ public class MainMenu extends AppCompatActivity  implements NavigationView.OnNav
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 new FragmentMainView()).commit();
 
+        FragmentWelcome fragmentWelcome = new FragmentWelcome();
+        fragmentWelcome.show(getSupportFragmentManager(), "Welcome");
+
 
 try {
     setSupportActionBar(toolbar);
