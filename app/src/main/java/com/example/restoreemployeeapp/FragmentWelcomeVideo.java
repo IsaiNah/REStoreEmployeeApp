@@ -9,17 +9,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.VideoView;
 
-public class FragmentWelcome extends DialogFragment {
+public class FragmentWelcomeVideo extends DialogFragment {
     private static final String TAG = "SEA_Log";
     private Button continueButton;
+    private VideoView videoView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_welcome,container);
+        View view = inflater.inflate(R.layout.fragment_welcomevideo,container);
 
-        continueButton  = view.findViewById(R.id.idbtwelcomenext);
+        continueButton  = view.findViewById(R.id.idbtwelcomevideonext);
+        videoView = view.findViewById(R.id.idvideowelcome);
+
 
         
         
@@ -29,7 +33,8 @@ public class FragmentWelcome extends DialogFragment {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: Continue Clicked");
-                                      getDialog().dismiss();
+
+                getDialog().dismiss();
             }
             }
         );

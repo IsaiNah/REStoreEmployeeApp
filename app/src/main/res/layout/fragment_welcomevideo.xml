@@ -27,14 +27,14 @@
         android:layout_height="436dp"
         android:layout_marginTop="11dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/idbtwelcomenext"
+        app:layout_constraintBottom_toTopOf="@+id/idbtwelcomevideonext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
     <Button
-        android:id="@+id/idbtwelcomenext"
+        android:id="@+id/idbtwelcomevideonext"
         android:layout_width="100dp"
         android:layout_height="48dp"
 

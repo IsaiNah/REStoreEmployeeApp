@@ -31,6 +31,10 @@ public class MainMenu extends AppCompatActivity  implements NavigationView.OnNav
     //Navigation Drawer
     private DrawerLayout drawer;
 
+
+    //Triggers for Dialog
+    private Boolean showInformation = false;
+
 //TODO remove unnecessary code after transfer
 
     @Override
@@ -72,8 +76,13 @@ public class MainMenu extends AppCompatActivity  implements NavigationView.OnNav
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 new FragmentMainView()).commit();
 
-        FragmentWelcome fragmentWelcome = new FragmentWelcome();
+        FragmentWelcomeText fragmentWelcomeText = new FragmentWelcomeText();
+        fragmentWelcomeText.show(getSupportFragmentManager(), "Information");
+
+        FragmentWelcomeVideo fragmentWelcome = new FragmentWelcomeVideo();
         fragmentWelcome.show(getSupportFragmentManager(), "Welcome");
+
+
 
 
 try {
