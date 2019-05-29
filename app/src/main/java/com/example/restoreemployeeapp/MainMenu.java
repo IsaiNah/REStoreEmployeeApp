@@ -76,11 +76,11 @@ public class MainMenu extends AppCompatActivity  implements NavigationView.OnNav
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 new FragmentMainView()).commit();
 
-        FragmentWelcomeText fragmentWelcomeText = new FragmentWelcomeText();
+    /*    FragmentWelcomeText fragmentWelcomeText = new FragmentWelcomeText();
         fragmentWelcomeText.show(getSupportFragmentManager(), "Information");
 
         FragmentWelcomeVideo fragmentWelcome = new FragmentWelcomeVideo();
-        fragmentWelcome.show(getSupportFragmentManager(), "Welcome");
+        fragmentWelcome.show(getSupportFragmentManager(), "Welcome");*/
 
 
 
@@ -235,6 +235,11 @@ try {
                 fragmentMainViewStore.setArguments(storebundle);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         fragmentMainViewStore).commit();
+                break;
+            case R.id.nav_navmore:
+                FragmentTestNav fragmentTestNav = new FragmentTestNav();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        fragmentTestNav).commit();
                 break;
                 case R.id.nav_training:
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

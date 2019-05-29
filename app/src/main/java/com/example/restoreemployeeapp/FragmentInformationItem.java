@@ -50,7 +50,7 @@ public class FragmentInformationItem extends Fragment {
             Log.d(TAG, "onCreateView: Exception : " + e);
         }
 
-        //TODO tmp filenmae
+        //TODO tmp video
         filename = "multi_vitamin_collection";
         //Setting Video
         //String path = "android.resource://" +getActivity().getPackageName().g

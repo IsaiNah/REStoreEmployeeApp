@@ -1,5 +1,6 @@
 package com.example.restoreemployeeapp;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,6 +16,7 @@ public class FragmentWelcomeVideo extends DialogFragment {
     private static final String TAG = "SEA_Log";
     private Button continueButton;
     private VideoView videoView;
+    private String filename;
 
     @Nullable
     @Override
@@ -23,8 +25,14 @@ public class FragmentWelcomeVideo extends DialogFragment {
 
         continueButton  = view.findViewById(R.id.idbtwelcomevideonext);
         videoView = view.findViewById(R.id.idvideowelcome);
+        videoView.setZOrderOnTop(true);
 
-
+        //TODO tmp video
+        filename = "multi_vitamin_collection";
+        //Setting Video
+        //String path = "android.resource://" +getActivity().getPackageName().g
+        videoView.setVideoURI(Uri.parse( "android.resource://com.example.projectgold/raw/"+filename));
+        videoView.start();
         
         
         
