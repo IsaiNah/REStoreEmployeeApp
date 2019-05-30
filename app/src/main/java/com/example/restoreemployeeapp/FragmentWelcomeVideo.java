@@ -31,8 +31,6 @@ public class FragmentWelcomeVideo extends Fragment{
         ((DrawerLocker)getActivity()).setDrawerEnabled(false);
         continueButton = view.findViewById(R.id.idbtwelcomevideonext);
 
-
-     /*   continueButton = view.findViewById(R.id.idbtwelcomevideonext);
         videoView = view.findViewById(R.id.idvideowelcome);
 
         filename = "multi_vitamin_collection";
@@ -40,24 +38,13 @@ public class FragmentWelcomeVideo extends Fragment{
         //String path = "android.resource://" +getActivity().getPackageName().g
         videoView.setVideoURI(Uri.parse( "android.resource://com.example.projectgold/raw/"+filename));
         videoView.start();
-
-        continueButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-        Log.d(TAG, "onClick: Continue Clicked");
-
-
-        }
-        }
-        );*/
-
         continueButton.setOnClickListener(new View.OnClickListener() {
                                               @Override
                                               public void onClick(View v) {
                                                   Log.d(TAG, "onClick: Continue Clicked");
-                                                  FragmentMainView fragmentMainView = new FragmentMainView();
+                                                  FragmentWelcomeText fragmentWelcomeText = new FragmentWelcomeText();
                                                   getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                                                          fragmentMainView).commit();
+                                                          fragmentWelcomeText).commit();
                                               }
                                           }
         );
