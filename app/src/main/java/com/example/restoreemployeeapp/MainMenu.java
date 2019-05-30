@@ -19,7 +19,7 @@ import android.widget.Button;
 
 import java.util.List;
 
-public class MainMenu extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
+public class MainMenu extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener, DrawerLocker {
     private static final String TAG = "SEA_Log";
     private Button btnCallManager;
     private Intent callIntent;
@@ -33,7 +33,7 @@ public class MainMenu extends AppCompatActivity  implements NavigationView.OnNav
 
 
     //Triggers for Dialog
-    private Boolean showInformation = false;
+    private Boolean showWelccome = true;
 
 //TODO remove unnecessary code after transfer
 
@@ -68,15 +68,21 @@ public class MainMenu extends AppCompatActivity  implements NavigationView.OnNav
         toggle.syncState();
 
 
-       // btnCallManager = (Button) findViewById(R.id.btn_menu_callmanager);
+        //TODO decide if to show first time or just mainmenu
+        if (!showWelccome) {
+            // Showing Main View
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new FragmentMainView()).commit();
+        }else {
+            // First Time Log In Views
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new FragmentWelcomeVideo()).commit();
+               //TEST
+       /*     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new FragmentInformationItem());*/
 
-        //Setting Main View
-      /*  getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                new FragmentMainMenu()).commit();*/
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                new FragmentMainView()).commit();
-
-    /*    FragmentWelcomeText fragmentWelcomeText = new FragmentWelcomeText();
+        }
+      /*  FragmentWelcomeText fragmentWelcomeText = new FragmentWelcomeText();
         fragmentWelcomeText.show(getSupportFragmentManager(), "Information");
 
         FragmentWelcomeVideo fragmentWelcome = new FragmentWelcomeVideo();
@@ -284,11 +290,16 @@ try {
             Log.d(TAG, "replaceToFragmentInformationItem: Exception " + e);
         }
 
-        Log.d(TAG, "!!!! WORKING !!!! " );
+        Log.d(TAG, " !!!! WORKING !!!! " );
 
     }
 
-
+    public void setDrawerEnabled(boolean enabled) {
+        int lockMode = enabled ? DrawerLayout.LOCK_MODE_UNLOCKED :
+                DrawerLayout.LOCK_MODE_LOCKED_CLOSED;
+        drawer.setDrawerLockMode(lockMode);
+        //toggle.setDrawerIndicatorEnabled(enabled);
+    }
 }
 
 
