@@ -6,13 +6,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_users"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
+    android:layout_height="100dp"
     android:layout_margin="5dp"
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="8dp"
     android:layout_marginBottom="8dp"
-    app:cardBackgroundColor="@color/White"
+    app:cardBackgroundColor="#232323"
 
     app:cardElevation="5dp"
 
@@ -34,127 +34,52 @@
             android:id="@+id/user_name"
             android:layout_width="213dp"
             android:layout_height="27dp"
-            android:layout_marginStart="1dp"
-            android:layout_marginBottom="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="90dp"
             android:paddingBottom="5dp"
-            android:textColor="@color/Black"
+            android:textColor="@color/White"
             android:textSize="10sp"
             app:layout_constraintBottom_toTopOf="@+id/user_email"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/user_nametitle"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/user_nametitle"
-            android:layout_width="50dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="27dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginEnd="1dp"
-            android:layout_marginBottom="3dp"
-            android:paddingBottom="5dp"
-            android:text="Name"
-            android:textAlignment="center"
-            android:textColor="@color/Black"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toTopOf="@+id/user_emailtitle"
-            app:layout_constraintEnd_toStartOf="@+id/user_name"
             app:layout_constraintStart_toEndOf="@+id/user_picture"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <View
-            android:layout_width="263dp"
-            android:layout_height="1dp"
-            android:layout_marginStart="86dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginEnd="2dp"
-            android:background="@android:color/darker_gray"
-            app:layout_constraintBottom_toTopOf="@+id/user_emailtitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/user_name" />
-
-        <TextView
-            android:id="@+id/user_emailtitle"
-            android:layout_width="50dp"
-            android:layout_height="29dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="1dp"
-            android:layout_marginBottom="4dp"
-            android:gravity="center_horizontal"
-            android:paddingBottom="5dp"
-            android:text="Email"
-            android:textAlignment="center"
-            android:textColor="@color/Black"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toTopOf="@+id/user_phonetitle"
-            app:layout_constraintEnd_toStartOf="@+id/user_email"
-            app:layout_constraintStart_toEndOf="@+id/user_picture"
-            app:layout_constraintTop_toBottomOf="@+id/user_nametitle" />
 
 
         <TextView
             android:id="@+id/user_email"
-            android:layout_width="206dp"
+            android:layout_width="214dp"
             android:layout_height="28dp"
             android:layout_gravity="fill"
-            android:layout_marginEnd="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="89dp"
             android:paddingEnd="40dp"
             android:paddingBottom="1dp"
+            android:textColor="@color/White"
             android:textSize="12sp"
             android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/user_phone"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/user_emailtitle"
-            app:layout_constraintTop_toBottomOf="@+id/user_name" />
-
-        <View
-            android:id="@+id/view2"
-            android:layout_width="263dp"
-            android:layout_height="1dp"
-            android:layout_marginStart="108dp"
-            android:layout_marginEnd="5dp"
-            android:background="@android:color/darker_gray"
-            app:layout_constraintBottom_toTopOf="@+id/user_phone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/user_email" />
-
-        <TextView
-            android:id="@+id/user_phonetitle"
-            android:layout_width="52dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="29dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="5dp"
-            android:gravity="center_horizontal"
-            android:paddingBottom="5dp"
-            android:text="Phone"
-            android:textAlignment="center"
-            android:textColor="@color/Black"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/user_phone"
             app:layout_constraintStart_toEndOf="@+id/user_picture"
-            app:layout_constraintTop_toBottomOf="@+id/user_emailtitle" />
+            app:layout_constraintTop_toBottomOf="@+id/user_name" />
 
 
         <TextView
             android:id="@+id/user_phone"
-            android:layout_width="206dp"
+            android:layout_width="214dp"
             android:layout_height="26dp"
             android:layout_gravity="fill"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="6dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="89dp"
+            android:layout_marginBottom="15dp"
             android:paddingEnd="40dp"
             android:paddingBottom="1dp"
+            android:textColor="@color/White"
             android:textSize="12sp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/user_phonetitle"
+            app:layout_constraintStart_toEndOf="@+id/user_picture"
             app:layout_constraintTop_toBottomOf="@+id/user_email" />
 
         <android.support.v7.widget.AppCompatImageView
@@ -162,9 +87,23 @@
             android:layout_width="70dp"
             android:layout_height="77dp"
             android:adjustViewBounds="true"
-            android:background="@drawable/ic_account_circle_black_24dp"
+            android:background="@drawable/ic_account_circle_white_24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/user_more"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="34dp"
+            android:background="@drawable/ic_more_white_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/user_email"
             app:layout_constraintTop_toTopOf="parent" />
 
 

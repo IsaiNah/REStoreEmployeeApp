@@ -19,7 +19,7 @@ import java.util.List;
 public class FragmentCoworkers extends Fragment {
 
     private static final String TAG = "SEA_Log";
-    private Button backButton;
+   // private Button backButton;
 
     //List of Other Users
     private List<User> userlist;
@@ -32,10 +32,10 @@ public class FragmentCoworkers extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_coworkers, container, false);
 
-        //Dialog Init for to set Transparent border
+
 
         // Getting Items by id
-        backButton = view.findViewById(R.id.btn_back);
+       // backButton = view.findViewById(R.id.btn_back);
 
         //Getting Recyclerview from XML
         recyclerView = view.findViewById(R.id.coworkers_recyclerview);
@@ -99,12 +99,12 @@ public class FragmentCoworkers extends Fragment {
         }
 
         // Closing fragment
-        backButton.setOnClickListener(new View.OnClickListener(){
+       /* backButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
               //  getDialog().dismiss();
             }
-        });
+        });*/
 
         return view;
     }

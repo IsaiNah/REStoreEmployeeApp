@@ -1,5 +1,7 @@
 package com.example.restoreemployeeapp;
 
+
+
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -18,6 +20,8 @@ public class FragmentDialogCoworkerExpanded extends DialogFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragmentdialog_coworkerexpanded, container);
 
+        //Dialog Init for to set Transparent border
+       getDialog().getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 
 
         //backButton = view.findViewById(R.id.);
