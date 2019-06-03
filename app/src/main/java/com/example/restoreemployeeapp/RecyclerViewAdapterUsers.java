@@ -3,6 +3,7 @@ package com.example.restoreemployeeapp;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -24,11 +25,14 @@ public class RecyclerViewAdapterUsers extends RecyclerView.Adapter<RecyclerViewA
     private Context context;//For layout inflater
     private List<User> list; //List of List of Facial Features
 
-    public  RecyclerViewAdapterUsers(Context context, List<User> list)
+    private PassData passData; // Interface to pass data from adapter to Coworker fragment
+
+    public  RecyclerViewAdapterUsers(Context context, List<User> list, PassData passData)
     {
         try {
             this.context = context;
             this.list = list;
+            this.passData = passData;
         }catch (Exception e)
         {
             Log.d(TAG, "Exception in RecyclerViewAdapter:" + e);
@@ -105,7 +109,10 @@ public class RecyclerViewAdapterUsers extends RecyclerView.Adapter<RecyclerViewA
             User user = list.get(getAdapterPosition());
 
 
-            Toast.makeText(v.getContext(), "Item is clicked", Toast.LENGTH_SHORT).show();
+            Toast.makeText(v.getContext(), "Item is clicked User " + user.getEmail(), Toast.LENGTH_SHORT).show();
+
+            //Launching DialogFragment
+
           /*  Log.d(TAG, "onClick: is highlight status : " + findMatch.isHighlight());
             if(!findMatch.isHighlight()) {
                 cardView.setCardBackgroundColor(Color.parseColor("#c3b180"));
@@ -117,6 +124,11 @@ public class RecyclerViewAdapterUsers extends RecyclerView.Adapter<RecyclerViewA
             }*/
 
             Log.d(TAG, "onClick: New OnClick Object = " + user.getEmail() + " ");
+
+            passData.passdata(user.getEmail());
+            //FragmentDialogCoworkerExpanded fragmentDialogCoworkerExpanded =  new FragmentDialogCoworkerExpanded();
+            //get
+
         }
     }
 }

@@ -23,6 +23,7 @@ public class RecyclerViewAdapterMainMenu extends  RecyclerView.Adapter<RecyclerV
     private List<MenuItem> list; // list of menu items
 
 
+    // TODO DELETE THIS CLASS, OLD MAIN MENU
 
 public RecyclerViewAdapterMainMenu(Context context, List<MenuItem> list)
 {
@@ -87,7 +88,7 @@ public RecyclerViewAdapterMainMenu(Context context, List<MenuItem> list)
                             break;
 
                         case 2: FragmentCoworkers fragmentCoworkers = new FragmentCoworkers();
-                        fragmentCoworkers.show(fm, "Fragment Coworkers");
+                        //fragmentCoworkers.show(fm, "Fragment Coworkers");
                                  break;
 
                     }

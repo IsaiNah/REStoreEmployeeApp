@@ -15,13 +15,14 @@
     app:cardBackgroundColor="@color/White"
 
     app:cardElevation="5dp"
-    app:cardUseCompatPadding="true"
+
     app:contentPadding="4dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
-
+    <!-- Removed from above -->
+<!--    app:cardUseCompatPadding="true"-->
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -158,10 +159,10 @@
 
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/user_picture"
-            android:layout_width="86dp"
-            android:layout_height="96dp"
+            android:layout_width="70dp"
+            android:layout_height="77dp"
             android:adjustViewBounds="true"
-            android:background="@drawable/contacts01"
+            android:background="@drawable/ic_account_circle_black_24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

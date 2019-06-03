@@ -109,7 +109,8 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
-                   // error.printStackTrace(); //TODO tutorial
+                    error.printStackTrace(); //TODO tutorial
+                    Log.d(TAG, "onErrorResponse: " + error);
                 }
             }
 

@@ -209,12 +209,15 @@ try {
                         new FragmentMainView()).commit();
                 break;
             case R.id.nav_contactmanager:
-                    FragmentCoworkers manager = new FragmentCoworkers(); // TODO Reuse class but check that manager
-                    manager.show(getSupportFragmentManager(), "Text");
+                   // FragmentCoworkers manager = new FragmentCoworkers(); // TODO Reuse class but check that manager
+                   // manager.show(getSupportFragmentManager(), "Text");
                     break;
             case R.id.nav_contactco:
-                FragmentCoworkers coworkers = new FragmentCoworkers();
-                coworkers.show(getSupportFragmentManager(), "Text");
+               // FragmentCoworkers coworkers = new FragmentCoworkers();
+               // coworkers.show(getSupportFragmentManager(), "Text");
+                FragmentCoworkers fragmentCoworkers = new FragmentCoworkers();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        fragmentCoworkers).commit();
                 break;
             case R.id.nav_useraccount:
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
