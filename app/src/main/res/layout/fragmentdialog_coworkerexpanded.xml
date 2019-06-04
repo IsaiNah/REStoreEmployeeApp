@@ -55,6 +55,7 @@
             android:textStyle="bold" />
 
         <Button
+            android:id="@+id/idbtmobilecall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
@@ -69,6 +70,7 @@
             />
 
         <Button
+            android:id="@+id/idbtwhatapp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
@@ -80,6 +82,7 @@
             android:textAlignment="textStart" />
 
         <Button
+            android:id="@+id/idbtmessage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
