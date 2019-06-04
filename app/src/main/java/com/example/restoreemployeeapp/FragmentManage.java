@@ -92,9 +92,8 @@ public class FragmentManage extends Fragment {
         public void passdata(String string) {
             Log.d(TAG, "passdata: WORKING! " + string);
 
-            FragmentDialogCoworkerExpanded fragmentDialogCoworkerExpanded = new FragmentDialogCoworkerExpanded();
-            fragmentDialogCoworkerExpanded.show(getFragmentManager(), "Users");
-
+            FragmentDialogManageExpanded fragmentDialogManageExpanded = new FragmentDialogManageExpanded();
+            fragmentDialogManageExpanded.show(getFragmentManager(), "Employees");
 
 
 
