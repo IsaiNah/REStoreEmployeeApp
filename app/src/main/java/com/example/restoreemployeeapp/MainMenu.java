@@ -219,6 +219,11 @@ try {
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         fragmentCoworkers).commit();
                 break;
+            case R.id.nav_manage:
+                FragmentManage fragmentManage = new FragmentManage();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        fragmentManage).commit();
+                break;
             case R.id.nav_useraccount:
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new FragmentAccount()).commit();

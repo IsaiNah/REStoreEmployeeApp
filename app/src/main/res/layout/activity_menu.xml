@@ -11,6 +11,7 @@
     android:fitsSystemWindows="true"
     tools:context=".MainMenu"
     tools:openDrawer="start"
+    android:background="@color/WhiteSmoke"
     >
 
     <LinearLayout
