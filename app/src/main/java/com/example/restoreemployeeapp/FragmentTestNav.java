@@ -67,4 +67,11 @@ public class FragmentTestNav extends Fragment implements OnMapReadyCallback
                         .snippet("The most populous city in Australia.")
                         .position(sydney));
     }
+
+  /*  PassData passData = new PassData() {
+        @Override
+        public void passdata(String string) {
+            Log.d(TAG, "passdata: Pass To Nav Working " + string);
+        }
+    };*/
 }

@@ -117,7 +117,7 @@ public class FragmentCoworkers extends Fragment {
             FragmentDialogCoworkerExpanded fragmentDialogCoworkerExpanded = new FragmentDialogCoworkerExpanded();
             fragmentDialogCoworkerExpanded.show(getFragmentManager(), "Users");
 
-            //TODO either change interface to accept more strings or extract data form single string with space or | seperators
+            //TODO either change interface to accept more strings or extract data form single string with space or | separators
 
       /*      FragmentInformationItem fragmentInformationItem = new FragmentInformationItem();//TODO Pass Data Here
             // Bundle to pass data into onCreateView method of fragment

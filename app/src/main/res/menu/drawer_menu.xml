@@ -11,7 +11,7 @@
 
     </group>
 
-    <item android:title="Contact">
+    <item android:title="Contacts">
         <menu>
             <item
                 android:id="@+id/nav_contactmanager"
@@ -44,11 +44,11 @@
             <item
                 android:id="@+id/nav_navstore"
                 android:icon="@drawable/ic_store_mall_directory_black_24dp"
-                android:title="Store" />
+                android:title="Stores" />
             <item
                 android:id="@+id/nav_navmore"
                 android:icon="@drawable/ic_navigation_black_24dp"
-                android:title="Extra ..." />
+                android:title="More" />
         </menu>
     </item>
     <item android:title="Interactions">

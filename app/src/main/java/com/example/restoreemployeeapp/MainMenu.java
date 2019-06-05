@@ -220,9 +220,9 @@ try {
                         fragmentCoworkers).commit();
                 break;
             case R.id.nav_manage:
-                FragmentManage fragmentManage = new FragmentManage();
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        fragmentManage).commit();
+                    FragmentManage fragmentManage = new FragmentManage();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            fragmentManage).commit();
                 break;
             case R.id.nav_useraccount:
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -243,12 +243,15 @@ try {
                 break;
             case R.id.nav_navstore:
                 //Setting bundle to pass data
-                Bundle storebundle = new Bundle();
+              /*  Bundle storebundle = new Bundle();
                 storebundle.putString("Address","200 connie crescent"); //TODO replace  value with variable | KEY , VALUE
                 FragmentMainView fragmentMainViewStore = new FragmentMainView();
                 fragmentMainViewStore.setArguments(storebundle);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        fragmentMainViewStore).commit();
+                        fragmentMainViewStore).commit();*/
+              FragmentDialogNavStoresExpanded fragmentDialogNavStoresExpanded = new FragmentDialogNavStoresExpanded();
+              fragmentDialogNavStoresExpanded.show(getSupportFragmentManager(), "Nav");
+
                 break;
             case R.id.nav_navmore:
                 FragmentTestNav fragmentTestNav = new FragmentTestNav();

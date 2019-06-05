@@ -24,7 +24,7 @@ public class FragmentManage extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View  view = inflater.inflate(R.layout.fragment_coworkers, container, false);
+        View  view = inflater.inflate(R.layout.fragment_manage, container, false);
 
         recyclerView = view.findViewById(R.id.coworkers_recyclerview);
         recyclerView.setHasFixedSize(true);
