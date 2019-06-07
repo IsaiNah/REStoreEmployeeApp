@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:id="@+id/idconfirmationlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#232323"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/fragmentdialog_confirmation_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Are You Sure ?"
+            android:textColor="@color/White"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/idbtconfirmyes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="10dp"
+            android:background="@color/White"
+            android:drawableLeft="@drawable/ic_check_green_24dp"
+            android:drawablePadding="20dp"
+            android:padding="20dp"
+            android:text="Yes"
+            android:textAlignment="textStart"
+
+            />
+
+        <Button
+            android:id="@+id/idbtconfirmno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@color/White"
+            android:drawableLeft="@drawable/ic_close_red_24dp"
+            android:drawablePadding="20dp"
+            android:padding="20dp"
+            android:text="No"
+            android:textAlignment="textStart" />
+
+
+
+    </LinearLayout>
+</RelativeLayout>

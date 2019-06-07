@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,36 @@ public class FragmentDialogManageExpanded extends DialogFragment {
         editButton = view.findViewById(R.id.idbteditemployee);
         removeButton = view.findViewById(R.id.idbtremoveemployee);
 
+        scheduleButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: Schedule Button");
+                try{
+                FragmentDialogNavStoresExpanded fragmentDialogNavStoresExpanded = new FragmentDialogNavStoresExpanded();
+                fragmentDialogNavStoresExpanded.show(getFragmentManager(), "text");
+                }
+                catch (Exception e)
+                {
+                    Log.d(TAG, "onClick: Exception " + e);
+                }
+            }
+        });
+
+        editButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: Edit Button");
+            }
+        });
+
+        removeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: Remove Button");
+                FragmentDialogConfirm fragmentDialogConfirm = new FragmentDialogConfirm();
+                fragmentDialogConfirm.show(getFragmentManager(), "text");
+            }
+        });
         return view;
     }
 }

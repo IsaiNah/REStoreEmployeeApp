@@ -120,13 +120,6 @@ public class FragmentMainView extends Fragment implements OnMapReadyCallback {
 
         map = googleMap;
 
-//        LatLng pp  = new LatLng(-33.852, 151.211);
-        // Add a marker in Sydney, Australia,
-        // and move the map's camera to the same location.
- /*       LatLng sydney = new LatLng(-33.852, 151.211);
-        googleMap.addMarker(new MarkerOptions().position(sydney)
-                .title("Marker in Sydney"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
         if (homeAddress != null)
         {
             Log.d(TAG, "onMapReady: homneaddress not null" + homeAddress);
@@ -164,12 +157,6 @@ else {
                 Log.d(TAG, "onMapReady: PERMISSION NO");
             }
         }
- /*       MapsInitializer.initialize(getContext());
-
-        mGoogleMap = googleMap;
-        googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(48.689247, -74.044582)).title("Title").snippet("Snippet"));*/
     }
 
 

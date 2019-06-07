@@ -57,6 +57,7 @@ public class FragmentDialogNavStoresExpanded extends DialogFragment {
                 try {
                     NavToStoreListener navToStoreListener = (NavToStoreListener) getActivity();
                     navToStoreListener.navToStore("509 Bayfield Street, Barrie, ON L4M 4Z8");
+                    getDialog().dismiss();
                 }catch (Exception e)
                 {
                     Log.d(TAG, "onClick: Exception " + e);
@@ -71,6 +72,7 @@ public class FragmentDialogNavStoresExpanded extends DialogFragment {
                 try {
                     NavToStoreListener navToStoreListener = (NavToStoreListener) getActivity();
                     navToStoreListener.navToStore("300 Borough Drive #101, Scarborough, ON M1P 4P5");
+                    getDialog().dismiss();
                 }catch (Exception e)
                 {
                     Log.d(TAG, "onClick: Exception " + e);
@@ -85,6 +87,7 @@ public class FragmentDialogNavStoresExpanded extends DialogFragment {
                 try {
                     NavToStoreListener navToStoreListener = (NavToStoreListener) getActivity();
                     navToStoreListener.navToStore("25 Peel Centre Drive, Brampton, ON L6T 3R5");
+                    getDialog().dismiss();
                 }catch (Exception e)
                 {
                     Log.d(TAG, "onClick: Exception " + e);
