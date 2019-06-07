@@ -19,7 +19,7 @@ import android.widget.Button;
 
 import java.util.List;
 
-public class MainMenu extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener, DrawerLocker {
+public class MainMenu extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener, DrawerLocker, FragmentDialogNavStoresExpanded.NavToStoreListener {
     private static final String TAG = "SEA_Log";
     private Button btnCallManager;
     private Intent callIntent;
@@ -282,6 +282,21 @@ try {
         {
             super.onBackPressed(); // If drawer is not open, will close the activity
         }
+    }
+
+
+    @Override
+    public void navToStore(String storename) {
+        Log.d(TAG, "navToStore: interface Working " + storename);
+
+        //TODO pass by bundle to Map Fragment
+        //Setting bundle to pass data
+        Bundle bundle = new Bundle();
+        bundle.putString("Address",storename); //TODO replace  value with variable | KEY , VALUE
+        FragmentTestNav fragmentTestNav = new FragmentTestNav();
+        fragmentTestNav.setArguments(bundle);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                fragmentTestNav).commit();
     }
 
     //TODO work or remove

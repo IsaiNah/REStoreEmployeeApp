@@ -73,7 +73,7 @@ public class FragmentMainView extends Fragment implements OnMapReadyCallback {
           homeAddress = bundle.getString("Address");
       }
 
-
+        Log.d(TAG, "onCreateView: HomeAddress " + homeAddress);
         return view;
     }
 
@@ -129,7 +129,7 @@ public class FragmentMainView extends Fragment implements OnMapReadyCallback {
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
         if (homeAddress != null)
         {
-            Log.d(TAG, "onMapReady: homneaddress not null");
+            Log.d(TAG, "onMapReady: homneaddress not null" + homeAddress);
             String latlng = getLocationFromAddress(homeAddress);
 
             Log.d(TAG, "onMapReady: Lat Lng = " + latlng);
