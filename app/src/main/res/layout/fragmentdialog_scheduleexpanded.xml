@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Set Schedule"
+            android:text="Set Schedule For : Name"
             android:textColor="@color/White"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -40,9 +40,12 @@
             android:padding="20dp"
             android:text="Date Picked"
             android:textAlignment="textStart"
-
             />-->
-        <TextView
+
+
+
+
+    <!--    <TextView
             android:id="@+id/iddatetitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,24 +56,14 @@
             android:padding="20dp"
             android:text="Selected Work Date"
             android:gravity="center_horizontal"
-            android:textStyle="bold"
             />
-        <TextView
-            android:id="@+id/iddateselected"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:background="@color/White"
-            android:drawablePadding="20dp"
-            android:padding="20dp"
-            android:text="N/A"
-            android:gravity="center_horizontal"/>
+-->
         <Button
             android:id="@+id/idbtdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:background="@color/Black"
+            android:background="#232323"
             android:textColor="@color/White"
             android:drawableLeft="@drawable/ic_schedule_white_24dp"
             android:drawablePadding="20dp"
@@ -79,18 +72,19 @@
             android:textAlignment="textStart"
             android:alpha=".9"
             />
-        <TextView
-            android:id="@+id/idtimetitle"
+        <Button
+            android:id="@+id/idbttime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:background="@color/White"
+            android:background="#232323"
+            android:textColor="@color/White"
+            android:drawableLeft="@drawable/ic_timer_white_24dp"
             android:drawablePadding="20dp"
             android:padding="20dp"
-            android:text="Selected Time"
-            android:gravity="center_horizontal"
-            android:textStyle="bold"
-            />
+            android:text="Pick Time"
+            android:textAlignment="textStart" />
+
         <TextView
             android:id="@+id/idtimeselected"
             android:layout_width="match_parent"
@@ -99,30 +93,20 @@
             android:background="@color/White"
             android:drawablePadding="20dp"
             android:padding="20dp"
-            android:text="N/A"
+            android:text="Selected Time : N/A"
             android:gravity="center_horizontal"/>
-        <Button
-            android:id="@+id/idbttime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:background="@color/White"
-            android:drawableLeft="@drawable/ic_timer_black_24dp"
-            android:drawablePadding="20dp"
-            android:padding="20dp"
-            android:text="Pick Time"
-            android:backgroundTint="@color/LightGrey"
-            android:textAlignment="textStart" />
+
         <Button
             android:id="@+id/idbtconfirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:background="@color/White"
+            android:background="@color/Goldenrod"
+            android:alpha=".9"
+            android:textColor="@color/White"
             android:drawablePadding="20dp"
             android:padding="20dp"
             android:text="Confirm"
-            android:backgroundTint="@color/LightGrey"
             android:gravity="center_horizontal" />
 
 

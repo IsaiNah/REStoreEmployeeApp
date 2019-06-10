@@ -15,6 +15,8 @@ import android.widget.TimePicker;
 import java.util.Calendar;
 
 public class FragmentDialogTimePicker extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
+    private static final String TAG = "SEA_Log";
+
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {

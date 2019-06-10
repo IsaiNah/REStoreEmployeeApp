@@ -10,10 +10,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class FragmentDialogScheduleExpanded extends DialogFragment {
+public class FragmentDialogScheduleExpanded extends DialogFragment implements FragmentDialogDatePicker.DateDataPass {
     private static final String TAG = "SEA_Log";
     private Button scheduleDate, scheduleTime, scheduleConfirm;
-    
+
+
+    @Override
+    public void DateData(String data) {
+
+            Log.d(TAG, "DateData: Working Data Recieved " + data);
+
+
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -26,11 +35,22 @@ public class FragmentDialogScheduleExpanded extends DialogFragment {
         scheduleTime = view.findViewById(R.id.idbttime);
         scheduleConfirm = view.findViewById(R.id.idbtconfirm);
         
-        
+        Bundle bundle = this.getArguments();
+        if (bundle != null)
+        {
+            Log.d(TAG, "onCreateView: Bundle is not null");
+
+            String date = bundle.getString("Date");
+            Log.d(TAG, "onCreateView: Bundle contents = " + date);
+
+        }
+
+
         scheduleDate.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: Schedule Date Clicked");
+                getDialog().dismiss();
                 FragmentDialogDatePicker fragmentDialogDatePicker = new FragmentDialogDatePicker();
                 fragmentDialogDatePicker.show(getFragmentManager(), "Schedule Date");
             }
@@ -48,10 +68,16 @@ public class FragmentDialogScheduleExpanded extends DialogFragment {
         scheduleConfirm.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                getDialog().dismiss();
                 Log.d(TAG, "onClick: Confirm Clicked");
             }
         });
+
+
             
             return view;
     }
+
+
+
 }

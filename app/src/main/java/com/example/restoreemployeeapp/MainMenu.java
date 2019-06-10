@@ -31,7 +31,6 @@ public class MainMenu extends AppCompatActivity  implements NavigationView.OnNav
     //Navigation Drawer
     private DrawerLayout drawer;
 
-
     //Triggers for Dialog
     private Boolean showWelccome = true;
 
@@ -317,6 +316,8 @@ try {
         drawer.setDrawerLockMode(lockMode);
         //toggle.setDrawerIndicatorEnabled(enabled);
     }
+
+
 }
 
 
