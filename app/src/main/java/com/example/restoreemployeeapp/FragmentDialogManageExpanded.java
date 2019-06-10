@@ -33,8 +33,13 @@ public class FragmentDialogManageExpanded extends DialogFragment {
             public void onClick(View v) {
                 Log.d(TAG, "onClick: Schedule Button");
                 try{
-                FragmentDialogNavStoresExpanded fragmentDialogNavStoresExpanded = new FragmentDialogNavStoresExpanded();
-                fragmentDialogNavStoresExpanded.show(getFragmentManager(), "text");
+            /*    FragmentDialogNavStoresExpanded fragmentDialogNavStoresExpanded = new FragmentDialogNavStoresExpanded();
+                fragmentDialogNavStoresExpanded.show(getFragmentManager(), "text");*/
+              /*  FragmentDialogTimePicker fragmentDialogTimePicker = new FragmentDialogTimePicker();
+                fragmentDialogTimePicker.show(getFragmentManager(),"Time Picker");*/
+              FragmentDialogScheduleExpanded fragmentDialogScheduleExpanded = new FragmentDialogScheduleExpanded();
+              fragmentDialogScheduleExpanded.show(getFragmentManager(), "Schedule Expanded");
+
                 }
                 catch (Exception e)
                 {

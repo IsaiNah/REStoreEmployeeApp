@@ -77,23 +77,14 @@ public class MainMenu extends AppCompatActivity  implements NavigationView.OnNav
             // First Time Log In Views
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new FragmentWelcomeVideo()).commit();
-               //TEST
-       /*     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new FragmentInformationItem());*/
-
         }
-      /*  FragmentWelcomeText fragmentWelcomeText = new FragmentWelcomeText();
-        fragmentWelcomeText.show(getSupportFragmentManager(), "Information");
-
-        FragmentWelcomeVideo fragmentWelcome = new FragmentWelcomeVideo();
-        fragmentWelcome.show(getSupportFragmentManager(), "Welcome");*/
 
 
 
 
 try {
     setSupportActionBar(toolbar);
-    getSupportActionBar().setTitle("Welcome ");//TODO User Name Here
+    getSupportActionBar().setTitle("Welcome " + User.getLogEmail());//TODO User Name Here
     toolbar.setTitleTextColor(Color.parseColor("#FFFAFA"));
     toolbar.setBackgroundColor(Color.parseColor("#000000"));
 }catch(Exception e)
