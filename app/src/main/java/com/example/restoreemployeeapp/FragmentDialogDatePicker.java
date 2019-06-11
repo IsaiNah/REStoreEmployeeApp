@@ -53,20 +53,29 @@ public class FragmentDialogDatePicker extends DialogFragment implements TimePick
                    String date = Integer.toString(year) + "/" + Integer.toString(month) + "/" + Integer.toString(day);
                     Log.d(TAG, "onDateSet: Int to String : " + date);
 
-                    try {
+                    //TODO Delete
+                /*    try {
                         DateDataPass dateDataPass = (DateDataPass) getActivity();
                         dateDataPass.DateData("Test");
                     }catch (Exception e)
                     {
                         Log.d(TAG, "onDateSet: Exception " + e);
                     }
-
-                    Bundle bundle = new Bundle();
+*/
+                  /*  Bundle bundle = new Bundle();
                     bundle.putString("Date", date);
                     FragmentDialogScheduleExpanded fragmentDialogScheduleExpanded = new FragmentDialogScheduleExpanded();
                     fragmentDialogScheduleExpanded.setArguments(bundle);
-                   fragmentDialogScheduleExpanded.show(getFragmentManager(), "Schedule Expanded");
+                   fragmentDialogScheduleExpanded.show(getFragmentManager(), "Schedule Expanded");*/
                     getDialog().dismiss();
+
+                    // Opening FragmentDialog for test
+                    // Passing Bundle to Time Fragment
+                        Bundle bundle = new Bundle();
+                        bundle.putString("Date", date);
+                        FragmentDialogTimePicker fragmentDialogTimePicker = new FragmentDialogTimePicker();
+                        fragmentDialogTimePicker.setArguments(bundle);
+                        fragmentDialogTimePicker.show(getFragmentManager(), "Time Expanded");
 
                 }
             };

@@ -9,10 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class FragmentDialogScheduleExpanded extends DialogFragment implements FragmentDialogDatePicker.DateDataPass {
     private static final String TAG = "SEA_Log";
     private Button scheduleDate, scheduleTime, scheduleConfirm;
+    private String date, time;
+    private TextView datetimeselected;
 
 
     @Override
@@ -34,17 +37,28 @@ public class FragmentDialogScheduleExpanded extends DialogFragment implements Fr
         scheduleDate = view.findViewById(R.id.idbtdate);
         scheduleTime = view.findViewById(R.id.idbttime);
         scheduleConfirm = view.findViewById(R.id.idbtconfirm);
-        
-        Bundle bundle = this.getArguments();
-        if (bundle != null)
+        datetimeselected = view.findViewById(R.id.iddatetimeselected);
+
+        try {
+            Bundle bundle = this.getArguments();
+            if (bundle != null) {
+                Log.d(TAG, "onCreateView: Bundle is not null");
+
+                String dateold = bundle.getString("Date");
+                Log.d(TAG, "onCreateView: Bundle contents = " + dateold);
+
+                date = bundle.getString("Date");
+                time = bundle.getString("Time");
+                Log.d(TAG, "onCreateView: Bundle contents | Date + Time = " + date + " " + time);
+
+                datetimeselected.setText("Date: " + date + " Start Time: " + time);
+            }
+            else
+                Log.d(TAG, "onCreateView: Bundle is null");
+        }catch (Exception e)
         {
-            Log.d(TAG, "onCreateView: Bundle is not null");
-
-            String date = bundle.getString("Date");
-            Log.d(TAG, "onCreateView: Bundle contents = " + date);
-
+            Log.d(TAG, "onCreateView: Exception " + e);
         }
-
 
         scheduleDate.setOnClickListener(new View.OnClickListener(){
             @Override
