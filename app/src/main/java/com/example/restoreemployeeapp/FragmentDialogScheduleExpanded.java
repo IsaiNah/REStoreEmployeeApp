@@ -74,8 +74,10 @@ public class FragmentDialogScheduleExpanded extends DialogFragment implements Fr
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: Schedule Time");
-                FragmentDialogTimePicker fragmentDialogTimePicker = new FragmentDialogTimePicker();
-                fragmentDialogTimePicker.show(getFragmentManager(), "Schedule Time");
+          /*      FragmentDialogTimePicker fragmentDialogTimePicker = new FragmentDialogTimePicker();
+                fragmentDialogTimePicker.show(getFragmentManager(), "Schedule Time")*/;
+                FragmentDialogDatePicker fragmentDialogDatePicker = new FragmentDialogDatePicker();
+                fragmentDialogDatePicker.show(getFragmentManager(), "Schedule Date");
             }
         });
         
