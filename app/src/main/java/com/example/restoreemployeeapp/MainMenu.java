@@ -83,7 +83,7 @@ public class MainMenu extends AppCompatActivity  implements NavigationView.OnNav
 
 try {
     setSupportActionBar(toolbar);
-    getSupportActionBar().setTitle("Welcome " + User.getLogEmail());//TODO User Name Here
+    getSupportActionBar().setTitle("Welcome " + GlobalUserInfo.userFirst);//TODO User Name Here
     toolbar.setTitleTextColor(Color.parseColor("#FFFAFA"));
     toolbar.setBackgroundColor(Color.parseColor("#000000"));
 }catch(Exception e)

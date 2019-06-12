@@ -21,6 +21,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -37,12 +38,7 @@ import java.util.List;
 
 public class FragmentMainView extends Fragment implements OnMapReadyCallback {
     private static final String TAG = "SEA_Log";
-    //TODO MAYBE
-    private Button btnCallManager;
-    private Intent callIntent;
-    //TODO ABOVE MAYBE
-
-
+    private TextView employeeName;
     private SupportMapFragment supportMapFragment;
     private GoogleMap map;
 
@@ -56,6 +52,10 @@ public class FragmentMainView extends Fragment implements OnMapReadyCallback {
 //        return super.onCreateView(inflater, container, savedInstanceState);
 
          View view = inflater.inflate(R.layout.fragment_mainview, container, false);
+
+         employeeName = view.findViewById(R.id.txt_empname);
+
+         employeeName.setText(GlobalUserInfo.userFirst + " " + GlobalUserInfo.userLast);
 
          //Activating Drawer
         try {
