@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             Log.d(TAG, "\n Email : " + etEmail.getText().toString() + ", Password : " + etPass.getText().toString());
 
-            User user = new User(etEmail.getText().toString(), etPass.getText().toString());
+            final User user = new User(etEmail.getText().toString(), etPass.getText().toString());
 
             //TODO Add Local DataBase?
 
@@ -81,12 +81,21 @@ public class MainActivity extends AppCompatActivity {
                                 JSONObject jsonObject = new JSONObject(response);
                                 boolean success = jsonObject.getBoolean("success");
                                 String test = jsonObject.getString("date");
-                                String firstTest = jsonObject.getString("first");
+                                String firstName = jsonObject.getString("first");
+                                String lastName = jsonObject.getString("last");
+                                String userEmail = jsonObject.getString("email");
+
+                                GlobalUserInfo.userFirst = firstName;
+                                GlobalUserInfo.userLast = lastName;
+                                GlobalUserInfo.userEmail = userEmail;
+
+
                                 if (success)
                                 {
-                                    Log.d(TAG, "onResponse: Success Test = " + test + " firstTest = " + firstTest);
+                                    Log.d(TAG, "onResponse: Success Test = " + test + " First = " + firstName + " "
+                                    + "Last = " + lastName + " " + "Email = " + userEmail);
 
-
+                                    Log.d(TAG, "onResponse: Global Variables Test " + GlobalUserInfo.userFirst);
 
                                     //TODO this area will determine employee level and show different menu accordingly
                                     try {
