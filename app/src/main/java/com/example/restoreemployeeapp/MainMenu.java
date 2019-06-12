@@ -15,7 +15,11 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -24,6 +28,7 @@ public class MainMenu extends AppCompatActivity  implements NavigationView.OnNav
     private Button btnCallManager;
     private Intent callIntent;
     private Toolbar toolbar;
+    private TextView headerUserName, headerUserEmail;
     //Menu Items
     private List<MenuItem> menuItems;
     //RecyclerView
@@ -33,6 +38,9 @@ public class MainMenu extends AppCompatActivity  implements NavigationView.OnNav
 
     //Triggers for Dialog
     private Boolean showWelccome = true;
+
+    //TextViews
+    private TextView navEmail, navUser;
 
 //TODO remove unnecessary code after transfer
 
@@ -65,6 +73,15 @@ public class MainMenu extends AppCompatActivity  implements NavigationView.OnNav
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        //Nav Header
+        View headerView = navigationView.getHeaderView(0);
+        navUser = headerView.findViewById(R.id.idheaderUserName);
+        navEmail = headerView.findViewById(R.id.idheaderUserEmail);
+
+
+        navUser.setText(GlobalUserInfo.userFirst + " " + GlobalUserInfo.userLast);
+        navEmail.setText(GlobalUserInfo.userEmail);
 
 
         //TODO decide if to show first time or just mainmenu

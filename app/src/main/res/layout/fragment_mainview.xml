@@ -10,44 +10,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="169dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="170dp"
         android:layout_marginBottom="4dp"
+        android:fontFamily="sans-serif-medium"
         android:text="My Schedule"
         android:textStyle="italic"
-        android:fontFamily="sans-serif-medium"
         app:layout_constraintBottom_toTopOf="@+id/calendarView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_empManagerName"
 
-        />
-
-    <TextView
-        android:id="@+id/txt_empManagerName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="185dp"
-        android:text="Firstname Lastname"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txt_empManagerNameTitle"
-        app:layout_constraintTop_toBottomOf="@+id/txt_empStoreName"
-        android:visibility="invisible"
-        />
-
-    <TextView
-        android:id="@+id/txt_empManagerNameTitle"
-        android:layout_width="69dp"
-        android:layout_height="18dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="8dp"
-        android:text="Manager :"
-        app:layout_constraintEnd_toStartOf="@+id/txt_empManagerName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_empStoreNameTitle"
-        android:visibility="invisible"
         />
 
     <TextView
@@ -97,11 +68,9 @@
         android:layout_marginStart="23dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-medium"
         android:text="Location : "
         android:textStyle="bold"
-        android:fontFamily="sans-serif-medium"
-        app:layout_constraintBottom_toTopOf="@+id/txt_empManagerNameTitle"
         app:layout_constraintEnd_toStartOf="@+id/txt_empStoreName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_empNameTitle" />

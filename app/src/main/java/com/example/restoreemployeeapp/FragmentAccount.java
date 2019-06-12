@@ -27,7 +27,6 @@ public class FragmentAccount extends Fragment {
         View view = inflater.inflate(R.layout.fragment_account, container, false);
 
         userFirst = view.findViewById(R.id.txt_userFName);
-        userLast = view.findViewById(R.id.txt_userLName);
         userPhone = view.findViewById(R.id.txt_userPhone);
         userEmail = view.findViewById(R.id.txt_userEmail);
         userAddress = view.findViewById(R.id.txt_userAddress);
@@ -35,7 +34,9 @@ public class FragmentAccount extends Fragment {
         
         changeAddress = view.findViewById(R.id.btnChangeAddress);
         changePass = view.findViewById(R.id.btnChangePass);
-        
+
+        userFirst.setText(GlobalUserInfo.userFirst + " " + GlobalUserInfo.userLast);
+        userEmail.setText(GlobalUserInfo.userEmail);
         
         
         changeAddress.setOnClickListener(new View.OnClickListener(){
