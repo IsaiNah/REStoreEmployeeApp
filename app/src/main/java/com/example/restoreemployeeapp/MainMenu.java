@@ -23,7 +23,7 @@ import org.w3c.dom.Text;
 
 import java.util.List;
 
-public class MainMenu extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener, DrawerLocker, FragmentDialogNavStoresExpanded.NavToStoreListener {
+public class MainMenu extends AppCompatActivity  implements FragmentDialogSellerType.SellerTypeListener, NavigationView.OnNavigationItemSelectedListener, DrawerLocker, FragmentDialogNavStoresExpanded.NavToStoreListener {
     private static final String TAG = "SEA_Log";
     private Button btnCallManager;
     private Intent callIntent;
@@ -337,6 +337,23 @@ try {
     }
 
 
+    @Override
+    public void sellerType(String type) {
+        Log.d(TAG, "sellerType: Interface, Seller Type : " + type);
+        //TODO pass bundle depending on type if gold display only gold, if silver ...
+        switch (type)
+        {
+            case "Gold":
+                Log.d(TAG, "sellerType: Case Gold");
+                break;
+            case "Silver":
+                Log.d(TAG, "sellerType: Case Silver");
+                break;
+            case "Bronze":
+                Log.d(TAG, "sellerType: Case Bronze");
+                break;
+        }
+    }
 }
 
 

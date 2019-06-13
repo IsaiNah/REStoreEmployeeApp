@@ -13,7 +13,11 @@ import android.widget.Button;
 public class FragmentDialogSellerType extends DialogFragment {
     private static final String TAG = "SEA_Log";
     private Button firstSeller, secondSeller, thirdSeller;
+    private PassData passData;
 
+    public interface SellerTypeListener{
+        void sellerType(String type);
+    }
 
     @Nullable
     @Override
@@ -30,14 +34,20 @@ public class FragmentDialogSellerType extends DialogFragment {
 
 
         Bundle bundle = getArguments();
-        String sellerType = bundle.getString("Type");
+        final String sellerType = bundle.getString("Type");
         Log.d(TAG, "onCreateView: Bundle Contents Seller Type = " + sellerType);
 
 
+       //TODO open List of various types of sellers with selector highlighting when clicked
         firstSeller.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: First clicked");
+                //passing data by interface to MainMenu Activity
+                SellerTypeListener sellerTypeListener = (SellerTypeListener) getActivity();
+                sellerTypeListener.sellerType("Gold");
+                getDialog().dismiss();
+
             }
         });
 
@@ -45,13 +55,21 @@ public class FragmentDialogSellerType extends DialogFragment {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: Second clicked");
+                //passing data by interface to MainMenu Activity
+                SellerTypeListener sellerTypeListener = (SellerTypeListener) getActivity();
+                sellerTypeListener.sellerType("Silver");
+                getDialog().dismiss();
             }
         });
 
         thirdSeller.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "onClick: Second clicked");
+                Log.d(TAG, "onClick: Third clicked");
+                //passing data by interface to MainMenu Activity
+                SellerTypeListener sellerTypeListener = (SellerTypeListener) getActivity();
+                sellerTypeListener.sellerType("Bronze");
+                getDialog().dismiss();
             }
         });
 
