@@ -40,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Which Shift?" DATE SELECTED HERE
+            android:text="Which Shift?"
             android:textColor="@color/White"
             android:textSize="24sp"
             android:textStyle="bold" />
