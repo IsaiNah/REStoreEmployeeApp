@@ -44,10 +44,14 @@ public class FragmentDialogSellerType extends DialogFragment {
             public void onClick(View v) {
                 Log.d(TAG, "onClick: First clicked");
                 //passing data by interface to MainMenu Activity
-                SellerTypeListener sellerTypeListener = (SellerTypeListener) getActivity();
-                sellerTypeListener.sellerType("Gold");
-                getDialog().dismiss();
-
+                try {
+                    SellerTypeListener sellerTypeListener = (SellerTypeListener) getActivity();
+                    sellerTypeListener.sellerType("Gold");
+                    getDialog().dismiss();
+                }catch (Exception e)
+                {
+                    Log.d(TAG, "onClick: Exception " + e);
+                }
             }
         });
 

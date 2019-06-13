@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_sellers"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_margin="5dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardBackgroundColor="#232323"
+
+    app:cardElevation="5dp"
+
+    app:contentPadding="4dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+    <!-- Removed from above -->
+<!--    app:cardUseCompatPadding="true"-->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="13dp"
+        tools:layout_editor_absoluteY="15dp">
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="213dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="90dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/White"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/user_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/user_picture"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/user_email"
+            android:layout_width="214dp"
+            android:layout_height="28dp"
+            android:layout_gravity="fill"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="89dp"
+            android:paddingEnd="40dp"
+            android:paddingBottom="1dp"
+            android:textColor="@color/White"
+            android:textSize="12sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/user_phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/user_picture"
+            app:layout_constraintTop_toBottomOf="@+id/user_name" />
+
+
+        <TextView
+            android:id="@+id/user_phone"
+            android:layout_width="214dp"
+            android:layout_height="26dp"
+            android:layout_gravity="fill"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="89dp"
+            android:layout_marginBottom="15dp"
+            android:paddingEnd="40dp"
+            android:paddingBottom="1dp"
+            android:textColor="@color/White"
+            android:textSize="12sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/user_picture"
+            app:layout_constraintTop_toBottomOf="@+id/user_email" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/user_picture"
+            android:layout_width="70dp"
+            android:layout_height="77dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/ic_account_circle_white_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/user_more"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="34dp"
+            android:background="@drawable/ic_check_box_outline_blank_white_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/user_email"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.v7.widget.CardView>

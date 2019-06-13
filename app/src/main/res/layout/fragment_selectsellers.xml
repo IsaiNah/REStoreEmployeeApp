@@ -1,48 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#232323"
-    >
+    android:background="#232323">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/selectSellers_recyclerview"
-        android:layout_width="411dp"
-        android:layout_height="566dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="15dp"
+        android:layout_width="405dp"
+        android:layout_height="578dp"
+        android:layout_marginTop="6dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/idtxtSelectSellers" />
 
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/idtxtSelectSellers"
         android:layout_width="wrap_content"
-        android:layout_height="34dp"
-        android:layout_marginStart="131dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="131dp"
-        android:layout_marginBottom="28dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginBottom="6dp"
         android:text="Select Sellers"
         android:textColor="@color/White"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/coworkers_recyclerview"
+        app:layout_constraintBottom_toTopOf="@+id/selectSellers_recyclerview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="17dp"
+        android:layout_width="422dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="21dp"
         android:text="Accept"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

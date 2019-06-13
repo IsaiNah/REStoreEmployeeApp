@@ -341,6 +341,7 @@ try {
     public void sellerType(String type) {
         Log.d(TAG, "sellerType: Interface, Seller Type : " + type);
         Bundle bundle = new Bundle();
+        bundle.putString("Type", type);
         FragmentSelectSellers fragmentSelectSellers = new FragmentSelectSellers();
         fragmentSelectSellers.setArguments(bundle);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
