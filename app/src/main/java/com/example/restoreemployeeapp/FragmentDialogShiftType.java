@@ -32,6 +32,12 @@ public class FragmentDialogShiftType extends DialogFragment {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: First shift clicked");
+                getDialog().dismiss();
+                Bundle bundle = new Bundle();
+                bundle.putString("Type", "First");
+                FragmentDialogSellerType fragmentDialogSellerType = new FragmentDialogSellerType();
+                fragmentDialogSellerType.setArguments(bundle);
+                fragmentDialogSellerType.show(getFragmentManager(),"SellerType");
             }
         });
 
@@ -39,6 +45,12 @@ public class FragmentDialogShiftType extends DialogFragment {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: Second shift clicked");
+                getDialog().dismiss();
+                Bundle bundle = new Bundle();
+                bundle.putString("Type", "Second");
+                FragmentDialogSellerType fragmentDialogSellerType = new FragmentDialogSellerType();
+                fragmentDialogSellerType.setArguments(bundle);
+                fragmentDialogSellerType.show(getFragmentManager(),"SellerType");
             }
         });
 

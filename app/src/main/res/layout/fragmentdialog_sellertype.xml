@@ -7,7 +7,7 @@
     android:layout_gravity="center">
 
     <LinearLayout
-        android:id="@+id/shifttypelayout"
+        android:id="@+id/sellertypelayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -21,7 +21,7 @@
         <ImageView
             android:layout_width="110dp"
             android:layout_height="145dp"
-            android:background="@drawable/ic_hourglass_empty_white_24dp"
+            android:background="@drawable/ic_attach_money_white_24dp"
             tools:layout_editor_absoluteX="106dp"
             tools:layout_editor_absoluteY="0dp" />
 
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Which Shift?"
+            android:text="Pick Seller Type"
             android:textColor="@color/White"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -38,7 +38,7 @@
 
 
         <Button
-            android:id="@+id/idbtfirstshift"
+            android:id="@+id/idbtfirstseller"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
@@ -46,21 +46,35 @@
             android:background="@color/White"
             android:drawablePadding="20dp"
             android:padding="20dp"
-            android:text="First"
-            android:textAlignment="center"
-
+            android:text="Gold Sellers"
+            android:textAlignment="textStart"
+            android:drawableStart="@drawable/ic_attach_money_gold_24dp"
             />
 
         <Button
-            android:id="@+id/idbtsecondshift"
+            android:id="@+id/idbtsecondseller"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:background="@color/White"
             android:drawablePadding="20dp"
             android:padding="20dp"
-            android:text="Second"
-            android:textAlignment="center" />
+            android:text="Silver Sellers"
+            android:textAlignment="textStart"
+            android:drawableStart="@drawable/ic_attach_money_silver_24dp"
+            />
+        <Button
+            android:id="@+id/idbtthirdseller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@color/White"
+            android:drawablePadding="20dp"
+            android:padding="20dp"
+            android:text="Bronze Sellers"
+            android:textAlignment="textStart"
+            android:drawableStart="@drawable/ic_attach_money_bronze_24dp"
+            />
 
     </LinearLayout>
 </RelativeLayout>
