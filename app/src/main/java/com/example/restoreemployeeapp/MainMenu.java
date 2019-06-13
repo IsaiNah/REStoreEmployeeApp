@@ -23,7 +23,7 @@ import org.w3c.dom.Text;
 
 import java.util.List;
 
-public class MainMenu extends AppCompatActivity  implements FragmentDialogSellerType.SellerTypeListener, NavigationView.OnNavigationItemSelectedListener, DrawerLocker, FragmentDialogNavStoresExpanded.NavToStoreListener {
+public class MainMenu extends AppCompatActivity  implements FragmentSelectSellers.ConfirmSellerListener,FragmentDialogSellerType.SellerTypeListener, NavigationView.OnNavigationItemSelectedListener, DrawerLocker, FragmentDialogNavStoresExpanded.NavToStoreListener {
     private static final String TAG = "SEA_Log";
     private Button btnCallManager;
     private Intent callIntent;
@@ -346,6 +346,21 @@ try {
         fragmentSelectSellers.setArguments(bundle);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 fragmentSelectSellers).commit();
+    }
+
+    @Override
+    public void sellerConfirm(String type) {
+        FragmentDialogSellerConfirm fragmentDialogSellerConfirm = new FragmentDialogSellerConfirm();
+        //TODO pass arguments : fragmentDialogSellerConfirm.setArguments();
+
+        Log.d(TAG, "sellerConfirm: Interface Seller Type : " + type);
+       /*try {
+           getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                   fragmentDialogSellerConfirm).commit();
+       }catch (Exception e)
+       {
+           Log.d(TAG, "sellerConfirm: Exception " + e);
+       }*/
     }
 }
 

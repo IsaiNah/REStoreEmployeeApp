@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/idbtacceptseller"
         android:layout_width="422dp"
         android:layout_height="48dp"
         android:text="Accept"
