@@ -33,7 +33,8 @@ public class FragmentDialogScheduleExpanded extends DialogFragment implements Fr
 
         //Dialog Init for to set Transparent border (removes white around dialog window)
         getDialog().getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-            
+
+
         scheduleDate = view.findViewById(R.id.idbtdate);
         scheduleTime = view.findViewById(R.id.idbttime);
         scheduleConfirm = view.findViewById(R.id.idbtconfirm);
@@ -64,9 +65,11 @@ public class FragmentDialogScheduleExpanded extends DialogFragment implements Fr
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: Schedule Date Clicked");
-                getDialog().dismiss();
+       /*         getDialog().dismiss();
                 FragmentDialogDatePicker fragmentDialogDatePicker = new FragmentDialogDatePicker();
-                fragmentDialogDatePicker.show(getFragmentManager(), "Schedule Date");
+                fragmentDialogDatePicker.show(getFragmentManager(), "Schedule Date");*/
+         /*       FragmentDialogShiftType fragmentDialogShiftType = new FragmentDialogShiftType();
+                fragmentDialogShiftType.show(getFragmentManager(),"ShiftType");*/
             }
         });
         
@@ -74,10 +77,11 @@ public class FragmentDialogScheduleExpanded extends DialogFragment implements Fr
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: Schedule Time");
-          /*      FragmentDialogTimePicker fragmentDialogTimePicker = new FragmentDialogTimePicker();
-                fragmentDialogTimePicker.show(getFragmentManager(), "Schedule Time")*/;
+                /*
+          *//*      FragmentDialogTimePicker fragmentDialogTimePicker = new FragmentDialogTimePicker();
+                fragmentDialogTimePicker.show(getFragmentManager(), "Schedule Time")*//*;
                 FragmentDialogDatePicker fragmentDialogDatePicker = new FragmentDialogDatePicker();
-                fragmentDialogDatePicker.show(getFragmentManager(), "Schedule Date");
+                fragmentDialogDatePicker.show(getFragmentManager(), "Schedule Date");*/
             }
         });
         

@@ -28,6 +28,10 @@
     <item android:title="Management">
         <menu>
             <item
+                android:id="@+id/nav_manageschedule"
+                android:icon="@drawable/ic_schedule_black_24dp"
+                android:title="Schedule"></item>
+            <item
                 android:id="@+id/nav_manage"
                 android:icon="@drawable/ic_contacts_black_24dp"
                 android:title="Manage Employees"></item>

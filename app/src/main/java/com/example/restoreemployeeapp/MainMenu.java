@@ -211,14 +211,12 @@ try {
     @Override
     public boolean onNavigationItemSelected(@NonNull android.view.MenuItem menuItem) {
         switch (menuItem.getItemId()){
+
+            //TODO Clean up code
             case R.id.nav_mainmenu:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new FragmentMainView()).commit();
                 break;
-            case R.id.nav_contactmanager:
-                   // FragmentCoworkers manager = new FragmentCoworkers(); // TODO Reuse class but check that manager
-                   // manager.show(getSupportFragmentManager(), "Text");
-                    break;
             case R.id.nav_contactco:
                // FragmentCoworkers coworkers = new FragmentCoworkers();
                // coworkers.show(getSupportFragmentManager(), "Text");
@@ -230,6 +228,10 @@ try {
                     FragmentManage fragmentManage = new FragmentManage();
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                             fragmentManage).commit();
+                break;
+            case R.id.nav_manageschedule:
+                FragmentDialogDatePicker fragmentDialogDatePicker = new FragmentDialogDatePicker();
+                fragmentDialogDatePicker.show(getSupportFragmentManager(), "Schedule Date");
                 break;
             case R.id.nav_useraccount:
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
