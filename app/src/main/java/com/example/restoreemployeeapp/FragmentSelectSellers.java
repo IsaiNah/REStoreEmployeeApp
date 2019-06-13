@@ -181,7 +181,7 @@ public class FragmentSelectSellers extends Fragment {
 
         try {
             //Recycler view Adapt call
-            RecyclerViewAdapterUsers adapter =new RecyclerViewAdapterUsers(view.getContext(),userlist, passData);
+            RecyclerViewAdapterSellers adapter =new RecyclerViewAdapterSellers(view.getContext(),userlist/*, passData*/);
 
             //Setting adapter to RecyclerView
             recyclerView.setAdapter(adapter);
@@ -200,7 +200,7 @@ public class FragmentSelectSellers extends Fragment {
         return view;
     }
 
-    PassData passData = new PassData() {
+   /* PassData passData = new PassData() {
         @Override
         public void passdata(String string) {
             Log.d(TAG, "passdata: WORKING! " + string);
@@ -210,7 +210,7 @@ public class FragmentSelectSellers extends Fragment {
 
             //TODO either change interface to accept more strings or extract data form single string with space or | separators
 
-      /*      FragmentInformationItem fragmentInformationItem = new FragmentInformationItem();//TODO Pass Data Here
+      *//*      FragmentInformationItem fragmentInformationItem = new FragmentInformationItem();//TODO Pass Data Here
             // Bundle to pass data into onCreateView method of fragment
             Bundle bundle = new Bundle();
             bundle.putString("title", string);
@@ -219,8 +219,8 @@ public class FragmentSelectSellers extends Fragment {
             FragmentManager manager = getFragmentManager();
             FragmentTransaction transaction = manager.beginTransaction();
             transaction.replace(R.id.mainmenu, fragmentInformationItem).commit();
-            getDialog().dismiss();*/
+            getDialog().dismiss();*//*
         }
-    };
+    };*/
 
 }

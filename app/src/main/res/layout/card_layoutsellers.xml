@@ -31,7 +31,7 @@
         tools:layout_editor_absoluteY="15dp">
 
         <TextView
-            android:id="@+id/user_name"
+            android:id="@+id/seller_name"
             android:layout_width="213dp"
             android:layout_height="27dp"
             android:layout_marginStart="20dp"
@@ -40,14 +40,14 @@
             android:paddingBottom="5dp"
             android:textColor="@color/White"
             android:textSize="10sp"
-            app:layout_constraintBottom_toTopOf="@+id/user_email"
+            app:layout_constraintBottom_toTopOf="@+id/seller_email"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/user_picture"
+            app:layout_constraintStart_toEndOf="@+id/seller_picture"
             app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
-            android:id="@+id/user_email"
+            android:id="@+id/seller_email"
             android:layout_width="214dp"
             android:layout_height="28dp"
             android:layout_gravity="fill"
@@ -58,14 +58,14 @@
             android:textColor="@color/White"
             android:textSize="12sp"
             android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/user_phone"
+            app:layout_constraintBottom_toTopOf="@+id/seller_phone"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/user_picture"
-            app:layout_constraintTop_toBottomOf="@+id/user_name" />
+            app:layout_constraintStart_toEndOf="@+id/seller_picture"
+            app:layout_constraintTop_toBottomOf="@+id/seller_name" />
 
 
         <TextView
-            android:id="@+id/user_phone"
+            android:id="@+id/seller_phone"
             android:layout_width="214dp"
             android:layout_height="26dp"
             android:layout_gravity="fill"
@@ -79,11 +79,11 @@
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/user_picture"
-            app:layout_constraintTop_toBottomOf="@+id/user_email" />
+            app:layout_constraintStart_toEndOf="@+id/seller_picture"
+            app:layout_constraintTop_toBottomOf="@+id/seller_email" />
 
         <android.support.v7.widget.AppCompatImageView
-            android:id="@+id/user_picture"
+            android:id="@+id/seller_picture"
             android:layout_width="70dp"
             android:layout_height="77dp"
             android:adjustViewBounds="true"
@@ -93,7 +93,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <android.support.v7.widget.AppCompatImageView
-            android:id="@+id/user_more"
+            android:id="@+id/seller_check"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="49dp"
@@ -103,7 +103,7 @@
             android:background="@drawable/ic_check_box_outline_blank_white_24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/user_email"
+            app:layout_constraintStart_toEndOf="@+id/seller_email"
             app:layout_constraintTop_toTopOf="parent" />
 
 

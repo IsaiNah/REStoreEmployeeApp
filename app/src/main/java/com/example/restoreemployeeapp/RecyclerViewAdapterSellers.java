@@ -2,6 +2,7 @@ package com.example.restoreemployeeapp;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -19,6 +20,7 @@ public class RecyclerViewAdapterSellers extends RecyclerView.Adapter<RecyclerVie
     private static final String TAG = "SEA_LOG";
     private Context context;//For layout inflater
     private List<User> list; //List of List of Facial Features
+    private boolean checked = false;
 
   // private PassData passData; // Interface to pass data from adapter to Coworker fragment
 
@@ -82,6 +84,7 @@ public class RecyclerViewAdapterSellers extends RecyclerView.Adapter<RecyclerVie
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         ImageView imageView;
         TextView textName, textEmail, textPhone;
+        AppCompatImageView checkBox;
         CardView cardView;
 
         public ViewHolder(View itemView)
@@ -89,11 +92,12 @@ public class RecyclerViewAdapterSellers extends RecyclerView.Adapter<RecyclerVie
             super(itemView);
 
 
-            imageView = itemView.findViewById(R.id.user_picture);
-            textName = itemView.findViewById(R.id.user_name);
-            textEmail = itemView.findViewById(R.id.user_email);
-            textPhone = itemView.findViewById(R.id.user_phone);
-            cardView  = itemView.findViewById(R.id.card_users);
+            imageView = itemView.findViewById(R.id.seller_picture);
+            textName = itemView.findViewById(R.id.seller_name);
+            textEmail = itemView.findViewById(R.id.seller_email);
+            textPhone = itemView.findViewById(R.id.seller_phone);
+            cardView  = itemView.findViewById(R.id.card_sellers);
+            checkBox = itemView.findViewById(R.id.seller_check);
             Log.d(TAG, "Setting click listener: ");
             itemView.setOnClickListener(this);
         }
@@ -104,7 +108,17 @@ public class RecyclerViewAdapterSellers extends RecyclerView.Adapter<RecyclerVie
             User user = list.get(getAdapterPosition());
 
 
-            Toast.makeText(v.getContext(), "Item is clicked User " + user.getEmail(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(v.getContext(), "Item is clicked Seller " + user.getEmail(), Toast.LENGTH_SHORT).show();
+
+
+            if (!checked) {
+                checkBox.setImageResource(R.drawable.ic_check_green_24dp);
+                checked = true;
+            }else{
+                checkBox.setImageResource(R.drawable.ic_check_box_outline_blank_white_24dp);
+                checked = false;
+            }
+
             //Launching DialogFragment
 
           /*  Log.d(TAG, "onClick: is highlight status : " + findMatch.isHighlight());
