@@ -73,9 +73,12 @@ public class FragmentDialogDatePicker extends DialogFragment implements TimePick
                     // Passing Bundle to Time Fragment
                         Bundle bundle = new Bundle();
                         bundle.putString("Date", date);
-                    FragmentDialogShiftType fragmentDialogShiftType = new FragmentDialogShiftType();
+                        FragmentDialogSelectStoreExpanded fragmentDialogSelectStoreExpanded = new FragmentDialogSelectStoreExpanded();
+                        fragmentDialogSelectStoreExpanded.setArguments(bundle);
+                        fragmentDialogSelectStoreExpanded.show(getFragmentManager(), "Select Store");
+                /*    FragmentDialogShiftType fragmentDialogShiftType = new FragmentDialogShiftType();
                     fragmentDialogShiftType.setArguments(bundle);
-                    fragmentDialogShiftType.show(getFragmentManager(),"ShiftType");
+                    fragmentDialogShiftType.show(getFragmentManager(),"ShiftType");*/
                   /*      FragmentDialogTimePicker fragmentDialogTimePicker = new FragmentDialogTimePicker();
                         fragmentDialogTimePicker.setArguments(bundle);
                         fragmentDialogTimePicker.show(getFragmentManager(), "Time Expanded");*/
