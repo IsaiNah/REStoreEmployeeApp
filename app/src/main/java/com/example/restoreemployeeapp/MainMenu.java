@@ -340,19 +340,11 @@ try {
     @Override
     public void sellerType(String type) {
         Log.d(TAG, "sellerType: Interface, Seller Type : " + type);
-        //TODO pass bundle depending on type if gold display only gold, if silver ...
-        switch (type)
-        {
-            case "Gold":
-                Log.d(TAG, "sellerType: Case Gold");
-                break;
-            case "Silver":
-                Log.d(TAG, "sellerType: Case Silver");
-                break;
-            case "Bronze":
-                Log.d(TAG, "sellerType: Case Bronze");
-                break;
-        }
+        Bundle bundle = new Bundle();
+        FragmentSelectSellers fragmentSelectSellers = new FragmentSelectSellers();
+        fragmentSelectSellers.setArguments(bundle);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                fragmentSelectSellers).commit();
     }
 }
 

@@ -39,6 +39,11 @@ public class FragmentSelectSellers extends Fragment {
         recyclerView = view.findViewById(R.id.selectSellers_recyclerview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        
+        //Getting data from Bundle
+        Bundle bundle = getArguments();
+        String Type = bundle.getString("Type");
+        Log.d(TAG, "onCreateView: Employee Type from Bundle : ");
 
 
         //TODO Load from DataBase
