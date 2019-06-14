@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-public class ScheduleParentActivity extends AppCompatActivity {
+public class ScheduleParentActivity extends AppCompatActivity implements FragmentControllerSchedule.BottomSectionControllerListener{
     private static final String TAG = "SEA_Log";
 
     @Override
@@ -21,5 +21,10 @@ public class ScheduleParentActivity extends AppCompatActivity {
 
         Log.d(TAG, "onCreate: Contents of intent extra " + date);
 
+    }
+
+    @Override
+    public void testDataPass(String data) {
+        Log.d(TAG, "testDataPass: Working " + data);
     }
 }
