@@ -24,6 +24,8 @@ public class FragmentDialogShiftType extends DialogFragment {
         getDialog().getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 
 
+
+
         firstShift = view.findViewById(R.id.idbtfirstshift);
         secondShift = view.findViewById(R.id.idbtsecondshift);
 

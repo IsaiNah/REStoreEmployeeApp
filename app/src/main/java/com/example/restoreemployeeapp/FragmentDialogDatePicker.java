@@ -11,6 +11,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.Date;
 
 public class FragmentDialogDatePicker extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
     private static final String TAG = "SEA_Log";
@@ -39,6 +40,9 @@ public class FragmentDialogDatePicker extends DialogFragment implements TimePick
         int month = c.get(Calendar.MONTH);
         int day = c.get(Calendar.DAY_OF_MONTH);
 
+
+
+
         return new DatePickerDialog(getActivity(), dateSetListener, year, month, day);
     }
     private DatePickerDialog.OnDateSetListener dateSetListener =
@@ -53,29 +57,24 @@ public class FragmentDialogDatePicker extends DialogFragment implements TimePick
                    String date = Integer.toString(year) + "/" + Integer.toString(month) + "/" + Integer.toString(day);
                     Log.d(TAG, "onDateSet: Int to String : " + date);
 
-                    //TODO Delete
-                /*    try {
+
+
                         DateDataPass dateDataPass = (DateDataPass) getActivity();
-                        dateDataPass.DateData("Test");
-                    }catch (Exception e)
-                    {
-                        Log.d(TAG, "onDateSet: Exception " + e);
-                    }
-*/
-                  /*  Bundle bundle = new Bundle();
-                    bundle.putString("Date", date);
-                    FragmentDialogScheduleExpanded fragmentDialogScheduleExpanded = new FragmentDialogScheduleExpanded();
-                    fragmentDialogScheduleExpanded.setArguments(bundle);
-                   fragmentDialogScheduleExpanded.show(getFragmentManager(), "Schedule Expanded");*/
+                        dateDataPass.DateData(date);
+
                     getDialog().dismiss();
 
+
+
+
+                 //TODO changed below to single activity screen above
                     // Opening FragmentDialog for test
                     // Passing Bundle to Time Fragment
-                        Bundle bundle = new Bundle();
+                      /*  Bundle bundle = new Bundle();
                         bundle.putString("Date", date);
                         FragmentDialogSelectStoreExpanded fragmentDialogSelectStoreExpanded = new FragmentDialogSelectStoreExpanded();
                         fragmentDialogSelectStoreExpanded.setArguments(bundle);
-                        fragmentDialogSelectStoreExpanded.show(getFragmentManager(), "Select Store");
+                        fragmentDialogSelectStoreExpanded.show(getFragmentManager(), "Select Store");*/
                 /*    FragmentDialogShiftType fragmentDialogShiftType = new FragmentDialogShiftType();
                     fragmentDialogShiftType.setArguments(bundle);
                     fragmentDialogShiftType.show(getFragmentManager(),"ShiftType");*/

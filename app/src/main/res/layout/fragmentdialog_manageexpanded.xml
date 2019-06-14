@@ -55,18 +55,30 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/idbtscheduleemployee"
+            android:id="@+id/idbtlocationemployee"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginTop="10dp"
             android:background="@color/White"
+            android:drawableLeft="@drawable/ic_navigation_black_24dp"
+            android:drawablePadding="20dp"
+            android:padding="20dp"
+            android:text="Last Known Location"
+            android:textAlignment="textStart"
+
+            />
+        <Button
+            android:id="@+id/idbtscheduleemployee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@color/White"
             android:drawableLeft="@drawable/ic_schedule_black_24dp"
             android:drawablePadding="20dp"
             android:padding="20dp"
-            android:text="Schedule"
+            android:text="Check Schedule"
             android:textAlignment="textStart"
-
             />
 
         <Button

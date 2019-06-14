@@ -23,7 +23,7 @@ import org.w3c.dom.Text;
 
 import java.util.List;
 
-public class MainMenu extends AppCompatActivity  implements FragmentSelectSellers.ConfirmSellerListener,FragmentDialogSellerType.SellerTypeListener, NavigationView.OnNavigationItemSelectedListener, DrawerLocker, FragmentDialogNavStoresExpanded.NavToStoreListener {
+public class MainMenu extends AppCompatActivity  implements FragmentDialogDatePicker.DateDataPass ,FragmentSelectSellers.ConfirmSellerListener,FragmentDialogSellerType.SellerTypeListener, NavigationView.OnNavigationItemSelectedListener, DrawerLocker, FragmentDialogNavStoresExpanded.NavToStoreListener {
     private static final String TAG = "SEA_Log";
     private Button btnCallManager;
     private Intent callIntent;
@@ -41,6 +41,9 @@ public class MainMenu extends AppCompatActivity  implements FragmentSelectSeller
 
     //TextViews
     private TextView navEmail, navUser;
+
+    //Intents
+    private Intent scheduleParentActivityIntent;
 
 //TODO remove unnecessary code after transfer
 
@@ -83,6 +86,8 @@ public class MainMenu extends AppCompatActivity  implements FragmentSelectSeller
         navUser.setText(GlobalUserInfo.userFirst + " " + GlobalUserInfo.userLast);
         navEmail.setText(GlobalUserInfo.userEmail);
 
+        //Intent for scheduling activity
+        scheduleParentActivityIntent = new Intent(MainMenu.this, ScheduleParentActivity.class);
 
         //TODO decide if to show first time or just mainmenu
         if (!showWelccome) {
@@ -361,6 +366,15 @@ try {
        {
            Log.d(TAG, "sellerConfirm: Exception " + e);
        }*/
+    }
+
+    @Override
+    public void DateData(String data) {
+        Log.d(TAG, "DateData: DataData Interface. Date Selected " + data);
+        // Passing Date to Activity using intent put extra
+        scheduleParentActivityIntent.putExtra("Date", data);
+        startActivity(scheduleParentActivityIntent);
+
     }
 }
 
