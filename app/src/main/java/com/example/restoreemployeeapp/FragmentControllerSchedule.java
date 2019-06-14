@@ -65,7 +65,8 @@ public class FragmentControllerSchedule extends Fragment {
             public void onClick(View v) {
                 Log.d(TAG, "onClick: Controller Fragment Test Button Click");
                 try {
-
+                BottomSectionControllerListener bottomSectionControllerListener = (BottomSectionControllerListener) getActivity();
+                bottomSectionControllerListener.testDataPass("Data is passing");
                 //Setting text in display fragment
                 //displayFragmentTextView.setText("BUTTON PRESSED");
                 //Getting Textview in Display Fragment in order to change data
