@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/fragmentLeftButtonAndroid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Android"
+        android:textSize="20dp"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/fragmentLeftButtonIos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="IOS"
+        android:textSize="20dp"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/fragmentLeftButtonWindows"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Windows"
+        android:textSize="20dp"
+        android:textAllCaps="false"/>
+</LinearLayout>
