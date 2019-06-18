@@ -90,7 +90,7 @@ public class FragmentCoworkers extends Fragment {
 
         try {
             //Recycler view Adapt call
-            RecyclerViewAdapterUsers adapter =new RecyclerViewAdapterUsers(view.getContext(),userlist, passData);
+            RecyclerViewAdapterUsers adapter = new RecyclerViewAdapterUsers(view.getContext(),userlist, passData);
 
             //Setting adapter to RecyclerView
             recyclerView.setAdapter(adapter);

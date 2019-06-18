@@ -15,7 +15,7 @@ public class FragmentDisplaySchedule extends Fragment {
     private static final String TAG = "SEA_Log";
     private TextView location00, location01, location02; //TODO tmp, change to array
 
-
+    //TODO Use Class For Scheduling and Contain in Array?
 
     @Nullable
     @Override
