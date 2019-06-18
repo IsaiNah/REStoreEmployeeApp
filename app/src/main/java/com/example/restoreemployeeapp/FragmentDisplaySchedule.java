@@ -13,7 +13,9 @@ import org.w3c.dom.Text;
 
 public class FragmentDisplaySchedule extends Fragment {
     private static final String TAG = "SEA_Log";
-    private TextView displayTextView;
+    private TextView location00, location01, location02; //TODO tmp, change to array
+
+
 
     @Nullable
     @Override
@@ -21,8 +23,8 @@ public class FragmentDisplaySchedule extends Fragment {
         View view = inflater.inflate(R.layout.fragment_displayerschedule, container);
 
 
-        displayTextView = (TextView) view.findViewById(R.id.fragmentDisplayTextView);
-        displayTextView.setText("Default");
+       // displayTextView = (TextView) view.findViewById(R.id.fragmentDisplayTextView);
+     //   displayTextView.setText("Default");
 
         return view;
     }

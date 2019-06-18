@@ -1,29 +1,60 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout5"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
     <Button
         android:id="@+id/fragmentLeftButtonAndroid"
-        android:layout_width="match_parent"
+        android:layout_width="126dp"
         android:layout_height="wrap_content"
-        android:text="Android"
-        android:textSize="20dp"
-        android:textAllCaps="false"/>
+        android:layout_marginStart="16dp"
+        android:text="Select Store"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fragmentLeftButtonIos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/fragmentLeftButtonIos"
-        android:layout_width="match_parent"
+        android:layout_width="126dp"
         android:layout_height="wrap_content"
-        android:text="IOS"
-        android:textSize="20dp"
-        android:textAllCaps="false"/>
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Select Shift"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fragmentLeftButtonWindows"
+        app:layout_constraintStart_toEndOf="@+id/fragmentLeftButtonAndroid"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/fragmentLeftButtonWindows"
-        android:layout_width="match_parent"
+        android:layout_width="127dp"
         android:layout_height="wrap_content"
-        android:text="Windows"
-        android:textSize="20dp"
-        android:textAllCaps="false"/>
-</LinearLayout>
+        android:layout_marginEnd="16dp"
+        android:text="Employees List"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fragmentLeftButtonIos"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/schedule_recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentLeftButtonAndroid" />
+</android.support.constraint.ConstraintLayout>

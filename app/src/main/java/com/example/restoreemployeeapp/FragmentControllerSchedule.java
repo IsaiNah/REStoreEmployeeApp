@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,10 +17,17 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FragmentControllerSchedule extends Fragment {
     private static final String TAG = "SEA_Log";
     private Button testButton;
    // private TextView displayFragmentTextView;
+
+    private RecyclerView recyclerView;
+
+    private List<User> userList; // TODO tmp decide if User Store Shift or user separated lists
 
     BottomSectionControllerListener bottomSectionControllerListener;
 
@@ -49,6 +58,63 @@ public class FragmentControllerSchedule extends Fragment {
         final FragmentActivity fragmentActivity = getActivity();
 
         testButton = view.findViewById(R.id.fragmentLeftButtonAndroid);
+
+        //Setting up RecyclerView
+        recyclerView = view.findViewById(R.id.schedule_recyclerview);
+        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+
+        //TODO For Testing
+        userList = new ArrayList<>();
+
+        userList.add(new User(
+                "employee00@reroyaltrading.ca",
+                "First",
+                "Last",
+                "123",
+                "200 Connie Cres",
+                "L4K 0K1",
+                "647-123-4567"
+
+        ));
+        userList.add(new User(
+                "employee01@reroyaltrading.ca",
+                "First",
+                "Last",
+                "123",
+                "200 Connie Cres",
+                "L4K 0K1",
+                "647-123-4567"
+
+        ));
+        userList.add(new User(
+                "employee02@reroyaltrading.ca",
+                "First",
+                "Last",
+                "123",
+                "200 Connie Cres",
+                "L4K 0K1",
+                "647-123-4567"
+
+        ));
+        userList.add(new User(
+                "employee03@reroyaltrading.ca",
+                "First",
+                "Last",
+                "123",
+                "200 Connie Cres",
+                "L4K 0K1",
+                "647-123-4567"
+
+        ));
+
+        // Calling RecyclerView adapter
+        RecyclerViewAdapterUsers adapterUsers = new RecyclerViewAdapterUsers(view.getContext(), userList, passData);
+
+
+        //TODO Set Different Adapters According to which Button Was Selected
+        recyclerView.setAdapter(adapterUsers);
+
+       // userList = view.findViewById(R.id)
 
        /* try {
             FragmentManager fragmentManager = fragmentActivity.getSupportFragmentManager();
@@ -82,4 +148,12 @@ public class FragmentControllerSchedule extends Fragment {
 
         return view;
     }
+
+    PassData passData = new PassData() {
+        @Override
+        public void passdata(String string) {
+            Log.d(TAG, "passdata: WORKING! " + string);
+            //TODO unused interface set in order to call AdapterUsers for  Testing
+        }
+    };
 }
