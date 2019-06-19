@@ -10,19 +10,24 @@ import android.util.Log;
 public class ScheduleParentActivity extends AppCompatActivity implements FragmentControllerSchedule.BottomSectionControllerListener{
     private static final String TAG = "SEA_Log";
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scheduleparent);
 
-        //TODO as in quicki
-        FragmentDisplaySchedule fragmentDisplaySchedule = new FragmentDisplaySchedule();
-
-
         Intent intent = getIntent();
 
         String date = intent.getStringExtra("Date");
 
+        //TODO as in quicki
+        try {
+            FragmentDisplaySchedule fragmentDisplaySchedule = new FragmentDisplaySchedule();
+            fragmentDisplaySchedule.changeLocationTest("WORKING!!!");
+        }catch (Exception e)
+        {
+            Log.d(TAG, "onCreate: Exception " + e);
+        }
         Log.d(TAG, "onCreate: Contents of intent extra " + date);
 
     }
@@ -31,6 +36,9 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
     public void testDataPass(String data) {
         Log.d(TAG, "testDataPass: Working " + data);
         //FragmentDisplaySchedule
+
+       // FragmentDisplaySchedule fragmentDisplaySchedule = getSupportFragmentManager().findFragmentById(R.id.fragmentDisplay);
+
 
     }
 }

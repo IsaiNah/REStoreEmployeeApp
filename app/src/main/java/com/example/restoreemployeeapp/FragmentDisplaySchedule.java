@@ -23,9 +23,17 @@ public class FragmentDisplaySchedule extends Fragment {
         View view = inflater.inflate(R.layout.fragment_displayerschedule, container);
 
 
+        location00 = view.findViewById(R.id.idtxtlocation00);
+
+
        // displayTextView = (TextView) view.findViewById(R.id.fragmentDisplayTextView);
      //   displayTextView.setText("Default");
 
         return view;
+    }
+
+
+    public void changeLocationTest(String string){
+        location00.setText(string);
     }
 }
