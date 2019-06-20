@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,11 +21,15 @@ public class FragmentDisplaySchedule extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_displayerschedule, container);
+        View view = inflater.inflate(R.layout.fragment_displayerschedule, container, false);
 
 
         location00 = view.findViewById(R.id.idtxtlocation00);
 
+
+        location00.setText("TEST");
+
+        changeLocationTest("Method is working");
 
        // displayTextView = (TextView) view.findViewById(R.id.fragmentDisplayTextView);
      //   displayTextView.setText("Default");
@@ -35,5 +40,6 @@ public class FragmentDisplaySchedule extends Fragment {
 
     public void changeLocationTest(String string){
         location00.setText(string);
+        Log.d(TAG, "changeLocationTest: Method is being called" + string);
     }
 }

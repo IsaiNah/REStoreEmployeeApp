@@ -1,5 +1,6 @@
 package com.example.restoreemployeeapp;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -37,7 +38,7 @@ public class FragmentControllerSchedule extends Fragment {
      void testDataPass(String data);
     }
 
-    @Override
+/*    @Override
     public void onAttachFragment(Fragment childFragment) {
         super.onAttachFragment(childFragment);
         try{
@@ -47,8 +48,17 @@ public class FragmentControllerSchedule extends Fragment {
         {
             Log.d(TAG, "onAttachFragment: Exception " + e);
         }
-    }
+    }*/
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try{
+            bottomSectionControllerListener = (BottomSectionControllerListener) context;
+        }catch (ClassCastException e) {
+            throw new ClassCastException(context.toString());
+        }
+    }
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -131,7 +141,7 @@ public class FragmentControllerSchedule extends Fragment {
             public void onClick(View v) {
                 Log.d(TAG, "onClick: Controller Fragment Test Button Click");
                 try {
-                BottomSectionControllerListener bottomSectionControllerListener = (BottomSectionControllerListener) getActivity();
+               // BottomSectionControllerListener bottomSectionControllerListener = (BottomSectionControllerListener) getActivity();
                 bottomSectionControllerListener.testDataPass("Data is passing");
                 //Setting text in display fragment
                 //displayFragmentTextView.setText("BUTTON PRESSED");

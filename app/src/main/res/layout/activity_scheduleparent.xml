@@ -17,9 +17,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    <!--android:id="@+id/fragmentDisplay"-->
     <fragment
-        android:id="@+id/fragmentDisplay"
+        android:id="@+id/fragdis"
         android:name="com.example.restoreemployeeapp.FragmentControllerSchedule"
         android:layout_width="411dp"
         android:layout_height="340dp"

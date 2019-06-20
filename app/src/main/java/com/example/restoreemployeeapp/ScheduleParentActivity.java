@@ -9,6 +9,8 @@ import android.util.Log;
 
 public class ScheduleParentActivity extends AppCompatActivity implements FragmentControllerSchedule.BottomSectionControllerListener{
     private static final String TAG = "SEA_Log";
+/*    FragmentDisplaySchedule fragmentDisplaySchedule;
+    FragmentControllerSchedule fragmentControllerSchedule;*/
 
 
     @Override
@@ -19,6 +21,10 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
         Intent intent = getIntent();
 
         String date = intent.getStringExtra("Date");
+
+       /* fragmentDisplaySchedule = new FragmentDisplaySchedule();
+        fragmentControllerSchedule = new FragmentControllerSchedule();*/
+
 
         //TODO as in quicki
         try {
@@ -37,8 +43,10 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
         Log.d(TAG, "testDataPass: Working " + data);
         //FragmentDisplaySchedule
 
-       // FragmentDisplaySchedule fragmentDisplaySchedule = getSupportFragmentManager().findFragmentById(R.id.fragmentDisplay);
+       // FragmentDisplaySchedule fragmentDisplaySchedule = (FragmentDisplaySchedule) getSupportFragmentManager().findFragmentById(R.id.fragmentDisplay);
+        //fragmentDisplaySchedule.changeLocationTest("Bed bugs are a menace");
 
-
+        FragmentDisplaySchedule fragmentDisplaySchedule = (FragmentDisplaySchedule) getSupportFragmentManager().findFragmentById(R.id.fragdis);
+        fragmentDisplaySchedule.changeLocationTest("OOOO");
     }
 }
