@@ -28,7 +28,8 @@ public class FragmentControllerSchedule extends Fragment {
 
     private RecyclerView recyclerView;
 
-    private List<User> userList; // TODO tmp decide if User Store Shift or user separated lists
+    private List<User> userList;
+    private List<Store> storeList;
 
     BottomSectionControllerListener bottomSectionControllerListener;
 
@@ -61,7 +62,30 @@ public class FragmentControllerSchedule extends Fragment {
         recyclerView = view.findViewById(R.id.schedule_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
-        //TODO For Testing
+        //TODO For Testing Load From File / DataBase
+
+        storeList = new ArrayList<>();
+
+        storeList.add(new Store(
+                "OroGold Scarborough",
+                "300 Borough Drive #101",
+                "M1P 4P5",
+                "647-123-4567"
+        ));
+        storeList.add(new Store(
+                "OroGold Brampton",
+                "25 Peel Centre Drive",
+                "L6T 3R5",
+                "647-123-4567"
+        ));
+        storeList.add(new Store(
+                "OroGold Barrie",
+                "509 Bayfield Street",
+                "L4M 4Z8",
+                "647-123-4567"
+        ));
+
+
         userList = new ArrayList<>();
 
         userList.add(new User(
