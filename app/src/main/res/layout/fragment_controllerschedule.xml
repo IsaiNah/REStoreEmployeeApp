@@ -2,10 +2,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout5"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <Button
+    <!--   <Button
         android:id="@+id/fragmentLeftButtonAndroid"
         android:layout_width="126dp"
         android:layout_height="wrap_content"
@@ -46,17 +47,65 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/fragmentLeftButtonIos"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0" />-->
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/schedule_recyclerview"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="29dp"
+        android:layout_height="381dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="480dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentLeftButtonAndroid"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_conversion_absoluteHeight="539dp"
+        tools:layout_conversion_absoluteWidth="376dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:drawable/bottom_bar"
+        android:orientation="horizontal"
+        android:paddingLeft="4.0dip"
+        android:paddingTop="5.0dip"
+        android:paddingRight="4.0dip"
+        android:paddingBottom="1.0dip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_conversion_absoluteHeight="62dp"
+        tools:layout_conversion_absoluteWidth="422dp">
+
+        <Button
+            android:id="@+id/idbtControllerStoreSelector"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:drawableLeft="@drawable/ic_check_green_24dp"
+            android:text="Store Select" />
+
+        <Button
+            android:id="@+id/idbtControllerShiftSelector"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:drawableLeft="@drawable/ic_close_red_24dp"
+            android:text="Shift Select" />
+
+        <Button
+            android:id="@+id/idbtControllerEmployeeSelector"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:drawableLeft="@drawable/ic_close_red_24dp"
+            android:text="Employee Select" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

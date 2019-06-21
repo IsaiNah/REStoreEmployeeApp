@@ -67,7 +67,7 @@ public class FragmentControllerSchedule extends Fragment {
         //TODO check
         //final FragmentActivity fragmentActivity = getActivity();
 
-        testButton = view.findViewById(R.id.fragmentLeftButtonAndroid);
+        testButton = view.findViewById(R.id.idbtControllerStoreSelector);
 
         //Setting up RecyclerView
         recyclerView = view.findViewById(R.id.schedule_recyclerview);

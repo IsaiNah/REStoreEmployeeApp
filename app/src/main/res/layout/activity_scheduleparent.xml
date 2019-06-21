@@ -4,16 +4,14 @@
     android:id="@+id/linearLayout4"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/WhiteSmoke"
-    >
+    android:background="@color/WhiteSmoke">
 
     <fragment
         android:id="@+id/fragdis"
         android:name="com.example.restoreemployeeapp.FragmentDisplaySchedule"
         android:layout_width="411dp"
-        android:layout_height="448dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/fragmentDisplay"
+        android:layout_height="390dp"
+        app:layout_constraintBottom_toTopOf="@+id/fragcon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,7 +20,7 @@
         android:id="@+id/fragcon"
         android:name="com.example.restoreemployeeapp.FragmentControllerSchedule"
         android:layout_width="411dp"
-        android:layout_height="340dp"
+        android:layout_height="341dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
