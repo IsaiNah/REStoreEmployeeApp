@@ -65,7 +65,7 @@ public class FragmentControllerSchedule extends Fragment {
         View view = inflater.inflate(R.layout.fragment_controllerschedule, container);
 
         //TODO check
-        final FragmentActivity fragmentActivity = getActivity();
+        //final FragmentActivity fragmentActivity = getActivity();
 
         testButton = view.findViewById(R.id.fragmentLeftButtonAndroid);
 

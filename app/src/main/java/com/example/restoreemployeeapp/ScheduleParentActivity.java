@@ -4,13 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 public class ScheduleParentActivity extends AppCompatActivity implements FragmentControllerSchedule.BottomSectionControllerListener{
     private static final String TAG = "SEA_Log";
-/*    FragmentDisplaySchedule fragmentDisplaySchedule;
-    FragmentControllerSchedule fragmentControllerSchedule;*/
+    FragmentDisplaySchedule fragmentDisplaySchedule;
+    FragmentControllerSchedule fragmentControllerSchedule;
+
+    private static final String FragDisplay = "Display";
+    private static final String FragSchedule = "Schedule";
 
 
     @Override
@@ -22,11 +26,23 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
 
         String date = intent.getStringExtra("Date");
 
-       /* fragmentDisplaySchedule = new FragmentDisplaySchedule();
-        fragmentControllerSchedule = new FragmentControllerSchedule();*/
+       // fragmentDisplaySchedule = new FragmentDisplaySchedule();
+        //fragmentControllerSchedule = new FragmentControllerSchedule();
 
+        FragmentManager fragmentManager = getSupportFragmentManager();
 
-        //TODO as in quicki
+        try {
+            fragmentDisplaySchedule = (FragmentDisplaySchedule) fragmentManager.findFragmentById(R.id.fragdis);
+            if (fragmentDisplaySchedule == null) {
+                Log.d(TAG, "onCreate: Fragment Schedule was null");
+            }
+        }catch (Exception e)
+        {
+            Log.d(TAG, "onCreate: Exception " + e);
+        }
+        //fragmentDisplaySchedule = fragmentManager.findFragmentByTag(FragDisplay);
+
+        /*//TODO as in quicki
         try {
             FragmentDisplaySchedule fragmentDisplaySchedule = new FragmentDisplaySchedule();
             fragmentDisplaySchedule.changeLocationTest("WORKING!!!");
@@ -34,7 +50,7 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
         {
             Log.d(TAG, "onCreate: Exception " + e);
         }
-        Log.d(TAG, "onCreate: Contents of intent extra " + date);
+        Log.d(TAG, "onCreate: Contents of intent extra " + date);*/
 
     }
 
@@ -43,10 +59,11 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
         Log.d(TAG, "testDataPass: Working " + data);
         //FragmentDisplaySchedule
 
-       // FragmentDisplaySchedule fragmentDisplaySchedule = (FragmentDisplaySchedule) getSupportFragmentManager().findFragmentById(R.id.fragmentDisplay);
-        //fragmentDisplaySchedule.changeLocationTest("Bed bugs are a menace");
+        //FragmentDisplaySchedule fragmentDisplaySchedule = (FragmentDisplaySchedule) getSupportFragmentManager().findFragmentById(R.id.fragmentDisplay);
+       // FragmentDisplaySchedule fragmentDisplaySchedule = (FragmentDisplaySchedule) getSupportFragmentManager().findFragmentById(R.id.fragdis);
+       // fragmentDisplaySchedule.changeLocationTest("Bed bugs are a menace");
 
-        FragmentDisplaySchedule fragmentDisplaySchedule = (FragmentDisplaySchedule) getSupportFragmentManager().findFragmentById(R.id.fragdis);
+        //FragmentDisplaySchedule fragmentDisplaySchedule = getSupportFragmentManager().findFragmentById(R.id.fragdis);
         fragmentDisplaySchedule.changeLocationTest("OOOO");
     }
 }
