@@ -38,18 +38,6 @@ public class FragmentControllerSchedule extends Fragment {
      void testDataPass(String data);
     }
 
-/*    @Override
-    public void onAttachFragment(Fragment childFragment) {
-        super.onAttachFragment(childFragment);
-        try{
-            Log.d(TAG, "onAttachFragment:");
-            bottomSectionControllerListener = (BottomSectionControllerListener) getContext();
-        }catch (Exception e)
-        {
-            Log.d(TAG, "onAttachFragment: Exception " + e);
-        }
-    }*/
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -124,30 +112,12 @@ public class FragmentControllerSchedule extends Fragment {
         //TODO Set Different Adapters According to which Button Was Selected
         recyclerView.setAdapter(adapterUsers);
 
-       // userList = view.findViewById(R.id)
-
-       /* try {
-            FragmentManager fragmentManager = fragmentActivity.getSupportFragmentManager();
-            //Getting FragmentDisplay
-            Fragment fragmentDisplay = fragmentManager.findFragmentById(R.id.fragmentDisplay);
-            final TextView displayFragmentTextView = fragmentDisplay.getView().findViewById(R.id.fragmentDisplayTextView);
-            displayFragmentTextView.setText("BUTTON PRESSED");
-        }catch (Exception e)
-        {
-            Log.d(TAG, "onCreateView: Exception " + e);
-        }*/
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: Controller Fragment Test Button Click");
                 try {
-               // BottomSectionControllerListener bottomSectionControllerListener = (BottomSectionControllerListener) getActivity();
                 bottomSectionControllerListener.testDataPass("Data is passing");
-                //Setting text in display fragment
-                //displayFragmentTextView.setText("BUTTON PRESSED");
-                //Getting Textview in Display Fragment in order to change data
-
-
                 }catch (Exception e)
                 {
                     Log.d(TAG, "onClick: Exception " + e);

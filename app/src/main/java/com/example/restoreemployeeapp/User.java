@@ -6,7 +6,7 @@ public class User {
 
     private static final String TAG = "SEA_Log";
 
-    private int _id;
+    private int id;
     private String  email, firstName, lastName, password, addressone, postal, phone = "Not Set";
     private int image;
     //Seperating reg and log varaibles tmp?
@@ -30,7 +30,7 @@ public  User(String email, String firstName, String lastName, String password, S
         this.logEmail = username;
         this.logPassword = password;
         //TODO Load all data from database in this case
-        Log.d(TAG, "Location in user | New user created :" + email + " " +  password + " " );
+        Log.d(TAG, "Location in user | New user created : " + email + " " +  password + " " );
     }
 
 
@@ -38,7 +38,7 @@ public  User(String email, String firstName, String lastName, String password, S
 
 
     public int get_id() {
-        return _id;
+        return id;
     }
 
     public String getEmail() {
