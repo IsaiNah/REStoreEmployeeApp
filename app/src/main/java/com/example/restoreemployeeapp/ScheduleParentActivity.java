@@ -12,9 +12,13 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
     private static final String TAG = "SEA_Log";
     FragmentDisplaySchedule fragmentDisplaySchedule;
     FragmentControllerSchedule fragmentControllerSchedule;
+    String date;
+/*
 
     private static final String FragDisplay = "Display";
     private static final String FragSchedule = "Schedule";
+*/
+
 
 
     @Override
@@ -24,13 +28,24 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
 
         Intent intent = getIntent();
 
-        String date = intent.getStringExtra("Date");
+        date = intent.getStringExtra("Date");
+
+        Log.d(TAG, "onCreate: Date from getIntent = " + date );
 
        // fragmentDisplaySchedule = new FragmentDisplaySchedule();
         //fragmentControllerSchedule = new FragmentControllerSchedule();
 
         FragmentManager fragmentManager = getSupportFragmentManager();
 
+        try {
+            fragmentDisplaySchedule = (FragmentDisplaySchedule) fragmentManager.findFragmentById(R.id.fragdis);
+            if (fragmentDisplaySchedule == null) {
+                Log.d(TAG, "onCreate: Fragment Schedule was null");
+            }
+        }catch (Exception e)
+        {
+            Log.d(TAG, "onCreate: Exception " + e);
+        }
         try {
             fragmentDisplaySchedule = (FragmentDisplaySchedule) fragmentManager.findFragmentById(R.id.fragdis);
             if (fragmentDisplaySchedule == null) {
@@ -65,5 +80,9 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
 
         //FragmentDisplaySchedule fragmentDisplaySchedule = getSupportFragmentManager().findFragmentById(R.id.fragdis);
         fragmentDisplaySchedule.changeLocationTest("OOOO");
+    }
+
+    public String getDate() {
+        return date;
     }
 }

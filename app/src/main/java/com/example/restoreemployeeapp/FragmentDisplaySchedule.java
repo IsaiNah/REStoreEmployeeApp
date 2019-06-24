@@ -14,7 +14,7 @@ import org.w3c.dom.Text;
 
 public class FragmentDisplaySchedule extends Fragment {
     private static final String TAG = "SEA_Log";
-    private TextView location00, location01, location02; //TODO tmp, change to array
+    private TextView dateSelected ,location00, location01, location02; //TODO tmp, change to array
 
     //TODO Use Class For Scheduling and Contain in Array?
 
@@ -23,11 +23,17 @@ public class FragmentDisplaySchedule extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_displayerschedule, container, false);
 
+        String acquireDate = ((ScheduleParentActivity)getActivity()).getDate();
 
+        dateSelected = view.findViewById(R.id.dateSelected);
         location00 = view.findViewById(R.id.idtxtlocation00);
 
-
+        dateSelected.setText(acquireDate);
         location00.setText("TEST");
+
+
+
+        Log.d(TAG, "onCreateView: Date acquired : " + acquireDate);
 
         changeLocationTest("Method is working");
 
