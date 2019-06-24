@@ -65,9 +65,7 @@ public  User(String email, String firstName, String lastName, String password, S
         return postal;
     }
 
-    public String getPhone() {
-        return phone;
-    }
+    public String getPhone() { return phone; }
 
     public static String getLogEmail() {
         return logEmail;

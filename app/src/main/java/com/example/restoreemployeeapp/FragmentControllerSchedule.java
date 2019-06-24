@@ -23,7 +23,7 @@ import java.util.List;
 
 public class FragmentControllerSchedule extends Fragment {
     private static final String TAG = "SEA_Log";
-    private Button testButton;
+    private Button storeButton, shiftButton, employeeButton;
    // private TextView displayFragmentTextView;
 
     private RecyclerView recyclerView;
@@ -51,106 +51,127 @@ public class FragmentControllerSchedule extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_controllerschedule, container);
+            View view = inflater.inflate(R.layout.fragment_controllerschedule, container);
 
-        //TODO check
-        //final FragmentActivity fragmentActivity = getActivity();
+            //TODO check
+            //final FragmentActivity fragmentActivity = getActivity();
 
-        testButton = view.findViewById(R.id.idbtControllerStoreSelector);
+            storeButton = view.findViewById(R.id.idbtControllerStoreSelector);
+            shiftButton = view.findViewById(R.id.idbtControllerShiftSelector);
+            employeeButton = view.findViewById(R.id.idbtControllerEmployeeSelector);
 
-        //Setting up RecyclerView
-        recyclerView = view.findViewById(R.id.schedule_recyclerview);
-        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+            //Setting up RecyclerView
+            recyclerView = view.findViewById(R.id.schedule_recyclerview);
+            recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
-        //TODO For Testing Load From File / DataBase
+            //TODO For Testing Load From File / DataBase
 
-        storeList = new ArrayList<>();
+            storeList = new ArrayList<>();
 
-        storeList.add(new Store(
-                "OroGold Scarborough",
-                "300 Borough Drive #101",
-                "M1P 4P5",
-                "647-123-4567"
-        ));
-        storeList.add(new Store(
-                "OroGold Brampton",
-                "25 Peel Centre Drive",
-                "L6T 3R5",
-                "647-123-4567"
-        ));
-        storeList.add(new Store(
-                "OroGold Barrie",
-                "509 Bayfield Street",
-                "L4M 4Z8",
-                "647-123-4567"
-        ));
-
-
-        userList = new ArrayList<>();
-
-        userList.add(new User(
-                "employee00@reroyaltrading.ca",
-                "First",
-                "Last",
-                "123",
-                "200 Connie Cres",
-                "L4K 0K1",
-                "647-123-4567"
-
-        ));
-        userList.add(new User(
-                "employee01@reroyaltrading.ca",
-                "First",
-                "Last",
-                "123",
-                "200 Connie Cres",
-                "L4K 0K1",
-                "647-123-4567"
-
-        ));
-        userList.add(new User(
-                "employee02@reroyaltrading.ca",
-                "First",
-                "Last",
-                "123",
-                "200 Connie Cres",
-                "L4K 0K1",
-                "647-123-4567"
-
-        ));
-        userList.add(new User(
-                "employee03@reroyaltrading.ca",
-                "First",
-                "Last",
-                "123",
-                "200 Connie Cres",
-                "L4K 0K1",
-                "647-123-4567"
-
-        ));
-
-        // Calling RecyclerView adapter
-        RecyclerViewAdapterUsers adapterUsers = new RecyclerViewAdapterUsers(view.getContext(), userList, passData);
+            storeList.add(new Store(
+                    "OroGold Scarborough",
+                    "300 Borough Drive #101",
+                    "M1P 4P5",
+                    "647-123-4567"
+            ));
+            storeList.add(new Store(
+                    "OroGold Brampton",
+                    "25 Peel Centre Drive",
+                    "L6T 3R5",
+                    "647-123-4567"
+            ));
+            storeList.add(new Store(
+                    "OroGold Barrie",
+                    "509 Bayfield Street",
+                    "L4M 4Z8",
+                    "647-123-4567"
+            ));
 
 
-        //TODO Set Different Adapters According to which Button Was Selected
-        recyclerView.setAdapter(adapterUsers);
+            userList = new ArrayList<>();
 
-        testButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(TAG, "onClick: Controller Fragment Test Button Click");
-                try {
-                bottomSectionControllerListener.testDataPass("Data is passing");
-                }catch (Exception e)
-                {
-                    Log.d(TAG, "onClick: Exception " + e);
+            userList.add(new User(
+                    "employee00@reroyaltrading.ca",
+                    "First",
+                    "Last",
+                    "123",
+                    "200 Connie Cres",
+                    "L4K 0K1",
+                    "647-123-4567"
+
+            ));
+            userList.add(new User(
+                    "employee01@reroyaltrading.ca",
+                    "First",
+                    "Last",
+                    "123",
+                    "200 Connie Cres",
+                    "L4K 0K1",
+                    "647-123-4567"
+
+            ));
+            userList.add(new User(
+                    "employee02@reroyaltrading.ca",
+                    "First",
+                    "Last",
+                    "123",
+                    "200 Connie Cres",
+                    "L4K 0K1",
+                    "647-123-4567"
+
+            ));
+            userList.add(new User(
+                    "employee03@reroyaltrading.ca",
+                    "First",
+                    "Last",
+                    "123",
+                    "200 Connie Cres",
+                    "L4K 0K1",
+                    "647-123-4567"
+
+            ));
+
+            // Calling RecyclerView adapters
+            final RecyclerViewAdapterUsers adapterUsers = new RecyclerViewAdapterUsers(view.getContext(), userList, passData);
+            final RecyclerViewAdapterStores adapterStores = new RecyclerViewAdapterStores(view.getContext(), storeList);
+
+            //TODO Set Different Adapters According to which Button Was Selected
+
+
+            recyclerView.setAdapter(adapterUsers);
+
+            storeButton.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    Log.d(TAG, "onClick: StoreButton");
+                    recyclerView.setAdapter(adapterStores);
                 }
-            }
-        });
+            });
+
+            employeeButton.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    Log.d(TAG, "onClick: ShiftButton");
+                    recyclerView.setAdapter(adapterUsers);
+                }
+            });
+
+            shiftButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //recyclerView.setAdapter(adapterUsers);
+                    Log.d(TAG, "onClick: Controller Fragment Test Button Click");
+                    try {
+                    bottomSectionControllerListener.testDataPass("Data is passing");
+                    }catch (Exception e)
+                    {
+                        Log.d(TAG, "onClick: Exception " + e);
+                    }
+                }
+            });
 
 
-        return view;
+            return view;
     }
 
     PassData passData = new PassData() {
