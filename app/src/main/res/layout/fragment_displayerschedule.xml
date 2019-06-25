@@ -39,8 +39,8 @@
         android:layout_marginStart="9dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="238dp"
-        android:textColor="@color/Black"
         android:text="0000/00/00"
+        android:textColor="@color/Black"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,85 +67,70 @@
         android:id="@+id/idtxtlocation00"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="37dp"
-        android:layout_marginEnd="164dp"
         android:gravity="center"
         android:text="Erin Mills"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        tools:layout_editor_absoluteX="251dp"
+        tools:layout_editor_absoluteY="83dp" />
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="189dp"
         android:text="First"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        tools:layout_editor_absoluteX="251dp"
+        tools:layout_editor_absoluteY="83dp" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="184dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="180dp"
-        android:layout_marginBottom="50dp"
         android:text="Second"
-        app:layout_constraintBottom_toTopOf="@+id/textView13"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        tools:layout_editor_absoluteX="251dp"
+        tools:layout_editor_absoluteY="83dp" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="171dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="172dp"
-        android:layout_marginBottom="25dp"
         android:gravity="center"
         android:text="London"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView17"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        tools:layout_editor_absoluteX="299dp"
+        tools:layout_editor_absoluteY="83dp" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="179dp"
-        android:layout_marginTop="46dp"
-        android:layout_marginEnd="179dp"
         android:gravity="center"
         android:text="Barrie"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        tools:layout_editor_absoluteX="246dp"
+        tools:layout_editor_absoluteY="5dp" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="142dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginBottom="344dp"
         android:gravity="center"
         android:text="Vaughan Mills"
         android:textSize="20sp"
+        tools:layout_editor_absoluteX="190dp"
+        tools:layout_editor_absoluteY="4dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recylcerview_scheduleemployees"
+        android:layout_width="395dp"
+        android:layout_height="605dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idtxtlocation00" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
 
 </android.support.constraint.ConstraintLayout>
