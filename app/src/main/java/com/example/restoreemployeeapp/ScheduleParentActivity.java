@@ -2,17 +2,24 @@ package com.example.restoreemployeeapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.service.autofill.UserData;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
+
+import java.util.List;
 
 public class ScheduleParentActivity extends AppCompatActivity implements FragmentControllerSchedule.BottomSectionControllerListener{
     private static final String TAG = "SEA_Log";
     FragmentDisplaySchedule fragmentDisplaySchedule;
     FragmentControllerSchedule fragmentControllerSchedule;
     String date;
+   // private RecyclerView recyclerView;
 /*
 
     private static final String FragDisplay = "Display";
@@ -32,10 +39,30 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
 
         Log.d(TAG, "onCreate: Date from getIntent = " + date );
 
+
+
+        // Setting up recyclerview for drag and drop
+        RecyclerView recyclerView = findViewById(R.id.recylcerview_scheduleemployees);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //Adapter TODO FINISH HERE https://therubberduckdev.wordpress.com/2017/10/24/android-recyclerview-drag-and-drop-and-swipe-to-dismiss/
+        // RecyclerViewAdapterUsers recyclerViewAdapterUsers = new RecyclerViewAdapterUsers(view.getContext(), userList, passData);
+        UserListAdapter userListAdapter = new UserListAdapter();
+        SwipeAndDragHelper swipeAndDragHelper = new SwipeAndDragHelper(userListAdapter);
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(swipeAndDragHelper);
+        userListAdapter.setTouchHelper(itemTouchHelper);
+        recyclerView.setAdapter(userListAdapter);
+        itemTouchHelper.attachToRecyclerView(recyclerView);
+
+        //Creating User Data //TODO transfer all other data like this
+        UsersData usersData = new UsersData();
+        List<Employee> employeeList = usersData.getEmployeesList();
+        userListAdapter.setUserList(employeeList);
+
+
        // fragmentDisplaySchedule = new FragmentDisplaySchedule();
         //fragmentControllerSchedule = new FragmentControllerSchedule();
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
+   /*     FragmentManager fragmentManager = getSupportFragmentManager();
 
         try {
             fragmentDisplaySchedule = (FragmentDisplaySchedule) fragmentManager.findFragmentById(R.id.fragdis);
@@ -54,7 +81,7 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
         }catch (Exception e)
         {
             Log.d(TAG, "onCreate: Exception " + e);
-        }
+        }*/
         //fragmentDisplaySchedule = fragmentManager.findFragmentByTag(FragDisplay);
 
         /*//TODO as in quicki
@@ -79,7 +106,7 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
        // fragmentDisplaySchedule.changeLocationTest("Bed bugs are a menace");
 
         //FragmentDisplaySchedule fragmentDisplaySchedule = getSupportFragmentManager().findFragmentById(R.id.fragdis);
-        fragmentDisplaySchedule.changeLocationTest("OOOO");
+        //fragmentDisplaySchedule.changeLocationTest("OOOO");
     }
 
     public String getDate() {

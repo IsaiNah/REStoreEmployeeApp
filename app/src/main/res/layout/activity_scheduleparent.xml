@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:background="@color/WhiteSmoke">
 
-    <fragment
+<!--    <fragment
         android:id="@+id/fragdis"
         android:name="com.example.restoreemployeeapp.FragmentDisplaySchedule"
         android:layout_width="411dp"
@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <!--android:id="@+id/fragmentDisplay"-->
+    &lt;!&ndash;android:id="@+id/fragmentDisplay"&ndash;&gt;
     <fragment
         android:id="@+id/fragcon"
         android:name="com.example.restoreemployeeapp.FragmentControllerSchedule"
@@ -24,5 +24,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragdis" />
+        app:layout_constraintTop_toBottomOf="@+id/fragdis" />-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recylcerview_scheduleemployees"
+        android:layout_width="395dp"
+        android:layout_height="715dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
