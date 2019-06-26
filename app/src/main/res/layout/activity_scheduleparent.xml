@@ -28,12 +28,54 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recylcerview_scheduleemployees"
         android:layout_width="0dp"
-        android:layout_height="715dp"
+        android:layout_height="608dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnsetschedule"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSelectedDateTitle" />
+
+    <Button
+        android:id="@+id/btnsetschedule"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="145dp"
+        android:text="Set Schedule"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recylcerview_scheduleemployees" />
+
+    <TextView
+        android:id="@+id/txtSelectedDateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="10dp"
+        android:text="Date of Schedule :"
+        app:layout_constraintBottom_toTopOf="@+id/recylcerview_scheduleemployees"
+        app:layout_constraintEnd_toStartOf="@+id/txtSelectedDate"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtSelectedDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="10dp"
+        android:text="00/00/0000"
+        app:layout_constraintBottom_toTopOf="@+id/recylcerview_scheduleemployees"
+        app:layout_constraintStart_toEndOf="@+id/txtSelectedDateTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.615" />
 </android.support.constraint.ConstraintLayout>
