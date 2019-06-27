@@ -52,72 +52,16 @@
         android:layout_width="115dp"
         android:layout_height="37dp"
         android:layout_marginStart="148dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="148dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center"
         android:text="Schedule"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintBottom_toTopOf="@+id/recylcerview_scheduleemployees"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/dateSelected" />
 
-    <TextView
-        android:id="@+id/idtxtlocation00"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Erin Mills"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="251dp"
-        tools:layout_editor_absoluteY="83dp" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="First"
-        tools:layout_editor_absoluteX="251dp"
-        tools:layout_editor_absoluteY="83dp" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Second"
-        tools:layout_editor_absoluteX="251dp"
-        tools:layout_editor_absoluteY="83dp" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="London"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="299dp"
-        tools:layout_editor_absoluteY="83dp" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Barrie"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="246dp"
-        tools:layout_editor_absoluteY="5dp" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Vaughan Mills"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="4dp" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recylcerview_scheduleemployees"

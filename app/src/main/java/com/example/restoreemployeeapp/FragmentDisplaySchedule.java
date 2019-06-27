@@ -36,7 +36,7 @@ public class FragmentDisplaySchedule extends Fragment {
         String acquireDate = ((ScheduleParentActivity)getActivity()).getDate();
 
         dateSelected = view.findViewById(R.id.dateSelected);
-        location00 = view.findViewById(R.id.idtxtlocation00);
+        //location00 = view.findViewById(R.id.idtxtlocation00);
 
         dateSelected.setText(acquireDate);
         location00.setText("TEST");

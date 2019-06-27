@@ -11,6 +11,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -19,6 +23,9 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
     FragmentDisplaySchedule fragmentDisplaySchedule;
     FragmentControllerSchedule fragmentControllerSchedule;
     String date;
+    private TextView selectedDate;
+    private Button btnSetSchedule;
+    private ImageView closeSchedule;
    // private RecyclerView recyclerView;
 /*
 
@@ -33,18 +40,23 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scheduleparent);
 
+        //Getting passed date
         Intent intent = getIntent();
-
         date = intent.getStringExtra("Date");
 
-        Log.d(TAG, "onCreate: Date from getIntent = " + date );
 
+        Log.d(TAG, "onCreate: Date from getIntent = " + date );
+        selectedDate = findViewById(R.id.txtSelectedDate);
+        selectedDate.setText(date);
+
+        closeSchedule = findViewById(R.id.idcloseschedule);
+        btnSetSchedule = findViewById(R.id.btnsetschedule);
 
 
         // Setting up recyclerview for drag and drop
         RecyclerView recyclerView = findViewById(R.id.recylcerview_scheduleemployees);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        //Adapter TODO FINISH HERE https://therubberduckdev.wordpress.com/2017/10/24/android-recyclerview-drag-and-drop-and-swipe-to-dismiss/
+        //Adapter 
         // RecyclerViewAdapterUsers recyclerViewAdapterUsers = new RecyclerViewAdapterUsers(view.getContext(), userList, passData);
         UserListAdapter userListAdapter = new UserListAdapter();
         SwipeAndDragHelper swipeAndDragHelper = new SwipeAndDragHelper(userListAdapter);
@@ -59,6 +71,21 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
         userListAdapter.setUserList(employeeList);
 
 
+        closeSchedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: Close Schedule Clicked");
+                finish();
+            }
+        });
+        
+        btnSetSchedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: Set Schedule Clicked");
+            }
+        });
+        
        // fragmentDisplaySchedule = new FragmentDisplaySchedule();
         //fragmentControllerSchedule = new FragmentControllerSchedule();
 
