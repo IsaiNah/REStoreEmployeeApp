@@ -24,8 +24,10 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
     FragmentControllerSchedule fragmentControllerSchedule;
     String date;
     private TextView selectedDate;
-    private Button btnSetSchedule;
+    private Button btnSetSchedule, btnResetUsers;
     private ImageView closeSchedule;
+    private UserListAdapter userListAdapter;
+    private List<Employee> employeeList;
    // private RecyclerView recyclerView;
 /*
 
@@ -49,6 +51,7 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
         selectedDate = findViewById(R.id.txtSelectedDate);
         selectedDate.setText(date);
 
+        btnResetUsers = findViewById(R.id.btnresetusers);
         closeSchedule = findViewById(R.id.idcloseschedule);
         btnSetSchedule = findViewById(R.id.btnsetschedule);
 
@@ -58,7 +61,7 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         //Adapter 
         // RecyclerViewAdapterUsers recyclerViewAdapterUsers = new RecyclerViewAdapterUsers(view.getContext(), userList, passData);
-        UserListAdapter userListAdapter = new UserListAdapter();
+        /*UserListAdapter*/ userListAdapter = new UserListAdapter();
         SwipeAndDragHelper swipeAndDragHelper = new SwipeAndDragHelper(userListAdapter);
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(swipeAndDragHelper);
         userListAdapter.setTouchHelper(itemTouchHelper);
@@ -67,9 +70,18 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
 
         //Creating User Data //TODO transfer all other data like this
         UsersData usersData = new UsersData();
-        List<Employee> employeeList = usersData.getEmployeesList();
+        employeeList = usersData.getEmployeesList();
         userListAdapter.setUserList(employeeList);
 
+
+        btnResetUsers.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: Reset Users Clicked");
+                //userListAdapter.setUserList(employeeList);
+                recreate();
+            }
+        });
 
         closeSchedule.setOnClickListener(new View.OnClickListener() {
             @Override
