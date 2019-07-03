@@ -55,6 +55,7 @@ public class UsersData {
             if (!usersList.get(i).getRank().equals(type))
             {
                 Log.d(TAG, "sortUsers: Not right type");
+               // usersList.remove(i); //TODO use 2 lists?
             }else
             {
                 Log.d(TAG, "sortUsers: Right type");
