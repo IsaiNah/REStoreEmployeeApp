@@ -12,13 +12,17 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
-public class ScheduleParentActivity extends AppCompatActivity implements FragmentControllerSchedule.BottomSectionControllerListener{
+public class ScheduleParentActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener ,FragmentControllerSchedule.BottomSectionControllerListener{
     private static final String TAG = "SEA_Log";
     FragmentDisplaySchedule fragmentDisplaySchedule;
     FragmentControllerSchedule fragmentControllerSchedule;
@@ -28,6 +32,10 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
     private ImageView closeSchedule;
     private UserListAdapter userListAdapter;
     private List<Employee> employeeList;
+    private Spinner filterSpinner;
+    //Data for spinner
+    private String[] filterData = {"All", "Gold", "Silver", "Bronze"};
+
    // private RecyclerView recyclerView;
 /*
 
@@ -46,6 +54,8 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
         Intent intent = getIntent();
         date = intent.getStringExtra("Date");
 
+       /* registerForContextMenu();*/
+
 
         Log.d(TAG, "onCreate: Date from getIntent = " + date );
         selectedDate = findViewById(R.id.txtSelectedDate);
@@ -55,6 +65,15 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
         closeSchedule = findViewById(R.id.idcloseschedule);
         btnSetSchedule = findViewById(R.id.btnsetschedule);
 
+        //Setting Spinner
+        filterSpinner = findViewById(R.id.btnspinnerfilter);
+        filterSpinner.setOnItemSelectedListener(this);
+        //Creating Array Adapter for spinner
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,filterData);
+        //Style for spinner
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting Spinner adapter
+        filterSpinner.setAdapter(arrayAdapter);
 
         // Setting up recyclerview for drag and drop
         RecyclerView recyclerView = findViewById(R.id.recylcerview_scheduleemployees);
@@ -73,6 +92,8 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
         employeeList = usersData.getEmployeesList();
         userListAdapter.setUserList(employeeList);
 
+        //Test for sorting users
+        usersData.sortUsers("Gold");
 
         btnResetUsers.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -132,6 +153,16 @@ public class ScheduleParentActivity extends AppCompatActivity implements Fragmen
             Log.d(TAG, "onCreate: Exception " + e);
         }
         Log.d(TAG, "onCreate: Contents of intent extra " + date);*/
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        Toast.makeText(getApplicationContext(), filterData[position],Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
 
     }
 

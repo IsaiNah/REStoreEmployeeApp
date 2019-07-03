@@ -70,7 +70,7 @@
         android:id="@+id/txtSelectedDateTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="10dp"
@@ -84,9 +84,9 @@
         android:id="@+id/txtSelectedDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="8dp"
         android:layout_marginBottom="10dp"
-        android:text="00/00/0000"
+        android:text="0000/00/00"
         app:layout_constraintBottom_toTopOf="@+id/recylcerview_scheduleemployees"
         app:layout_constraintStart_toEndOf="@+id/txtSelectedDateTitle"
         app:layout_constraintTop_toTopOf="parent"
@@ -105,4 +105,17 @@
         app:layout_constraintStart_toEndOf="@+id/txtSelectedDate"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_close_red_24dp" />
+
+    <Spinner
+        android:id="@+id/btnspinnerfilter"
+        android:layout_width="109dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/recylcerview_scheduleemployees"
+        app:layout_constraintEnd_toStartOf="@+id/idcloseschedule"
+        app:layout_constraintStart_toEndOf="@+id/txtSelectedDate"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

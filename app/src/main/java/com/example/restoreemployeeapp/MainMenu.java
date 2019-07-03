@@ -235,8 +235,13 @@ try {
                             fragmentManage).commit();
                 break;
             case R.id.nav_manageschedule:
-                FragmentDialogDatePicker fragmentDialogDatePicker = new FragmentDialogDatePicker();
-                fragmentDialogDatePicker.show(getSupportFragmentManager(), "Schedule Date");
+                try {
+                    FragmentDialogDatePicker fragmentDialogDatePicker = new FragmentDialogDatePicker();
+                    fragmentDialogDatePicker.show(getSupportFragmentManager(), "Schedule Date");
+                }catch (Exception e)
+                {
+                    Log.d(TAG, "onNavigationItemSelected: Exception " + e);
+                }
                 break;
             case R.id.nav_useraccount:
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

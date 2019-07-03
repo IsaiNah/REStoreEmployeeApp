@@ -10,12 +10,14 @@ public class Employee {
     private String name;
     private String imageUrl;
     private String type;
+    private String rank;
 
-    public Employee(int id, String name, String imageUrl, String type) {
+    public Employee(int id, String name, String imageUrl, String type, String rank) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
         this.type = type;
+        this.rank = rank;
     }
 
     public Employee(Employee employee) {
@@ -23,6 +25,7 @@ public class Employee {
         this.name = employee.name;
         this.imageUrl = employee.imageUrl;
         this.type = employee.type;
+        this.rank = employee.rank;
     }
 
     public int getId() {
@@ -39,5 +42,9 @@ public class Employee {
 
     public String getType() {
         return type;
+    }
+
+    public String getRank(){
+        return rank;
     }
 }
