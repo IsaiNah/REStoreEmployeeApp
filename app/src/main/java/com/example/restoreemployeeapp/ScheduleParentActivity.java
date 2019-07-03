@@ -31,11 +31,11 @@ public class ScheduleParentActivity extends AppCompatActivity implements Adapter
     private Button btnSetSchedule, btnResetUsers;
     private ImageView closeSchedule;
     private UserListAdapter userListAdapter;
-    private List<Employee> employeeList;
+    private List<Employee> employeeList, employeeListGold, employeeListSilver, employeeListBronze; // Full list + sorted lists
     private Spinner filterSpinner;
     //Data for spinner
     private String[] filterData = {"All", "Gold", "Silver", "Bronze"};
-
+    private UsersData usersData;
    // private RecyclerView recyclerView;
 /*
 
@@ -88,12 +88,14 @@ public class ScheduleParentActivity extends AppCompatActivity implements Adapter
         itemTouchHelper.attachToRecyclerView(recyclerView);
 
         //Creating User Data //TODO transfer all other data like this
-        UsersData usersData = new UsersData();
+         usersData = new UsersData();
         employeeList = usersData.getEmployeesList();
         userListAdapter.setUserList(employeeList);
 
         //Test for sorting users
-        usersData.sortUsers("Gold");
+        employeeListGold = usersData.sortUsers("Gold");
+        employeeListSilver = usersData.sortUsers("Silver");
+        //employeeListBronze = usersData.sortUsers("Bronze");
 
         btnResetUsers.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -158,7 +160,27 @@ public class ScheduleParentActivity extends AppCompatActivity implements Adapter
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        Log.d(TAG, "onItemSelected: Selected, Position = " + position + " id = " + id);
         Toast.makeText(getApplicationContext(), filterData[position],Toast.LENGTH_LONG).show();
+        switch (position) {
+        case 0:
+            userListAdapter.setUserList(employeeList);
+           // employeeListGold = usersData.sortUsers("Gold");
+        break;
+            case 1:
+                userListAdapter.setUserList(employeeListGold);
+             //   employeeListGold = usersData.sortUsers("Silver");
+                break;
+            case 2:
+                userListAdapter.setUserList(employeeListSilver);
+                //   employeeListGold = usersData.sortUsers("Silver");
+                break;
+            case 3:
+                userListAdapter.setUserList(employeeListBronze);
+                //   employeeListGold = usersData.sortUsers("Silver");
+                break;
+
+        }
     }
 
     @Override

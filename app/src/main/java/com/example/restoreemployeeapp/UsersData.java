@@ -48,6 +48,7 @@ public class UsersData {
     public List<Employee> sortUsers(String type) {
 
         for (int i =0; i < usersList.size(); i++) {
+
             //TODO create var for set and not set and only filter not set
             Log.d(TAG, "sortUsers: " + i + type);
             String name = usersList.get(i).getName();
@@ -55,7 +56,8 @@ public class UsersData {
             if (!usersList.get(i).getRank().equals(type))
             {
                 Log.d(TAG, "sortUsers: Not right type");
-               // usersList.remove(i); //TODO use 2 lists?
+                usersList.remove(i); //TODO use 2 lists?
+
             }else
             {
                 Log.d(TAG, "sortUsers: Right type");
