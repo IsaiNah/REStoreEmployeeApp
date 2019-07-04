@@ -95,7 +95,7 @@ public class ScheduleParentActivity extends AppCompatActivity implements Adapter
         //Test for sorting users
         employeeListGold = usersData.sortUsers("Gold");
         employeeListSilver = usersData.sortUsers("Silver");
-        //employeeListBronze = usersData.sortUsers("Bronze");
+        employeeListBronze = usersData.sortUsers("Bronze");
 
         btnResetUsers.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -172,7 +172,7 @@ public class ScheduleParentActivity extends AppCompatActivity implements Adapter
              //   employeeListGold = usersData.sortUsers("Silver");
                 break;
             case 2:
-                userListAdapter.setUserList(employeeListSilver);
+               userListAdapter.setUserList(employeeListSilver);
                 //   employeeListGold = usersData.sortUsers("Silver");
                 break;
             case 3:
