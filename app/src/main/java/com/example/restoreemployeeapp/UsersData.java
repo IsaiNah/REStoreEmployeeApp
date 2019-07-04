@@ -54,16 +54,13 @@ public class UsersData {
            // Log.d(TAG, "sortUsers: " + i + type);
             String name = usersList.get(i).getName();
             Log.d(TAG, "sortUsers: " + name + " " + i);
-            if (!usersList.get(i).getRank().equals(type)/* && !usersList.get(i).getName().equals("")*/)
-            {
-                Log.d(TAG, "sortUsers: Not right type");
-               // usersList.remove(i); //TODO use 2 lists?
-
-            }else
+            if (usersList.get(i).getRank().equals(type)  || usersList.get(i).getRank().equals("") && usersList.get(i).getRank().equals("")/* && !usersList.get(i).getName().equals("")*/)
             {
                 Log.d(TAG, "sortUsers: Right type");
                 newList.add(usersList.get(i));
-                //usersList.get(i)
+            }else
+            {
+                Log.d(TAG, "sortUsers: Not Right type");
             }
         }
 
