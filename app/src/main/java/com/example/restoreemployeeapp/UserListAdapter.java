@@ -3,6 +3,7 @@ package com.example.restoreemployeeapp;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,6 +19,7 @@ import java.util.List;
 
 public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements
         SwipeAndDragHelper.ActionCompletionContract {
+    private static final String TAG = "SEA_Log";
     private static final int USER_TYPE = 1;
     private static final int HEADER_TYPE = 2;
     private List<Employee> usersList;
@@ -60,6 +62,7 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         } else {
             SectionHeaderViewHolder headerViewHolder = (SectionHeaderViewHolder) holder;
             headerViewHolder.sectionTitle.setText(usersList.get(position).getType());
+
         }
     }
 
@@ -101,4 +104,6 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         this.touchHelper = touchHelper;
     }
+
+
 }

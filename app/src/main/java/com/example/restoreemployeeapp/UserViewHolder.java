@@ -22,4 +22,6 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
         username = itemView.findViewById(R.id.textview_name);
         reorderView = itemView.findViewById(R.id.imageview_reorder);
     }
+
+
 }

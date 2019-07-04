@@ -158,6 +158,7 @@ public class ScheduleParentActivity extends AppCompatActivity implements Adapter
 
     }
 
+    // Filter
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         Log.d(TAG, "onItemSelected: Selected, Position = " + position + " id = " + id);
