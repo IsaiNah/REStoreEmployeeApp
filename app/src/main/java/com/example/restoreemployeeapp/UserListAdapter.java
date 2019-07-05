@@ -67,13 +67,14 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             headerViewHolder.sectionTitle.setText(usersList.get(position).getType());
         }
         //TODO TEST
+      //final  FragmentManager fragmentManager = new ;
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: ");
                 //TODO Finish this using interface to pass data to other window where fragment manager can be used
-                //FragmentDialogSelectStoreExpanded fragmentDialogSelectStoreExpanded = new FragmentDialogSelectStoreExpanded();
-                //fragmentDialogSelectStoreExpanded.show(FragmentManager, "Stores");
+             //   FragmentDialogSelectStoreExpanded fragmentDialogSelectStoreExpanded = new FragmentDialogSelectStoreExpanded();
+             //   fragmentDialogSelectStoreExpanded.show(fragmentManager, "Stores");
             }
         });
 
