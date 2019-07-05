@@ -182,7 +182,7 @@ public class ScheduleParentActivity extends AppCompatActivity implements Adapter
 
                 break;
             case 3:
-                employeeListGold = usersData.sortUsers("Silver");
+                employeeListGold = usersData.sortUsers("Bronze");
                 userListAdapter.setUserList(employeeListBronze);
                 break;
 

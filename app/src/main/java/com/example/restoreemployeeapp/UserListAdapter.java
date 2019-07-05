@@ -1,5 +1,6 @@
 package com.example.restoreemployeeapp;
 
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.text.TextUtils;
@@ -24,6 +25,8 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private static final int HEADER_TYPE = 2;
     private List<Employee> usersList;
     private ItemTouchHelper touchHelper;
+
+
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -62,9 +65,17 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         } else {
             SectionHeaderViewHolder headerViewHolder = (SectionHeaderViewHolder) holder;
             headerViewHolder.sectionTitle.setText(usersList.get(position).getType());
-
         }
-
+        //TODO TEST
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: ");
+                //TODO Finish this using interface to pass data to other window where fragment manager can be used
+                //FragmentDialogSelectStoreExpanded fragmentDialogSelectStoreExpanded = new FragmentDialogSelectStoreExpanded();
+                //fragmentDialogSelectStoreExpanded.show(FragmentManager, "Stores");
+            }
+        });
 
     }
 

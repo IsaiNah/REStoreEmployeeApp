@@ -63,4 +63,5 @@ public class SwipeAndDragHelper extends ItemTouchHelper.Callback {
         void onViewSwiped(int position);
     }
 
+
 }
