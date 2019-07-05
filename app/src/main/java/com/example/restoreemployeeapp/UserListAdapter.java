@@ -64,6 +64,8 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             headerViewHolder.sectionTitle.setText(usersList.get(position).getType());
 
         }
+
+
     }
 
     @Override
@@ -88,10 +90,19 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public void onViewMoved(int oldPosition, int newPosition) {
         Employee targetEmployee = usersList.get(oldPosition);
+        //Checking current rank
+        Log.d(TAG, "Checking Rank: " + targetEmployee.getRank() + " type " + targetEmployee.getType());
+        //Checking what type is ABOVE current employee, will orient based on the type located above
+        Employee employeeAbove = usersList.get(newPosition - 1);
+        //Logging employee above new position
+        Log.d(TAG, "Employee above type: " + employeeAbove.getType());
         Employee employee = new Employee(targetEmployee);
+        employee.setType(employeeAbove.getType());
         usersList.remove(oldPosition);
         usersList.add(newPosition, employee);
+
         notifyItemMoved(oldPosition, newPosition);
+        Log.d(TAG, "onViewMoved:  Move detected, position updated. Old pos " + oldPosition + " New pos " + newPosition );
     }
 
     @Override
@@ -104,6 +115,7 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         this.touchHelper = touchHelper;
     }
+
 
 
 }

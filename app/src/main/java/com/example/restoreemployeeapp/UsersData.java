@@ -54,10 +54,14 @@ public class UsersData {
            // Log.d(TAG, "sortUsers: " + i + type);
             String name = usersList.get(i).getName();
             Log.d(TAG, "sortUsers: " + name + " " + i);
-            if (usersList.get(i).getRank().equals(type)  || usersList.get(i).getRank().equals("") && usersList.get(i).getRank().equals("")/* && !usersList.get(i).getName().equals("")*/)
+            if (usersList.get(i).getRank().equals(type)  || usersList.get(i).getRank().equals("") /*&& usersList.get(i).getRank().equals("")*//* && !usersList.get(i).getName().equals("")*/)
             {
                 Log.d(TAG, "sortUsers: Right type");
                 newList.add(usersList.get(i));
+                if (usersList.get(i).getType().equals("Not Set"))
+                {
+                    Log.d(TAG, "sortUsers: Type is not Set. #" + i);
+                }
             }else
             {
                 Log.d(TAG, "sortUsers: Not Right type");
@@ -66,4 +70,6 @@ public class UsersData {
 
         return newList;
     }
+
+
 }

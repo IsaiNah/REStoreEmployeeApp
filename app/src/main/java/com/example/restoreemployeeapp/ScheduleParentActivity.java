@@ -118,6 +118,8 @@ public class ScheduleParentActivity extends AppCompatActivity implements Adapter
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: Set Schedule Clicked");
+                userListAdapter.setUserList(employeeList);
+                Log.d(TAG, "onClick: "  + employeeList.get(4).getName() + " " + employeeList.get(4).getType());
             }
         });
         
@@ -166,6 +168,7 @@ public class ScheduleParentActivity extends AppCompatActivity implements Adapter
         switch (position) {
         case 0:
             userListAdapter.setUserList(employeeList);
+            //userListAdapter.notifyDataSetChanged();
            // employeeListGold = usersData.sortUsers("Gold");
         break;
             case 1:

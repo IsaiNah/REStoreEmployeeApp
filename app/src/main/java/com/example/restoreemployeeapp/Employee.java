@@ -47,4 +47,20 @@ public class Employee {
     public String getRank(){
         return rank;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setRank(String rank) {
+        this.rank = rank;
+    }
 }
