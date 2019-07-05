@@ -50,7 +50,7 @@ public class UsersData {
         List<Employee> newList = new ArrayList<Employee>(){};
         for (int i =0; i < usersList.size(); i++) {
 
-            //TODO create var for set and not set and only filter not set
+            //Creating var for set and not set and only filter not set
            // Log.d(TAG, "sortUsers: " + i + type);
             String name = usersList.get(i).getName();
             Log.d(TAG, "sortUsers: " + name + " " + i);

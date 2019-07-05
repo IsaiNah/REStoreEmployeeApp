@@ -92,7 +92,7 @@ public class ScheduleParentActivity extends AppCompatActivity implements Adapter
         employeeList = usersData.getEmployeesList();
         userListAdapter.setUserList(employeeList);
 
-        //Test for sorting users
+        //Presorting users
         employeeListGold = usersData.sortUsers("Gold");
         employeeListSilver = usersData.sortUsers("Silver");
         employeeListBronze = usersData.sortUsers("Bronze");
@@ -169,19 +169,21 @@ public class ScheduleParentActivity extends AppCompatActivity implements Adapter
         case 0:
             userListAdapter.setUserList(employeeList);
             //userListAdapter.notifyDataSetChanged();
-           // employeeListGold = usersData.sortUsers("Gold");
+           //
         break;
             case 1:
+                employeeListGold = usersData.sortUsers("Gold");
                 userListAdapter.setUserList(employeeListGold);
              //   employeeListGold = usersData.sortUsers("Silver");
                 break;
             case 2:
+                employeeListGold = usersData.sortUsers("Silver");
                userListAdapter.setUserList(employeeListSilver);
-                //   employeeListGold = usersData.sortUsers("Silver");
+
                 break;
             case 3:
+                employeeListGold = usersData.sortUsers("Silver");
                 userListAdapter.setUserList(employeeListBronze);
-                //   employeeListGold = usersData.sortUsers("Silver");
                 break;
 
         }

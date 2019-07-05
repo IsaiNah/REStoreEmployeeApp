@@ -100,7 +100,6 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         employee.setType(employeeAbove.getType());
         usersList.remove(oldPosition);
         usersList.add(newPosition, employee);
-
         notifyItemMoved(oldPosition, newPosition);
         Log.d(TAG, "onViewMoved:  Move detected, position updated. Old pos " + oldPosition + " New pos " + newPosition );
     }
