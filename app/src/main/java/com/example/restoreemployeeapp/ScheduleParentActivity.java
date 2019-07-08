@@ -22,7 +22,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
-public class ScheduleParentActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener ,FragmentControllerSchedule.BottomSectionControllerListener{
+public class ScheduleParentActivity extends AppCompatActivity implements /*UserListAdapter.PassFromAdapter,*/ AdapterView.OnItemSelectedListener ,FragmentControllerSchedule.BottomSectionControllerListener{
     private static final String TAG = "SEA_Log";
     FragmentDisplaySchedule fragmentDisplaySchedule;
     FragmentControllerSchedule fragmentControllerSchedule;
@@ -81,7 +81,7 @@ public class ScheduleParentActivity extends AppCompatActivity implements Adapter
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         //Adapter 
         // RecyclerViewAdapterUsers recyclerViewAdapterUsers = new RecyclerViewAdapterUsers(view.getContext(), userList, passData);
-        /*UserListAdapter*/ userListAdapter = new UserListAdapter();
+        /*UserListAdapter*/ userListAdapter = new UserListAdapter(passData);
         SwipeAndDragHelper swipeAndDragHelper = new SwipeAndDragHelper(userListAdapter);
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(swipeAndDragHelper);
         userListAdapter.setTouchHelper(itemTouchHelper);
@@ -91,6 +91,7 @@ public class ScheduleParentActivity extends AppCompatActivity implements Adapter
         //Creating User Data //TODO transfer all other data like this
          usersData = new UsersData();
         employeeList = usersData.getEmployeesList();
+
         userListAdapter.setUserList(employeeList);
 
         //Presorting users
@@ -219,11 +220,16 @@ public class ScheduleParentActivity extends AppCompatActivity implements Adapter
         }
     };
 */
-/* PassData passData = new PassData() {
-        @Override
-        public void passdata(String string) {
-            Log.d(TAG, "passdata: " + string);
-        }
-    };*/
 
+   /* @Override
+    public void adapterPass(String data) {
+        Log.d(TAG, "adapterPass: " + data);
+    }*/
+
+   PassData passData = new PassData() {
+       @Override
+       public void passdata(String string) {
+           Log.d(TAG, "passdata: interface working" + string);
+       }
+   };
 }

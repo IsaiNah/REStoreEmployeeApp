@@ -26,17 +26,22 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private List<Employee> usersList;
     private ItemTouchHelper touchHelper;
     private PassData passData;
-    //private PassFromAdapter passFromAdapter;
+   // private PassFromAdapter passFromAdapter;
 
 
-  /*  public interface PassFromAdapter {
+    /*public interface PassFromAdapter {
         void adapterPass(String data);
     }*/
+
+    public UserListAdapter(PassData passData) {
+        //this.usersList = usersList;
+        this.passData = passData;
+    }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view;
-      //  passData.passdata("");
+
         switch (viewType) {
             case USER_TYPE:
                 view = LayoutInflater.from(parent.getContext())
@@ -74,21 +79,26 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
         //TODO TEST
       //final  FragmentManager fragmentManager = new ;
+        //passFromAdapter = (PassFromAdapter) this;
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: ");
                 //TODO Finish this using interface to pass data to other window where fragment manager can be used
+                passData.passdata("Brazilians like to bullshit");
            // passData.passdata("test");
              //   FragmentDialogSelectStoreExpanded fragmentDialogSelectStoreExpanded = new FragmentDialogSelectStoreExpanded();
              //   fragmentDialogSelectStoreExpanded.show(fragmentManager, "Stores");
-           /*try {
-               PassFromAdapter passFromAdapter = new Pa
-               passFromAdapter.adapterPass("Test data pass");
+
+                try {
+              // PassFromAdapter passFromAdapter = new Pa
+                     //PassFromAdapter passFromAdapter = (PassFromAdapter);
+                   // passFromAdapter = (PassFromAdapter) Class.forName().newInstance();
+              // passFromAdapter.adapterPass("Test data pass");
            }catch (Exception e)
            {
                Log.d(TAG, "onClick: Exception " + e);
-           }*/
+           }
             }
         });
 
