@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/popupuserloc_barrie"
+        android:title="Barrie" />
+    <item android:id="@+id/popupuserloc_scar"
+        android:title="Scarborough" />
+    <item android:id="@+id/popupuserloc_bram"
+        android:title="Brampton" />
+
+</menu>

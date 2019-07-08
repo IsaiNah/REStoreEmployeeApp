@@ -1,6 +1,8 @@
 package com.example.restoreemployeeapp;
 
+import android.content.Context;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.text.TextUtils;
@@ -84,6 +86,10 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: ");
+                PopupMenu popupMenu = new PopupMenu(v.getContext(),v);
+                //popupMenu.setOnMenuItemClickListener();
+                popupMenu.inflate(R.menu.popupuserloc_menu);
+                popupMenu.show();
                 //TODO Finish this using interface to pass data to other window where fragment manager can be used
                 passData.passdata("Brazilians like to bullshit");
            // passData.passdata("test");
