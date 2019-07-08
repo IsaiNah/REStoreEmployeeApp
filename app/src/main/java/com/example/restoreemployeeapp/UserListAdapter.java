@@ -8,6 +8,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,7 +63,7 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
-        int itemViewType = getItemViewType(position);
+        final int itemViewType = getItemViewType(position);
         if (itemViewType == USER_TYPE) {
             ((UserViewHolder) holder).username.setText(usersList.get(position).getName());
             Glide.with(holder.itemView).load(usersList.get(position).getImageUrl()).into(((UserViewHolder) holder).userAvatar);
@@ -79,6 +80,7 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             SectionHeaderViewHolder headerViewHolder = (SectionHeaderViewHolder) holder;
             headerViewHolder.sectionTitle.setText(usersList.get(position).getType());
         }
+
         //TODO TEST
       //final  FragmentManager fragmentManager = new ;
         //passFromAdapter = (PassFromAdapter) this;
@@ -86,12 +88,24 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: ");
+
+               //final String itemClicked;
                 PopupMenu popupMenu = new PopupMenu(v.getContext(),v);
                 //popupMenu.setOnMenuItemClickListener();
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        Log.d(TAG, "onMenuItemClick: " + menuItem.toString());
+
+                        passData.passdata(menuItem.toString());
+                        return false;
+                    }
+                });
+                //TODO acquire name clicked and pass along with location
                 popupMenu.inflate(R.menu.popupuserloc_menu);
                 popupMenu.show();
-                //TODO Finish this using interface to pass data to other window where fragment manager can be used
-                passData.passdata("Brazilians like to bullshit");
+
+               // passData.passdata("Brazilians like to bullshit");
            // passData.passdata("test");
              //   FragmentDialogSelectStoreExpanded fragmentDialogSelectStoreExpanded = new FragmentDialogSelectStoreExpanded();
              //   fragmentDialogSelectStoreExpanded.show(fragmentManager, "Stores");

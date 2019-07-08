@@ -229,7 +229,7 @@ public class ScheduleParentActivity extends AppCompatActivity implements /*UserL
    PassData passData = new PassData() {
        @Override
        public void passdata(String string) {
-           Log.d(TAG, "passdata: interface working" + string);
+           Log.d(TAG, "passdata: interface working = " + string);
        }
    };
 }
