@@ -36,6 +36,7 @@ public class ScheduleParentActivity extends AppCompatActivity implements Adapter
     //Data for spinner
     private String[] filterData = {"All", "Gold", "Silver", "Bronze"};
     private UsersData usersData;
+    //private UserListAdapter.PassFromAdapter
    // private RecyclerView recyclerView;
 /*
 
@@ -210,4 +211,19 @@ public class ScheduleParentActivity extends AppCompatActivity implements Adapter
     public String getDate() {
         return date;
     }
+
+    /*UserListAdapter.PassFromAdapter passFromAdapter = new UserListAdapter.PassFromAdapter() {
+        @Override
+        public void adapterPass(String data) {
+            Log.d(TAG, "adapterPass: Data Recieved From Adapter : " + data);
+        }
+    };
+*/
+/* PassData passData = new PassData() {
+        @Override
+        public void passdata(String string) {
+            Log.d(TAG, "passdata: " + string);
+        }
+    };*/
+
 }
