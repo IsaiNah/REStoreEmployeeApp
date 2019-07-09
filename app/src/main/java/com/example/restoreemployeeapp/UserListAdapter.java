@@ -62,7 +62,7 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     @Override
-    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
         final int itemViewType = getItemViewType(position);
         if (itemViewType == USER_TYPE) {
             ((UserViewHolder) holder).username.setText(usersList.get(position).getName());
@@ -92,12 +92,14 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                //final String itemClicked;
                 PopupMenu popupMenu = new PopupMenu(v.getContext(),v);
                 //popupMenu.setOnMenuItemClickListener();
+
+                Log.d(TAG, "onClick: " + ((usersList).get(position).getName()));
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         Log.d(TAG, "onMenuItemClick: " + menuItem.toString());
 
-                        passData.passdata(menuItem.toString());
+                        passData.passdata(menuItem.toString()/* + holder.itemView.*/);
                         return false;
                     }
                 });
