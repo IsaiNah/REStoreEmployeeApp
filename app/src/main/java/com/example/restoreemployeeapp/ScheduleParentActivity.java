@@ -237,8 +237,12 @@ public class ScheduleParentActivity extends AppCompatActivity implements /*UserL
            employeeList.add(setEmployee);
            //userListAdapter.setUserList(employeeList);
             //usersData.getEmployeesList().get(6).set;
+            //TODO return pos of title in order to always know underwhich pos to add user
+            //TODO use onViewMoved?
+           //TODO iterate though list (in UserData), find type -> get pos according to type
+           //usersData.getEmployeesList().
 
-            userListAdapter.onViewMoved(4, 2);
+           userListAdapter.onViewMoved(4, 2);
        }
    };
 }
