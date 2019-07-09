@@ -71,5 +71,22 @@ public class UsersData {
         return newList;
     }
 
+    public int findPos(String storeName){
+        int pos = 1;
+        for (int i = 0; i < usersList.size(); i++)
+        {
+            //Log.d(TAG, "findPos: " + usersList.get(i).getType());
+            if (usersList.get(i).getType().equals(storeName))
+            {
+                Log.d(TAG, "findPos: Name matches, can return pos : " + usersList.get(i).getId());
+                pos = usersList.get(i).getId();
+            }
+        }
+
+        return pos;
+    }
+  /*  public List<Employee> findPos(String itemName){
+
+    }*/
 
 }

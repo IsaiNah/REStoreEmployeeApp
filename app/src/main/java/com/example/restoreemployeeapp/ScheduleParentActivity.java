@@ -232,9 +232,9 @@ public class ScheduleParentActivity extends AppCompatActivity implements /*UserL
            Log.d(TAG, "passdata: interface working = " + string);
            //TODO add employee to new pos then delete old version
 
-           Employee setEmployee = new Employee(4, "Changed!", "https://randomUser.me/api/portraits/men/52.jpg", "OroGold Barrie", "Gold");
-           usersData.getEmployeesList().set(5, setEmployee);
-           employeeList.add(setEmployee);
+           //Employee setEmployee = new Employee(4, "Changed!", "https://randomUser.me/api/portraits/men/52.jpg", "OroGold Barrie", "Gold");
+           //usersData.getEmployeesList().set(5, setEmployee);
+           //employeeList.add(setEmployee);
            //userListAdapter.setUserList(employeeList);
             //usersData.getEmployeesList().get(6).set;
             //TODO return pos of title in order to always know underwhich pos to add user
@@ -242,7 +242,17 @@ public class ScheduleParentActivity extends AppCompatActivity implements /*UserL
            //TODO iterate though list (in UserData), find type -> get pos according to type
            //usersData.getEmployeesList().
 
-           userListAdapter.onViewMoved(4, 2);
+           //userListAdapter.getItemViewType()
+           //int pos = usersData.findPos("OroGold Brampton");
+           //Log.d(TAG, "passdata: PoS = " + pos);
+            userListAdapter.setUserList(employeeList);
+           userListAdapter.setPos("OroGold Scarborough");
+
+           //userListAdapter.
+
+          /// userListAdapter.onViewMoved(4, 2);
+          // userListAdapter.onViewMoved(5, 2);
+         //  userListAdapter.onViewMoved(6, 2);
        }
    };
 }

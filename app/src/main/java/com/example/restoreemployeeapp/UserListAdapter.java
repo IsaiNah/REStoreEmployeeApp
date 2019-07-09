@@ -81,9 +81,6 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             headerViewHolder.sectionTitle.setText(usersList.get(position).getType());
         }
 
-        //TODO TEST
-      //final  FragmentManager fragmentManager = new ;
-        //passFromAdapter = (PassFromAdapter) this;
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,7 +97,7 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         Log.d(TAG, "onMenuItemClick: " + menuItem.toString());
 
                         passData.passdata(menuItem.toString() + " " + (usersList).get(position).getName() + " " + (usersList).get(position).getId()/* + holder.itemView.*/);
-                        (usersList).get(position).getClass();
+                        Log.d(TAG, "onMenuItemClick: " + (usersList).get(position).getClass());
                         return false;
                     }
                 });
@@ -158,6 +155,17 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         this.touchHelper = touchHelper;
     }
 
-
+    //TODO TEST
+    public void setPos(String location)
+    {
+        Log.d(TAG, "setPos: Location " + location);
+        for (int i = 0; i < usersList.size(); i++ )
+        {
+           if (usersList.get(i).getType().equals(location))
+           {
+               Log.d(TAG, "setPos: Location Match, Position = " + usersList.get(i).getId());
+           }
+        }
+    }
 
 }
