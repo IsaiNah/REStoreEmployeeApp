@@ -99,7 +99,7 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         Log.d(TAG, "onMenuItemClick: " + menuItem.toString());
 
-                        passData.passdata(menuItem.toString()/* + holder.itemView.*/);
+                        passData.passdata(menuItem.toString() + (usersList).get(position).getName()/* + holder.itemView.*/);
                         return false;
                     }
                 });
