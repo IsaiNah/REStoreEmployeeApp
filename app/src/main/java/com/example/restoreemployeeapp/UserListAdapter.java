@@ -99,28 +99,13 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         Log.d(TAG, "onMenuItemClick: " + menuItem.toString());
 
-                        passData.passdata(menuItem.toString() + (usersList).get(position).getName()/* + holder.itemView.*/);
+                        passData.passdata(menuItem.toString() + " " + (usersList).get(position).getName() + " " + (usersList).get(position).getId()/* + holder.itemView.*/);
+                        (usersList).get(position).getClass();
                         return false;
                     }
                 });
-                //TODO acquire name clicked and pass along with location
                 popupMenu.inflate(R.menu.popupuserloc_menu);
                 popupMenu.show();
-
-               // passData.passdata("Brazilians like to bullshit");
-           // passData.passdata("test");
-             //   FragmentDialogSelectStoreExpanded fragmentDialogSelectStoreExpanded = new FragmentDialogSelectStoreExpanded();
-             //   fragmentDialogSelectStoreExpanded.show(fragmentManager, "Stores");
-
-                try {
-              // PassFromAdapter passFromAdapter = new Pa
-                     //PassFromAdapter passFromAdapter = (PassFromAdapter);
-                   // passFromAdapter = (PassFromAdapter) Class.forName().newInstance();
-              // passFromAdapter.adapterPass("Test data pass");
-           }catch (Exception e)
-           {
-               Log.d(TAG, "onClick: Exception " + e);
-           }
             }
         });
 

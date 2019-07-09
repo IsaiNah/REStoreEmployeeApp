@@ -230,6 +230,15 @@ public class ScheduleParentActivity extends AppCompatActivity implements /*UserL
        @Override
        public void passdata(String string) {
            Log.d(TAG, "passdata: interface working = " + string);
+           //TODO add employee to new pos then delete old version
+
+           Employee setEmployee = new Employee(4, "Changed!", "https://randomUser.me/api/portraits/men/52.jpg", "OroGold Barrie", "Gold");
+           usersData.getEmployeesList().set(5, setEmployee);
+           employeeList.add(setEmployee);
+           //userListAdapter.setUserList(employeeList);
+            //usersData.getEmployeesList().get(6).set;
+
+            userListAdapter.onViewMoved(4, 2);
        }
    };
 }
