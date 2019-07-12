@@ -161,16 +161,15 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         Log.d(TAG, "setPos: Location " + location);
         for (int i = 0; i < usersList.size(); i++ )
         {
+            //TODO match by name above?
             Log.d(TAG, "setPos: ");
-           if (usersList.get(i).getType().equals(location))
+           if (usersList.get(i).getType().equals(location) && usersList.get(i).getName().equals(""))
            {
-               if( usersList.get(i).getName().equals("")) {
-                   Log.d(TAG, "setPos: true");
-               }
-               
                Log.d(TAG, "setPos: Location Match, Position = " + usersList.get(i).getId());
                 int newposition = i++;
                Log.d(TAG, "setPos: Current positions oldPos " + oldposition + " newPos " + newposition);
+               //TODO onViewMoved Causing issue with positioning, create other onViewMoved method
+               //TODO which will not cause positioning conflict
                onViewMoved(oldposition, newposition);
            }
         }
