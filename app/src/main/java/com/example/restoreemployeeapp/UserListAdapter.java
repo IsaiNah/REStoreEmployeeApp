@@ -95,7 +95,7 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         Log.d(TAG, "onMenuItemClick: " + menuItem.toString());
-
+                        //TODO PASS Class along with location
                         passData.passdata(menuItem.toString() + " " + (usersList).get(position).getName() + " " + (usersList).get(position).getId()/* + holder.itemView.*/);
                         Log.d(TAG, "onMenuItemClick: " + (usersList).get(position).getClass());
                         return false;
@@ -156,7 +156,7 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     //TODO TEST
-    public void setPos(String location)
+    public void setPos(String location, int oldposition)
     {
         Log.d(TAG, "setPos: Location " + location);
         for (int i = 0; i < usersList.size(); i++ )
@@ -164,6 +164,9 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
            if (usersList.get(i).getType().equals(location))
            {
                Log.d(TAG, "setPos: Location Match, Position = " + usersList.get(i).getId());
+                int newposition = i++;
+               Log.d(TAG, "setPos: Current positions oldPos " + oldposition + " newPos " + newposition);
+               onViewMoved(oldposition, newposition);
            }
         }
     }

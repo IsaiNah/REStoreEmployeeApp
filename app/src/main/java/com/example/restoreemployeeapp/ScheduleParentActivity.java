@@ -245,12 +245,16 @@ public class ScheduleParentActivity extends AppCompatActivity implements /*UserL
            //userListAdapter.getItemViewType()
            //int pos = usersData.findPos("OroGold Brampton");
            //Log.d(TAG, "passdata: PoS = " + pos);
+
+           //Getting the last pos of string in order to pass current position
+           int oldpos = Integer.parseInt(string.substring(string.length() -1));
+
             userListAdapter.setUserList(employeeList);
-           userListAdapter.setPos("OroGold Scarborough");
+           userListAdapter.setPos("OroGold Scarborough", oldpos);
 
            //userListAdapter.
 
-          /// userListAdapter.onViewMoved(4, 2);
+          // userListAdapter.onViewMoved(4, 2);
           // userListAdapter.onViewMoved(5, 2);
          //  userListAdapter.onViewMoved(6, 2);
        }
