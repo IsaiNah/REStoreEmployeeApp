@@ -169,7 +169,7 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 int newposition = i++;
                Log.d(TAG, "setPos: Current positions oldPos " + oldposition + " newPos " + newposition);
                //TODO onViewMoved Causing issue with positioning, create other onViewMoved method
-               //TODO which will not cause positioning conflict
+               //TODO which will not cause positioning conflict.
                onViewMoved(oldposition, newposition);
            }
         }
