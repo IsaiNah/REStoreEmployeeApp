@@ -38,13 +38,6 @@ public class ScheduleParentActivity extends AppCompatActivity implements /*UserL
     private UsersData usersData;
     //private UserListAdapter.PassFromAdapter
    // private RecyclerView recyclerView;
-/*
-
-    private static final String FragDisplay = "Display";
-    private static final String FragSchedule = "Schedule";
-*/
-
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,9 +47,6 @@ public class ScheduleParentActivity extends AppCompatActivity implements /*UserL
         //Getting passed date
         Intent intent = getIntent();
         date = intent.getStringExtra("Date");
-
-       /* registerForContextMenu();*/
-
 
         Log.d(TAG, "onCreate: Date from getIntent = " + date );
         selectedDate = findViewById(R.id.txtSelectedDate);
@@ -124,41 +114,6 @@ public class ScheduleParentActivity extends AppCompatActivity implements /*UserL
                 Log.d(TAG, "onClick: "  + employeeList.get(4).getName() + " " + employeeList.get(4).getType());
             }
         });
-        
-       // fragmentDisplaySchedule = new FragmentDisplaySchedule();
-        //fragmentControllerSchedule = new FragmentControllerSchedule();
-
-   /*     FragmentManager fragmentManager = getSupportFragmentManager();
-
-        try {
-            fragmentDisplaySchedule = (FragmentDisplaySchedule) fragmentManager.findFragmentById(R.id.fragdis);
-            if (fragmentDisplaySchedule == null) {
-                Log.d(TAG, "onCreate: Fragment Schedule was null");
-            }
-        }catch (Exception e)
-        {
-            Log.d(TAG, "onCreate: Exception " + e);
-        }
-        try {
-            fragmentDisplaySchedule = (FragmentDisplaySchedule) fragmentManager.findFragmentById(R.id.fragdis);
-            if (fragmentDisplaySchedule == null) {
-                Log.d(TAG, "onCreate: Fragment Schedule was null");
-            }
-        }catch (Exception e)
-        {
-            Log.d(TAG, "onCreate: Exception " + e);
-        }*/
-        //fragmentDisplaySchedule = fragmentManager.findFragmentByTag(FragDisplay);
-
-        /*//TODO as in quicki
-        try {
-            FragmentDisplaySchedule fragmentDisplaySchedule = new FragmentDisplaySchedule();
-            fragmentDisplaySchedule.changeLocationTest("WORKING!!!");
-        }catch (Exception e)
-        {
-            Log.d(TAG, "onCreate: Exception " + e);
-        }
-        Log.d(TAG, "onCreate: Contents of intent extra " + date);*/
 
     }
 
@@ -237,10 +192,13 @@ public class ScheduleParentActivity extends AppCompatActivity implements /*UserL
        }
    };
 
-   PassData passData = new PassData() {
+   /*PassData passData = new PassData() {
        @Override
        public void passdata(String string ) {
-          /* Log.d(TAG, "passdata: interface working = emp name " + employee.getName());
+          *//* Log.d(TAG, "passdata: interface working = emp name " + employee.getName());
+          //TODO delete
+
+
            //TODO add employee to new pos then delete old version
 
            //Employee setEmployee = new Employee(4, "Changed!", "https://randomUser.me/api/portraits/men/52.jpg", "OroGold Barrie", "Gold");
@@ -268,8 +226,8 @@ public class ScheduleParentActivity extends AppCompatActivity implements /*UserL
 
           // userListAdapter.onViewMoved(4, 2);
           // userListAdapter.onViewMoved(5, 2);
-         //  userListAdapter.onViewMoved(6, 2);*/
+         //  userListAdapter.onViewMoved(6, 2);*//*
        }
 
-   };
+   };*/
 }
