@@ -15,9 +15,9 @@ public class UsersData {
 
     private List<Employee> usersList = new ArrayList<Employee>() {
         {
-            add(new Employee(0, "", "", "OroGold Barrie", ""));
-            add(new Employee(1, "", "", "OroGold Scarborough", ""));
-            add(new Employee(2, "", "", "OroGold Brampton", ""));
+            add(new Employee(0, "", "", "Barrie", ""));
+            add(new Employee(1, "", "", "Scarborough", ""));
+            add(new Employee(2, "", "", "Brampton", ""));
             add(new Employee(3, "", "", "Not Set", ""));
             add(new Employee(4, "Frederick Hoffman", "https://randomUser.me/api/portraits/men/52.jpg", "Not Set","Gold"));
             add(new Employee(5, "Calvin Young", "https://randomUser.me/api/portraits/men/78.jpg", "Not Set","Gold"));

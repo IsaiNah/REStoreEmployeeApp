@@ -29,6 +29,7 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private List<Employee> usersList;
     private ItemTouchHelper touchHelper;
     private PassData passData;
+    private PassEmployee passEmployee;
    // private PassFromAdapter passFromAdapter;
 
 
@@ -36,9 +37,10 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         void adapterPass(String data);
     }*/
 
-    public UserListAdapter(PassData passData) {
+    public UserListAdapter(/*PassData passData*/ PassEmployee passEmployee) {
         //this.usersList = usersList;
-        this.passData = passData;
+        //this.passData = passData;
+        this.passEmployee = passEmployee;
     }
 
     @Override
@@ -95,8 +97,13 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         Log.d(TAG, "onMenuItemClick: " + menuItem.toString());
-                        //TODO PASS Class along with location
-                        passData.passdata(menuItem.toString() + " " + (usersList).get(position).getName() + " " + (usersList).get(position).getId()/* + holder.itemView.*/);
+                        //Passing Employee
+                        Employee emp = usersList.get(position);
+                        Log.d(TAG, "onMenuItemClick: " + emp.getName() + " " + emp.getType());
+                        //Log.d(TAG, "onMenuItemClick: TESTING employee ID " + emp.getId());
+                       // passData.passdata(menuItem.toString() + " " + (usersList).get(position).getName() + " " + (usersList).get(position).getId()/* + holder.itemView.*/);
+                        passEmployee.passemployee(emp, menuItem.toString());
+                        //passData.passemp(emp);
                         Log.d(TAG, "onMenuItemClick: " + (usersList).get(position).getClass());
                         return false;
                     }
@@ -186,7 +193,7 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
               }
                Log.d(TAG, "setPos: i = " + i);
                Log.d(TAG, "setPos: Location Match, Position = " + usersList.get(i).getId());
-                int newposition = i + 1;
+                int newposition = i;
                Log.d(TAG, "setPos: Current positions oldPos " + oldposition + " newPos " + newposition);
                //TODO onViewMoved Causing issue with positioning, create other onViewMoved method
                //TODO which will not cause positioning conflict.

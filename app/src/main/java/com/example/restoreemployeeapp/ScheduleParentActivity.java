@@ -81,7 +81,7 @@ public class ScheduleParentActivity extends AppCompatActivity implements /*UserL
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         //Adapter 
         // RecyclerViewAdapterUsers recyclerViewAdapterUsers = new RecyclerViewAdapterUsers(view.getContext(), userList, passData);
-        /*UserListAdapter*/ userListAdapter = new UserListAdapter(passData);
+        /*UserListAdapter*/ userListAdapter = new UserListAdapter(/*passData*/passEmployee);
         SwipeAndDragHelper swipeAndDragHelper = new SwipeAndDragHelper(userListAdapter);
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(swipeAndDragHelper);
         userListAdapter.setTouchHelper(itemTouchHelper);
@@ -226,10 +226,21 @@ public class ScheduleParentActivity extends AppCompatActivity implements /*UserL
         Log.d(TAG, "adapterPass: " + data);
     }*/
 
+   PassEmployee passEmployee = new PassEmployee() {
+       @Override
+       public void passemployee(Employee employee, String setLocation) {
+               Log.d(TAG, "passEmployee: " + employee.getName() + " Location Selected: " + setLocation);
+
+               userListAdapter.setPos(employee.getType(), employee.getId());
+
+
+       }
+   };
+
    PassData passData = new PassData() {
        @Override
-       public void passdata(String string) {
-           Log.d(TAG, "passdata: interface working = " + string);
+       public void passdata(String string ) {
+          /* Log.d(TAG, "passdata: interface working = emp name " + employee.getName());
            //TODO add employee to new pos then delete old version
 
            //Employee setEmployee = new Employee(4, "Changed!", "https://randomUser.me/api/portraits/men/52.jpg", "OroGold Barrie", "Gold");
@@ -247,17 +258,18 @@ public class ScheduleParentActivity extends AppCompatActivity implements /*UserL
            //Log.d(TAG, "passdata: PoS = " + pos);
 
            //Getting the last pos of string in order to pass current position
-           int oldpos = Integer.parseInt(string.substring(string.length() -1));
+           //int oldpos = Integer.parseInt(string.substring(string.length() -1));
 
-           Log.d(TAG, "passdata: oldpos = " +oldpos);
+           Log.d(TAG, "passdata: oldpos = " + employee.getId());
             userListAdapter.setUserList(employeeList);
-           userListAdapter.setPos("OroGold Barrie", oldpos);
+           userListAdapter.setPos("OroGold Barrie", employee.getId());
 
-           //userListAdapter.
+           //userListAdapter.// //TODO make employee interface
 
           // userListAdapter.onViewMoved(4, 2);
           // userListAdapter.onViewMoved(5, 2);
-         //  userListAdapter.onViewMoved(6, 2);
+         //  userListAdapter.onViewMoved(6, 2);*/
        }
+
    };
 }
