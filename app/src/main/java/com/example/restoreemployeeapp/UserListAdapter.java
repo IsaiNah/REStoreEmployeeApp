@@ -129,6 +129,7 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public void onViewMoved(int oldPosition, int newPosition) {
+        Log.d(TAG, "onViewMoved: CALL ");
         Employee targetEmployee = usersList.get(oldPosition);
         //Checking current rank
         Log.d(TAG, "Checking Rank: " + targetEmployee.getRank() + " type " + targetEmployee.getType());
@@ -143,6 +144,17 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         notifyItemMoved(oldPosition, newPosition);
         Log.d(TAG, "onViewMoved:  Move detected, position updated. Old pos " + oldPosition + " New pos " + newPosition );
     }
+
+    public void onViewSimpleMove(int oldPosition, int newPostition)
+    {
+        Log.d(TAG, "onViewSimpleMove: CALL");
+        Employee targetEmployee = usersList.get(oldPosition);
+        Employee employee = new Employee(targetEmployee);
+        usersList.remove(oldPosition);
+        usersList.add(newPostition, employee);
+        notifyItemMoved(oldPosition, newPostition);
+    }
+
 
     @Override
     public void onViewSwiped(int position) {
@@ -161,16 +173,26 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         Log.d(TAG, "setPos: Location " + location);
         for (int i = 0; i < usersList.size(); i++ )
         {
+            Log.d(TAG, "setPos: i = " + i);
             //TODO match by name above?
-            Log.d(TAG, "setPos: ");
-           if (usersList.get(i).getType().equals(location) && usersList.get(i).getName().equals(""))
+            Log.d(TAG, "setPos: !Location! = " + usersList.get(i).getType().equals(location));
+          //  String setLocation =  usersList.get(i).getType();
+           if (usersList.get(i).getType().equals(location) /*&& usersList.get(i).getName().equals("")*/)
            {
+               Log.d(TAG, "setPos: True, item positon = " + i);
+              if(usersList.get(i).getName().equals(""))
+              {
+                  Log.d(TAG, "setPos: MATCH");
+              }
+               Log.d(TAG, "setPos: i = " + i);
                Log.d(TAG, "setPos: Location Match, Position = " + usersList.get(i).getId());
-                int newposition = i++;
+                int newposition = i + 1;
                Log.d(TAG, "setPos: Current positions oldPos " + oldposition + " newPos " + newposition);
                //TODO onViewMoved Causing issue with positioning, create other onViewMoved method
                //TODO which will not cause positioning conflict.
-               onViewMoved(oldposition, newposition);
+               //onViewMoved(oldposition, newposition);
+               onViewSimpleMove(oldposition, newposition);
+               break;
            }
         }
     }

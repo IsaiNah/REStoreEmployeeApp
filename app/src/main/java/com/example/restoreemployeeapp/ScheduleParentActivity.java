@@ -249,8 +249,9 @@ public class ScheduleParentActivity extends AppCompatActivity implements /*UserL
            //Getting the last pos of string in order to pass current position
            int oldpos = Integer.parseInt(string.substring(string.length() -1));
 
+           Log.d(TAG, "passdata: oldpos = " +oldpos);
             userListAdapter.setUserList(employeeList);
-           userListAdapter.setPos("OroGold Scarborough", oldpos);
+           userListAdapter.setPos("OroGold Barrie", oldpos);
 
            //userListAdapter.
 
