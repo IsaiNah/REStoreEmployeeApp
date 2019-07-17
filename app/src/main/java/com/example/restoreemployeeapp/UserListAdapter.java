@@ -17,9 +17,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-/**
- * Created by Srijith on 08-10-2017.
- */
+
 
 public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements
         SwipeAndDragHelper.ActionCompletionContract {
@@ -180,7 +178,6 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         Log.d(TAG, "setPos: Location " + location);
         for (int i = 0; i < usersList.size(); i++ )
         {
-            Log.d(TAG, "setPos: i = " + i);
             //TODO match by name above?
             Log.d(TAG, "setPos: !Location! = " + usersList.get(i).getType().equals(location));
           //  String setLocation =  usersList.get(i).getType();
@@ -189,20 +186,21 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                Log.d(TAG, "setPos: True, item positon = " + i);
               if(usersList.get(i).getName().equals(""))
               {
-                  Log.d(TAG, "setPos: MATCH");
+                  Log.d(TAG, "setPos: MATCH ");
                   Log.d(TAG, "setPos: Position of get name blank " + i);
+                  onViewSimpleMove(oldposition, i + 1);
+                  break;
               }
-               Log.d(TAG, "setPos: i = " + i);
                Log.d(TAG, "setPos: Location Match, Position = " + usersList.get(i).getId());
-                int newposition = i;
-               Log.d(TAG, "setPos: New Position " + newposition + " " + usersList.get(i).getType());
-               Log.d(TAG, "setPos: Current positions oldPos " + oldposition + " newPos " + newposition);
+
+             //  Log.d(TAG, "setPos: New Position " + newposition + " " + usersList.get(i).getType());
+               //Log.d(TAG, "setPos: Current positions oldPos " + oldposition + " newPos " + newposition);
                //TODO onViewMoved Causing issue with positioning, create other onViewMoved method
                //TODO which will not cause positioning conflict.
                //TODO check if onViewMoved is really causing conflict
                //onViewMoved(oldposition, newposition);
-               onViewSimpleMove(oldposition, newposition);
-               break;
+
+
            }
         }
     }

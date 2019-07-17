@@ -186,7 +186,8 @@ public class ScheduleParentActivity extends AppCompatActivity implements /*UserL
        public void passemployee(Employee employee, String setLocation) {
                Log.d(TAG, "passEmployee: " + employee.getName() + " Location Selected: " + setLocation);
 
-               userListAdapter.setPos(employee.getType(), employee.getId());
+
+               userListAdapter.setPos(setLocation, employee.getId());
 
 
        }

@@ -1,8 +1,5 @@
 package com.example.restoreemployeeapp;
 
-/**
- * Created by Srijith on 08-10-2017.
- */
 
 public class Employee {
 
