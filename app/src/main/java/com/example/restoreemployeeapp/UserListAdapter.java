@@ -156,8 +156,9 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         Employee targetEmployee = usersList.get(oldPosition);
         Employee employee = new Employee(targetEmployee);
         usersList.remove(oldPosition);
-        usersList.add(newPostition, employee);
         notifyItemMoved(oldPosition, newPostition);
+        usersList.add(newPostition, employee);
+
     }
 
 
@@ -173,25 +174,33 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     //TODO TEST
-    public void setPos(String location, int oldposition)
+    public void setPos(String location,/* int oldposition*/ Employee employee)
     {
+        //TODO issue is with old Pos
+        // Recreate all Positions???
         Log.d(TAG, "setPos: Location " + location);
         for (int i = 0; i < usersList.size(); i++ )
         {
             //TODO match by name above?
             Log.d(TAG, "setPos: !Location! = " + usersList.get(i).getType().equals(location));
           //  String setLocation =  usersList.get(i).getType();
-           if (usersList.get(i).getType().equals(location) /*&& usersList.get(i).getName().equals("")*/)
+           if (usersList.get(i).getType().equals(location) && usersList.get(i).getName().equals(""))
            {
+
                Log.d(TAG, "setPos: True, item positon = " + i);
-              if(usersList.get(i).getName().equals(""))
+           /*   if(usersList.get(i).getName().equals(""))
               {
                   Log.d(TAG, "setPos: MATCH ");
                   Log.d(TAG, "setPos: Position of get name blank " + i);
                   onViewSimpleMove(oldposition, i + 1);
                   break;
-              }
-               Log.d(TAG, "setPos: Location Match, Position = " + usersList.get(i).getId());
+              }*/
+                    //onViewMoved(oldposition, i + 1);
+
+               onViewSimpleMove(employee.getId(), i + 1);
+               //notifyDataSetChanged();
+                break;
+               //Log.d(TAG, "setPos: Location Match, Position = " + usersList.get(i).getId());
 
              //  Log.d(TAG, "setPos: New Position " + newposition + " " + usersList.get(i).getType());
                //Log.d(TAG, "setPos: Current positions oldPos " + oldposition + " newPos " + newposition);

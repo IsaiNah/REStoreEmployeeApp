@@ -187,7 +187,9 @@ public class ScheduleParentActivity extends AppCompatActivity implements /*UserL
                Log.d(TAG, "passEmployee: " + employee.getName() + " Location Selected: " + setLocation);
 
 
-               userListAdapter.setPos(setLocation, employee.getId());
+              // userListAdapter.
+               userListAdapter.setPos(setLocation, /*employee.getId()*/ employee);
+           //Log.d(TAG, "passemployee: Employee ID = " );
 
 
        }
