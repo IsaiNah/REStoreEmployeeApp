@@ -156,9 +156,8 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         Employee targetEmployee = usersList.get(oldPosition);
         Employee employee = new Employee(targetEmployee);
         usersList.remove(oldPosition);
-        notifyItemMoved(oldPosition, newPostition);
         usersList.add(newPostition, employee);
-
+        notifyItemMoved(oldPosition, newPostition);
     }
 
 
@@ -195,10 +194,17 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                   onViewSimpleMove(oldposition, i + 1);
                   break;
               }*/
-                    //onViewMoved(oldposition, i + 1);
 
-               onViewSimpleMove(employee.getId(), i + 1);
-               //notifyDataSetChanged();
+           /*    int oldpos = employee.getId();
+                usersList.add(i + 1,employee);
+               usersList.remove(oldpos);
+                notifyItemMoved(oldpos,i + 1);
+           */
+               int oldpos = employee.getId();
+           onViewMoved(oldpos, ++i);
+                //onViewSimpleMove(employee.getId(), i + 1);
+
+
                 break;
                //Log.d(TAG, "setPos: Location Match, Position = " + usersList.get(i).getId());
 
