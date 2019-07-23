@@ -199,10 +199,19 @@ public class UserListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 usersList.add(i + 1,employee);
                usersList.remove(oldpos);
                 notifyItemMoved(oldpos,i + 1);
-           */
+           */ //TODO Old pos Changes for some reason eventually
+               //TODO order of oldpos seems to get mixed up recreate UserData???
                int oldpos = employee.getId();
            onViewMoved(oldpos, ++i);
-                //onViewSimpleMove(employee.getId(), i + 1);
+             //  onViewSimpleMove(employee.getId(), ++i);
+               Log.d(TAG, "setPos: ###########################");
+           //TODO temp for debugging
+               for (i = 0; i < usersList.size(); i++) {
+                   Log.d(TAG, "setPos: " + usersList.get(i).getId());
+               }
+               Log.d(TAG, "setPos: ###########################");
+           //usersList.get(i).setId(++i);
+
 
 
                 break;

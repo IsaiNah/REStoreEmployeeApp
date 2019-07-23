@@ -23,7 +23,7 @@ public class UsersData {
             add(new Employee(5, "Calvin Young", "https://randomUser.me/api/portraits/men/78.jpg", "Not Set","Gold"));
             add(new Employee(6, "Jeanette Reid", "https://randomUser.me/api/portraits/women/37.jpg", "Not Set","Gold"));
             add(new Employee(7, "Flenn Wilson", "https://randomUser.me/api/portraits/men/40.jpg", "Not Set","Gold"));
-            add(new Employee(8, "Martin Holland", "https://randomUser.me/api/portraits/men/0.jpg", "Not Set","Gold"));
+          /*  add(new Employee(8, "Martin Holland", "https://randomUser.me/api/portraits/men/0.jpg", "Not Set","Gold"));
             add(new Employee(9, "Jeanette Simmmons", "https://randomUser.me/api/portraits/women/3.jpg", "Not Set","Silver"));
             add(new Employee(10, "Wallace Lambert", "https://randomUser.me/api/portraits/men/53.jpg", "Not Set", "Silver"));
             add(new Employee(11, "Andy Clark", "https://randomUser.me/api/portraits/men/68.jpg", "Not Set", "Silver"));
@@ -38,7 +38,7 @@ public class UsersData {
             add(new Employee(20, "Veronica Vargas", "https://randomUser.me/api/portraits/women/14.jpg", "Not Set", "Bronze"));
             add(new Employee(21, "Natalie Jacobs", "https://randomUser.me/api/portraits/women/0.jpg", "Not Set", "Bronze"));
             add(new Employee(22, "Beverly Kennedy", "https://randomUser.me/api/portraits/women/30.jpg", "Not Set", "Bronze"));
-        }
+   */     }
     };
 
     public List<Employee> getEmployeesList() {
