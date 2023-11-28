@@ -1,3 +1,9 @@
+Changed to public to show code.
+
+This project was initated by me as per request of former boss. It was meant as a interal Employee App. Project was a side project as my priority was often in web-dev.
+
+Project was stopped after split of partnership in the company and priorites shifted.
+
 # REStoreEmployeeApp
 
 2019/04/08
